@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="554ae45f-2c23-407b-9ca3-7b450b3829ae" name="Changes" comment="Step 1 correction bug">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/components/Navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/lib/mongodb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/About.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/Animation_Credit_Don.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/Contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/Credit_Cotisation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/Credit_Don.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/Sign_In.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/[emailpw].js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/_app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/_documents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/public/Image_Credit/Merci.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/public/Image_Login/logoMoon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/public/Image_Login/tothemoon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/public/Image_Navbar/logoMoon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/public/vercel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/styles/Home.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/styles/globals.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Production" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ADU5jP542U3M6u6J66fs2Xe8Aa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/Ecole/Session6 - PROJET/projet_integration/projetgo/public/Image_Navbar",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Ecole\Session6 - PROJET\projet_integration\projetgo\public\Image_Navbar" />
+      <recent name="F:\Ecole\Session6 - PROJET\projet_integration\projetgo\public\Image_Login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Ecole\Session6 - PROJET\projet_integration\projetgo\public\Image_Credit" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="554ae45f-2c23-407b-9ca3-7b450b3829ae" name="Changes" comment="" />
+      <created>1654543468084</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654543468084</updated>
+      <workItem from="1654543469267" duration="4037000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Step 1 correction bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 1 correction bug" />
+  </component>
+</project>
