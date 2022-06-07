@@ -2,7 +2,7 @@ import {useRouter} from "next/router";
 import styles from "../styles/Home.module.css";
 import Navbar from "../Components/Navbar";
 import clientPromise from "../lib/mongodb";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 export async function getServerSideProps(context) {
 
@@ -113,7 +113,7 @@ export default function Homepage({projets, membre}) {
                                 <div className={styles.DivAbsolute}>
                                     &ensp;{projets.map((projets, i) => (
                                     <div key={i} className={styles.ArrayContainer} onClick={() => {
-                                        router.push('/post/projets/' + projets._id + '&' + user._email + '_' + user._pw).then(r => r)
+                                        router.push('/post/projets/' + projets._id + '&' + user._id).then(r => r)
                                     }}>
                                         <h3 style={{color: "#0272fc"}}>{projets._titre}</h3>
                                         {projets._desc}<br/>

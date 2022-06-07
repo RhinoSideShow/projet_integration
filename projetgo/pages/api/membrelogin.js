@@ -1,14 +1,11 @@
 import clientPromise from "../../lib/mongodb";
+import {ObjectId} from "mongodb";
 export default async  function handler(req,res){
     const query = req.query.emailpw;
-
-    let tabEmailPw = query.split("_");
-    let email= tabEmailPw[0];
-    let pw = tabEmailPw[1];
     const client = await clientPromise;
 
     const db = client.db("projet_go");
-    const data = await db.collection("membres").findOne({_email:email,_pw:pw})
+    const data = await db.collection("membres").findOne({_id: new ObjectId(query)})
 
     res.json(data);
 }
