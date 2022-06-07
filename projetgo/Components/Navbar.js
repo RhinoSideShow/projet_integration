@@ -12,36 +12,36 @@ const Nav = styled.nav`
 `;
 
 const StyledLink = styled.a`
-    padding: 0 2rem;
+  padding: 0 2rem;
 `;
 
 const Image = styled.image`
-    margin-right: 90rem;
+  margin-right: 80rem;
 `;
 
 const Navbar = () => {
     return (
         <Nav>
             <div className={styles.DivNav}>
-                <Link href='/' passHref>
+                <Link href='/'passHref>
                     <Image>
                         <img className={styles.DivImageNav} src="/Image_Navbar/logoMoon.png" alt="nope"/>
                     </Image>
                 </Link>
             </div>
             <div>
-                <Link href='/' passHref>
-                    <StyledLink>Home</StyledLink>
+                <Link href='/'passHref>
+                    <StyledLink>Comment ça marche</StyledLink>
                 </Link>
             </div>
             <div>
-                <Link href='/About' passHref>
-                    <StyledLink>About</StyledLink>
+                <Link href='/About'passHref>
+                    <StyledLink>Créer un projet</StyledLink>
                 </Link>
             </div>
             <div>
-                <Link href='/Contact' passHref>
-                    <StyledLink>Contact</StyledLink>
+                <Link href='/Contact'passHref>
+                    <StyledLink>Connexion</StyledLink>
                 </Link>
             </div>
         </Nav>

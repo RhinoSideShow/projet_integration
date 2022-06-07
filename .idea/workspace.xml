@@ -1,33 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="554ae45f-2c23-407b-9ca3-7b450b3829ae" name="Changes" comment="Step 1 correction bug">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/components/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/lib/mongodb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/About.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/Animation_Credit_Don.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/Contact.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/Credit_Cotisation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/Credit_Don.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/Sign_In.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/[emailpw].js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/_app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/_documents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/public/Image_Credit/Merci.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/public/Image_Login/logoMoon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/public/Image_Login/tothemoon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/public/Image_Navbar/logoMoon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/public/vercel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/styles/Home.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/styles/globals.css" afterDir="false" />
+    <list default="true" id="554ae45f-2c23-407b-9ca3-7b450b3829ae" name="Changes" comment="Step 2 correction bug">
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/Homepage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/api/ProjetDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/post/projets/[projets].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/Components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/Contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/[emailpw].js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/post/membre/[emailpw].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Production" />
+        <entry key="$PROJECT_DIR$" value="Developpement" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,17 +46,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/Ecole/Session6 - PROJET/projet_integration/projetgo/public/Image_Navbar",
+    "last_opened_file_path": "F:/Ecole/Session6 - PROJET/projet_integration/projetgo",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Ecole\Session6 - PROJET\projet_integration\projetgo" />
       <recent name="F:\Ecole\Session6 - PROJET\projet_integration\projetgo\public\Image_Navbar" />
       <recent name="F:\Ecole\Session6 - PROJET\projet_integration\projetgo\public\Image_Login" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Ecole\Session6 - PROJET\projet_integration\projetgo\pages\post\membre" />
       <recent name="F:\Ecole\Session6 - PROJET\projet_integration\projetgo\public\Image_Credit" />
     </key>
   </component>
@@ -85,8 +70,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654543468084</updated>
-      <workItem from="1654543469267" duration="4037000" />
+      <workItem from="1654543469267" duration="6790000" />
     </task>
+    <task id="LOCAL-00001" summary="Step 2 correction bug">
+      <created>1654549832985</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654549832986</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Step 2 correction bug">
+      <created>1654549844209</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654549844209</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +97,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Developpement" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -105,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Step 1 correction bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Step 1 correction bug" />
+    <MESSAGE value="Step 2 correction bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Step 2 correction bug" />
   </component>
 </project>

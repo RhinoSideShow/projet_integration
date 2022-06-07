@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
-import Navbar from "../components/Navbar";
+import Navbar from "../Components/Navbar";
 import styles from '../styles/Home.module.css';
 
 export default function Home({ isConnected }) {
