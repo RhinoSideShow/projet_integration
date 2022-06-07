@@ -1,19 +1,27 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Animation_Credit_Don from "./Animation_Credit_Don";
 
 export default function Credit_Don() {
 
     const [money, setMoney] = useState(0.0);
+    const [count, setCount] = useState(0);
     const [show, setShow] = useState(false);
 
     const handleShow = () => {
         setShow(!show);
     }
 
+    function LoadOnce() {
+        if (!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
+    }
+
     return (
-        <div id="__next" className={styles.DivContainer}>
+        <div onLoad={LoadOnce} id="__next" className={styles.DivContainer}>
             <Head>
                 <title>ProjetGo</title>
             </Head>
@@ -22,7 +30,7 @@ export default function Credit_Don() {
                     <div style={show === true ? {display: 'none'} : {display: 'inline'}}>
                         <div>
                             <div>
-                                <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogo} alt ="image"/>
+                                <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogo}/>
                                 <div className={styles.DivInputCreditDon}>
                                     <span className={styles.SpanCreditDon}>Montant</span>&emsp;
                                     <input className={styles.InputCreditDon}
@@ -36,7 +44,8 @@ export default function Credit_Don() {
                             <input className={styles.InputCredit}/><br/><br/>
                         </div>
                         <div>
-                            <span>&ensp;Numéro de Carte de Crédit</span> &emsp;<span className={styles.SpanCredit}>CVC</span><br/>
+                            <span>&ensp;Numéro de Carte de Crédit</span> &emsp;<span
+                            className={styles.SpanCredit}>CVC</span><br/>
                             <input className={styles.InputCreditNum}/>&ensp;
                             <input className={styles.InputCreditCodeSecurite}/><br/><br/>
                         </div>
@@ -48,14 +57,17 @@ export default function Credit_Don() {
                             <input className={styles.InputCreditDate} placeholder="YY"/><br/><br/>
                         </div>
                         <div>
-                            <span>&ensp;Montant</span><span className={styles.SpanCreditTaxes}>&emsp;&ensp;ProjetGo Tips</span><span className={styles.SpanCreditTaxes}>Montant Total</span><br/>
+                            <span>&ensp;Montant</span><span
+                            className={styles.SpanCreditTaxes}>&emsp;&ensp;ProjetGo Tips</span><span
+                            className={styles.SpanCreditTaxes}>Montant Total</span><br/>
 
                             <input className={styles.InputCreditTaxes} defaultValue={isNaN(money) ? setMoney(0) : money}
                                    disabled="disabled"/>&ensp;+&ensp;
                             <input className={styles.InputCreditTaxes} defaultValue={money === 0 ? 0 : 5.0}
                                    disabled="disabled"/>&ensp;=&ensp;
                             <input className={styles.InputCreditTaxes}
-                                   defaultValue={money === 0 ? 0 : (money + 5.0).toFixed(2) + " CAD"} disabled="disabled"/>&ensp;
+                                   defaultValue={money === 0 ? 0 : (money + 5.0).toFixed(2) + " CAD"}
+                                   disabled="disabled"/>&ensp;
                         </div>
                     </div>
                     <div>

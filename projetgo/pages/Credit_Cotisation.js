@@ -12,7 +12,7 @@ export default function Credit_Cotisation() {
 
     //
     const handleOnClickPlustard = () =>{
-        router.push('/').then(r => r)
+        router.push('/Homepage').then(r => r)
     }
 
     const handleShow = () => {
@@ -29,7 +29,7 @@ export default function Credit_Cotisation() {
                     <div style={show === true ? {display: 'none'} : {display: 'inline'}}>
                         <div>
                             <div>
-                                <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogo} alt="image"/>
+                                <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogo}/>
                                 <div className={styles.DivInputCreditDon}>
                                     <span className={styles.SpanCreditCotisation}>Cotisation Annuelle</span>&emsp;
                                 </div>

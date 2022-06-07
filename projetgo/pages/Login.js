@@ -25,13 +25,15 @@ export default function Login() {
                         </div>
                         <div className={styles.DivText}>
                             <div>
-                                <img src="/Image_Login/logoMoon.png" alt = "nope" className={styles.DivImageLogo}/><br/>
+                                <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogo}/><br/>
                             </div>
                             <div>
                                 <h3>Apporter votre projet vers la lune</h3>
                                 <h4>Rejoignez ProjetGo aujourd'hui.</h4><br/><br/>
 
-                                <button className={styles.ButtonLogin} onClick={() => router.push('/')}>Continuer sans Compte</button>
+                                <button className={styles.ButtonLogin}
+                                        onClick={() => router.push('/Homepage')}>Continuer sans Compte
+                                </button>
 
                                 <div className={styles.DivLigne}>
                                     <span className={styles.OrSpan}>
@@ -39,7 +41,9 @@ export default function Login() {
                                     </span>
                                 </div>
 
-                                <button className={styles.ButtonLogin} onClick={() => router.push('/Sign_In')}>Se connecter</button>
+                                <button className={styles.ButtonLogin} onClick={() => router.push('/Sign_In')}>Se
+                                    connecter
+                                </button>
                                 <p className={styles.TextAccount}>Vous n'avez pas de compte ?</p>
 
                                 <button className={styles.ButtonLoginSignIn} onClick={() => router.push('/')}>S'inscrire</button>

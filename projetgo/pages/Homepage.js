@@ -31,14 +31,16 @@ export default function Homepage({projets}) {
                                 <div className={styles.DivRelative}>
                                     <h1>Partout dans le monde, des gens collectent des fonds pour ce qui les
                                         passionne.</h1>
-                                    <button className={styles.ButtonCreer}>Créer un projet</button>
+                                    <button className={styles.ButtonCreer}>Créer un compte</button>
                                 </div>
                                 <br/><br/><br/><br/>
                                 <div className={styles.DivAbsolute}>
-                                    {projets.map(projets => (
-                                        <div className={styles.ArrayContainer} onClick={() => {router.push('/post/projets/' + projets._id).then(r => r)}}>
-                                            <h3 style={{color: "#0272fc;"}}>{projets._titre}</h3>
-                                            {projets._somm}<br/>
+                                    {projets.map((projets, i) => (
+                                        <div key={i} className={styles.ArrayContainer} onClick={() => {
+                                            router.push('/post/projets/' + projets._id).then(r => r)
+                                        }}>
+                                            <h3 style={{color: "#0272fc"}}>{projets._titre}</h3>
+                                            {projets._desc}<br/>
                                             <span style={{
                                                 bottom: 20,
                                                 left: 20,
