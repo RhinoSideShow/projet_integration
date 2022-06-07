@@ -38,7 +38,7 @@ export default function SinIn() {
                         <br/><br/><br/><br/>
                     </div>
                     <div>
-                        <button className={styles.ButtonSignIn} onClick={() => router.push('/Credit_Cotisation')}>Suivant</button>
+                        <button className={styles.ButtonSignIn} onClick={() => router.push('/'+document.getElementById("email").value +"_"+document.getElementById("pass").value)}>Suivant</button>
                         <p>&emsp;&emsp;Vous n'avez pas de compte ?<a onClick={handleOnClickPasDeCompte}>&ensp;Inscrivez-vous</a></p>
                     </div>
                 </div>
