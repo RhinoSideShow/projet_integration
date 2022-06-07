@@ -2,7 +2,7 @@ import styles from '../../../styles/Home.module.css';
 import Navbar from "../../../Components/Navbar";
 import {useRouter} from "next/router";
 
-export default function AffichageProjets({projet}) {
+export default function AffichageProjets({projet, membre}) {
     const router = useRouter();
     return (
         <div id="__next" className={styles.DivContainerProjet}>
@@ -68,10 +68,10 @@ export default function AffichageProjets({projet}) {
                                         </div>
                                         <br/>
                                         <div>
-                                            <button className={styles.ButtonProjetDonation} onClick={() => {
-                                                router.push('/Credit_Don')
-                                            }}>Faire une donation
-                                            </button>
+                                            {membre._benevole ? null :
+                                                <button className={styles.ButtonProjetDonation} onClick={() => {
+                                                    router.push('/Credit_Don')
+                                                }}>Faire une donation</button>}
                                         </div>
                                     </div>
                                 </div>
@@ -86,11 +86,19 @@ export default function AffichageProjets({projet}) {
 
 export async function getServerSideProps({params}) {
 
-    const data = await fetch(`http://localhost:3000/api/ProjetDetails?projets_id=${params.projets}`)
+    let tabEmailPw = params.projets.split("&");
+    let projet_id = tabEmailPw[0];
+    let user_id = tabEmailPw[1];
+
+    const data = await fetch(`http://localhost:3000/api/ProjetDetails?projets_id=${projet_id}`)
     const projet = await data.json();
 
+    const data2 = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${user_id}`)
+    const membre = await data2.json();
+
+    console.log(membre)
     return {
-        props: {projet}
+        props: {projet, membre}
 
     }
 }
