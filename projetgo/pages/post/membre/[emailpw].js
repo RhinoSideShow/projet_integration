@@ -28,7 +28,5 @@ export async function getServerSideProps({params}) {
 
     return {
         props: {membre, projets}
-
     }
-
 }

@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import Confetti from 'react-confetti'
 
-export default function Animation_Credit_Don({isDon, setIsDon}) {
+export default function Animation_Credit_Don({isDon, membre}) {
 
     const [show, setShow] = useState(false);
     const [counter, setCounter] = useState(6);
@@ -19,7 +19,7 @@ export default function Animation_Credit_Don({isDon, setIsDon}) {
         const timer =
             counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
         if (counter === 0)
-            router.push('/Homepage').then(r => r);
+            router.push('/post/membre/' + membre._id).then(r => r);
         return () => clearInterval(timer);
     }, [counter]);
 

@@ -75,7 +75,7 @@ export default function Homepage({projets, membre}) {
                         <h1>Bienvenue {user._prenom}</h1><br/>
                         <h1>Veuillez payer votre cotisation annuelle, pour bénéficier des avantages d'un membre.</h1>
                         <button className={styles.ButtonCreer} onClick={() => {
-                            router.push('/Credit_Cotisation').then(r => r)
+                            router.push('/post/cotisation/' + user._id).then(r => r)
                         }}>Payer cotisation
                         </button>
                     </div>
