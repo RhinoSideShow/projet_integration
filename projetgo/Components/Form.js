@@ -11,15 +11,18 @@ const Form = ({ formId, membreForm, forNewMembre = true }) => {
   const [message, setMessage] = useState('')
 
   const [form, setForm] = useState({
-    name: membreForm.name,
-    lastname: membreForm.lastname,
-    email: membreForm.email,
-    telephone: membreForm.telephone,
-    adresse: membreForm.adresse,
-    password: membreForm.password,
-    benevole: membreForm.benevole,
- 
-    
+    _prenom: membreForm.name,
+    _nom: membreForm.lastname,
+    _email: membreForm.email,
+    _tel: membreForm.telephone,
+    _adresse: membreForm.adresse,
+    _pw: membreForm.password,
+    _benevole: membreForm.benevole,
+    _date_adhesion: new Date(),
+    _status_adhesion:"attente cotisation",
+    _admin:false
+
+
   })
 
 
@@ -67,7 +70,7 @@ const Form = ({ formId, membreForm, forNewMembre = true }) => {
       if (!res.ok) {
         throw new Error(res.status)
       }
-      
+
       router.push('/')
     } catch (error) {
       setMessage('Failed to add membre')
@@ -78,7 +81,7 @@ const Form = ({ formId, membreForm, forNewMembre = true }) => {
 
   const handleChange = (e) => {
     const target = e.target
-    const value = 
+    const value =
       target.name === 'benevole' ? target.checked : target.value
     const name = target.name
 
@@ -93,7 +96,7 @@ const Form = ({ formId, membreForm, forNewMembre = true }) => {
     const errs = formValidate()
     if (Object.keys(errs).length === 0) {
       forNewMembre ? postData(form) : putData(form)
-      
+
     } else {
       setErrors({ errs })
     }
@@ -114,7 +117,7 @@ const Form = ({ formId, membreForm, forNewMembre = true }) => {
     <>
       <form id={formId} onSubmit={handleSubmit}>
 
-        
+
         <input
           type="text"
           maxLength="60"
@@ -125,7 +128,7 @@ const Form = ({ formId, membreForm, forNewMembre = true }) => {
           required
         />
 
-        
+
         <input
           type="text"
           maxLength="60"
@@ -136,7 +139,7 @@ const Form = ({ formId, membreForm, forNewMembre = true }) => {
           required
         />
 
-        
+
         <input
           type="text"
           maxLength="80"
@@ -147,7 +150,7 @@ const Form = ({ formId, membreForm, forNewMembre = true }) => {
           required
         />
 
-        
+
         <input
           type="text"
           maxLength="30"
@@ -158,7 +161,7 @@ const Form = ({ formId, membreForm, forNewMembre = true }) => {
           required
         />
 
-        
+
         <input
           type="text"
           maxLength="80"
