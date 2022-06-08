@@ -168,7 +168,6 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     required
                 />
 
-
                 <input
                     type="text"
                     className={styles.Input}
@@ -196,7 +195,7 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     checked={form._benevole}
                     onChange={handleChange}
                 />
-                
+
                 <button className={styles.ButtonSignIn} type="submit">
                     Soumettre
                 </button>
