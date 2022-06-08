@@ -50,11 +50,13 @@ export default function Homepage({projets, membre}) {
     const isMembreNull = () => {
         if (user === undefined)
             return (
-                <div className={styles.DivRelative}>
-                    <h1>Partout dans le monde, des gens collectent des fonds pour ce qui les
-                        passionne.</h1>
-                    <button className={styles.ButtonCreer}>Créer un compte</button>
-                </div>
+                <>
+                    <div className={styles.DivRelative}>
+                        <h1>Partout dans le monde, des gens collectent des fonds pour ce qui les
+                            passionne.</h1>
+                        <button className={styles.ButtonCreer}>Créer un compte</button>
+                    </div>
+                </>
             )
         else if (user._benevole) {
             return (
@@ -80,6 +82,20 @@ export default function Homepage({projets, membre}) {
                         </button>
                     </div>
                     <br/><br/><br/><br/>
+                </>
+            )
+        } else if (user._admin) {
+            return (
+                <>
+                    <div className={styles.DivRelative}>
+                        <h1>Bienvenue {user._prenom}</h1>
+                    </div>
+                    <br/><br/><br/><br/>
+                    <button className={styles.ButtonAdmin} onClick={() => {
+                        router.push('/post/cotisation/' + user._id).then(r => r)
+                    }}>Conseil d'administration
+                    </button>
+                    <button className={styles.ButtonAdmin}>Créer un projet</button>
                 </>
             )
         } else if (user._status_adhesion === 'actif') {
@@ -113,7 +129,10 @@ export default function Homepage({projets, membre}) {
                                 <div className={styles.DivAbsolute}>
                                     &ensp;{projets.map((projets, i) => (
                                     <div key={i} className={styles.ArrayContainer} onClick={() => {
-                                        router.push('/post/projets/' + projets._id + '&' + user._id).then(r => r)
+                                        {
+                                            user === undefined ? router.push('/post/projets/' + projets._id).then(r => r) :
+                                                router.push('/post/projets/' + projets._id + '&' + user._id).then(r => r)
+                                        }
                                     }}>
                                         <h3 style={{color: "#0272fc"}}>{projets._titre}</h3>
                                         {projets._desc}<br/>
