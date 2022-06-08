@@ -4,18 +4,20 @@ import {useState} from "react";
 import Animation_Credit_Don from "./Animation_Credit_Don";
 import {useRouter} from "next/router";
 
-export default function Credit_Cotisation() {
+export default function Credit_Cotisation({membre}) {
 
     const [argent, setArgent] = useState(120.0);
+    const [user, setUser] = useState(membre);
     const [show, setShow] = useState(false);
     const router = useRouter();
 
     //
-    const handleOnClickPlustard = () =>{
-        router.push('/Homepage').then(r => r)
+    const handleOnClickPlustard = () => {
+        router.push('/post/membre/' + membre._id).then(r => r)
     }
 
     const handleShow = () => {
+        fetch(`http://localhost:3000/api/updateStatut?cotisation=${membre._id}`).then(r => r)
         setShow(!show);
     }
 
@@ -65,7 +67,7 @@ export default function Credit_Cotisation() {
                         </div>
                     </div>
                     <div>
-                        {show && <Animation_Credit_Don isDon={false} setIsDon={false}/>}
+                        {show && <Animation_Credit_Don isDon={false} membre={user} projet={null}/>}
                         <div>
                             {!show &&
                                 <button className={styles.ButtonDon} onClick={handleShow}>Payer {argent * 1.15.toFixed(2) + " $"}</button>}

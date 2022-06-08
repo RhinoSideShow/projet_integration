@@ -2,7 +2,7 @@ import styles from '../../../styles/Home.module.css';
 import Navbar from "../../../Components/Navbar";
 import {useRouter} from "next/router";
 
-export default function AffichageProjets({projet}) {
+export default function AffichageProjets({projet, membre}) {
     const router = useRouter();
     return (
         <div id="__next" className={styles.DivContainerProjet}>
@@ -19,6 +19,13 @@ export default function AffichageProjets({projet}) {
                                         </div>
 
                                         <div><p>{projet._createur + " organise ce projet."}</p><br/>
+                                            <div className={styles.DivButtonEdit}>
+                                                {membre._admin ?
+                                                    <button className={styles.ButtonProjetEdit}>Éditer</button> : null}
+                                                {membre._admin ? <button
+                                                    className={styles.ButtonProjetEdit}>Supprimer</button> : null}
+
+                                            </div>
                                             <hr/>
                                         </div>
 
@@ -68,10 +75,19 @@ export default function AffichageProjets({projet}) {
                                         </div>
                                         <br/>
                                         <div>
-                                            <button className={styles.ButtonProjetDonation} onClick={() => {
-                                                router.push('/Credit_Don')
-                                            }}>Faire une donation
-                                            </button>
+                                            {membre === undefined ?
+                                                <button className={styles.ButtonProjetDonation} onClick={() => {
+                                                    membre === undefined ? router.push('/post/fonds/' + projet._id) :
+                                                        router.push('/post/fonds/' + projet._id + '&' + membre._id)
+                                                }
+
+                                                }>Faire une donation</button> :
+                                                membre._benevole ? null :
+                                                    <button className={styles.ButtonProjetDonation} onClick={() => {
+                                                        membre === undefined ? router.push('/post/fonds/' + projet._id) :
+                                                            router.push('/post/fonds/' + projet._id + '&' + membre._id)
+                                                    }}>Faire une donation</button>
+                                            }
                                         </div>
                                     </div>
                                 </div>
@@ -86,11 +102,27 @@ export default function AffichageProjets({projet}) {
 
 export async function getServerSideProps({params}) {
 
-    const data = await fetch(`http://localhost:3000/api/ProjetDetails?projets_id=${params.projets}`)
-    const projet = await data.json();
+    let tabEmailPw = params.projets.split("&");
+    let projet_id = tabEmailPw[0];
+    let user_id = tabEmailPw[1];
 
-    return {
-        props: {projet}
+    if (user_id !== undefined) {
+        const data = await fetch(`http://localhost:3000/api/ProjetDetails?projets_id=${projet_id}`)
+        const projet = await data.json();
 
+        const data2 = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${user_id}`)
+        const membre = await data2.json();
+
+        return {
+            props: {projet, membre}
+        }
+    } else {
+        user_id = null
+        const data = await fetch(`http://localhost:3000/api/ProjetDetails?projets_id=${projet_id}`)
+        const projet = await data.json();
+
+        return {
+            props: {projet, user_id}
+        }
     }
 }
