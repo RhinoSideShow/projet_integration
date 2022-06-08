@@ -16,14 +16,17 @@ const EditMembre = () => {
   if (!membre) return <p>Loading...</p>
 
   const membreForm = {
-    name: membre.name,
-    lastname: membre.lastname,
-    email: membre.email,
-    telephone: membre.telephone,
-    adresse: membre.adresse,
-    benevole: membre.benevole,
-    payment: membre.payment,
-    
+    _prenom: membre._prenom,
+    _nom: membre._nom,
+    _email: membre._email,
+    _tel: membre._tel,
+    _adresse: membre._adresse,
+    _benevole: membre._benevole,
+    _pw: membre._pw,
+    _status_adhesion: membre._status_adhesion,
+    _date_adhesion: membre._date_adhesion,
+    _admin:membre._admin,
+
   }
 
   return <Form formId="edit-membre-form" membreForm={membreForm} forNewMembre={false} />

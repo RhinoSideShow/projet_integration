@@ -15,7 +15,7 @@ const NewMembre = () => {
         _pw: '',
         _status_adhesion: '',
         _date_adhesion: '',
-        _admin: false
+        _admin: false,
 
     }
 
