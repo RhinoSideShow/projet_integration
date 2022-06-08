@@ -31,9 +31,7 @@ export default function Login() {
                                 <h3>Apporter votre projet vers la lune</h3>
                                 <h4>Rejoignez ProjetGo aujourd'hui.</h4><br/><br/>
 
-                                <button className={styles.ButtonLogin}
-                                        onClick={() => router.push('/Homepage')}>Continuer sans Compte
-                                </button>
+                                <button className={styles.ButtonLogin} onClick={() => router.push('/Homepage')}>Continuer sans Compte</button>
 
                                 <div className={styles.DivLigne}>
                                     <span className={styles.OrSpan}>
@@ -41,12 +39,10 @@ export default function Login() {
                                     </span>
                                 </div>
 
-                                <button className={styles.ButtonLogin} onClick={() => router.push('/Sign_In')}>Se
-                                    connecter
-                                </button>
+                                <button className={styles.ButtonLogin} onClick={() => router.push('/Sign_In')}>Se connecter</button>
                                 <p className={styles.TextAccount}>Vous n'avez pas de compte ?</p>
 
-                                <button className={styles.ButtonLoginSignIn} onClick={() => router.push('/')}>S'inscrire</button>
+                                <button className={styles.ButtonLoginSignIn} onClick={() => router.push('/new')}>S'inscrire</button>
                                 <p className={styles.Mini}>En vous inscrivant, vous acceptez les <a onClick={handleOnClickTerms}>conditions d'utilisation</a> et
                                 </p><p className={styles.Mini}>la <a onClick={handleOnClickTerms}>Politique de Confidentialité</a>,
                                 incluant l'<a onClick={handleOnClickTerms}>utilisation des cookies</a>.</p>
