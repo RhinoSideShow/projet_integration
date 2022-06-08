@@ -189,7 +189,7 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     onChange={handleChange}
                 />
 
-                <label htmlFor="benevole">Voulez vous etre Bénévole ? </label>
+               <label htmlFor="benevole">Voulez vous etre Bénévole ? </label>
                 <input
                     className={styles.Input}
                     type="checkbox"
@@ -197,8 +197,7 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     checked={form._benevole}
                     onChange={handleChange}
                 />
-
-
+                
                 <button className={styles.ButtonSignIn} type="submit">
                     Soumettre
                 </button>

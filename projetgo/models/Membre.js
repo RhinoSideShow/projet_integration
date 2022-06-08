@@ -36,7 +36,7 @@ const MembreSchema = new mongoose.Schema({
     type: String,
   },
 
-  _date_adhesion: {
+ /* _date_adhesion: {
 
     type: Date,
   },
@@ -55,15 +55,15 @@ const MembreSchema = new mongoose.Schema({
   },
 
   _benevole: {
-    /* Boolean benevole value */
+    
     type: Boolean,
   },
 
   _pw: {
-    /* Boolean payment value */
+    
 
     type: Boolean,
-  },
+  },*/
 
 
 })
