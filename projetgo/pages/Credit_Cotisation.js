@@ -17,7 +17,7 @@ export default function Credit_Cotisation({membre}) {
     }
 
     const handleShow = () => {
-        fetch(`http://localhost:3000/api/updateStatut?cotisation=${membre._status_adhesion}`).then(r => r)
+        fetch(`http://localhost:3000/api/updateStatut?cotisation=${membre._id}`).then(r => r)
         setShow(!show);
     }
 
@@ -67,7 +67,7 @@ export default function Credit_Cotisation({membre}) {
                         </div>
                     </div>
                     <div>
-                        {show && <Animation_Credit_Don isDon={false} membre={user}/>}
+                        {show && <Animation_Credit_Don isDon={false} membre={user} projet={null}/>}
                         <div>
                             {!show &&
                                 <button className={styles.ButtonDon} onClick={handleShow}>Payer {argent * 1.15.toFixed(2) + " $"}</button>}

@@ -3,13 +3,15 @@ import styles from '../styles/Home.module.css';
 import {useEffect, useState} from "react";
 import Animation_Credit_Don from "./Animation_Credit_Don";
 
-export default function Credit_Don() {
+export default function Credit_Don({projet, membre}) {
 
+    const [plan, setPlan] = useState(projet);
     const [money, setMoney] = useState(0.0);
     const [count, setCount] = useState(0);
     const [show, setShow] = useState(false);
 
     const handleShow = () => {
+        fetch(`http://localhost:3000/api/updateFonds?fonds=${[projet._id, money]}`).then(r => r)
         setShow(!show);
     }
 
@@ -71,7 +73,7 @@ export default function Credit_Don() {
                         </div>
                     </div>
                     <div>
-                        {show && <Animation_Credit_Don isDon={true} membre={null}/>}
+                        {show && <Animation_Credit_Don isDon={true} membre={membre} projet={plan}/>}
                         <div>
                             {!show &&
                                 <button className={styles.ButtonDon} onClick={handleShow}>Faire un don</button>}
