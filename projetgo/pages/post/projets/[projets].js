@@ -20,11 +20,11 @@ export default function AffichageProjets({projet, membre}) {
 
                                         <div><p>{projet._createur + " organise ce projet."}</p><br/>
                                             <div className={styles.DivButtonEdit}>
-                                                {membre._admin ?
+                                                {membre === undefined ? null : membre._admin === true ?
                                                     <button className={styles.ButtonProjetEdit}>Éditer</button> : null}
-                                                {membre._admin ? <button
-                                                    className={styles.ButtonProjetEdit}>Supprimer</button> : null}
-
+                                                {membre === undefined ? null : membre._admin === true ?
+                                                    <button
+                                                        className={styles.ButtonProjetEdit}>Supprimer</button> : null}
                                             </div>
                                             <hr/>
                                         </div>
