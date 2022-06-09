@@ -95,7 +95,7 @@ export default function Homepage({projets, membre}) {
                         router.push('/post/cotisation/' + user._id).then(r => r)
                     }}>Conseil d'administration
                     </button>
-                    <button className={styles.ButtonAdmin}>Créer un projet</button>
+                    <button className={styles.ButtonAdmin} onClick={() => router.push('/post/CrProject/' + user._id)}>Créer un projet</button>
                 </>
             )
         } else if (user._status_adhesion === 'actif') {
@@ -105,7 +105,7 @@ export default function Homepage({projets, membre}) {
                         <h1>Bienvenue {user._prenom}</h1>
                     </div>
                     <br/><br/><br/><br/>
-                    <button className={styles.ButtonAdmin}>Créer un projet</button>
+                    <button className={styles.ButtonAdmin}onClick={() => router.push('/post/CrProject/' + user._id)}>Créer un projet</button>
                     <br/><br/><br/><br/>
                     <h2>Vos projets</h2>
                     <hr/>
