@@ -1,6 +1,6 @@
 import styles from '../../../styles/Home.module.css';
 import Credit_Cotisation from "../../Credit_Cotisation";
-import CreateProject from "../../CreateProject";
+import CreateProjet from "../../CreateProjet";
 
 export default function CreationProjet({membre}) {
 
@@ -8,7 +8,7 @@ export default function CreationProjet({membre}) {
         <div id="__next" className={styles.DivContainer}>
             {membre && (
                 <>
-                    <CreateProject membre={membre}/>
+                    <CreateProjet membre={membre}/>
                 </>
             )}
         </div>

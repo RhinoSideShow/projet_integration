@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 
 
 const ProjetSchema = new mongoose.Schema({
-
-    _Budget: {
+    _budget: {
 
         type: String,
         required: [true, 'Entrez le Budget .'],
@@ -67,6 +66,9 @@ const ProjetSchema = new mongoose.Schema({
         required: [true, 'Entrez le sommaire .'],
         maxlength: [6000, 'Name cannot be more than 60 characters'],
     },
+
+
+},
 {
 
     versionKey: false // You should be aware of the outcome after set to false
@@ -75,8 +77,4 @@ const ProjetSchema = new mongoose.Schema({
 )
 
 
-export default mongoose.models.projetsModel || mongoose.model('projetsModels', ProjetSchema)
-
-
-
-})
+export default mongoose.models.ProjetsModel || mongoose.model('ProjetsModels', ProjetSchema)

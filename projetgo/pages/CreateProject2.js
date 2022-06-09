@@ -1,10 +1,10 @@
-import formProjets from '../Components/formProjets';
+import FormProjets from '../Components/FormProjets2';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Navbar from "../Components/Navbar";
 
     const NewProjet = () => {
-        const projetform = {
+        const projetForm = {
 
             _budget: '',
             _createur: '',
@@ -25,7 +25,7 @@ import Navbar from "../Components/Navbar";
                     <div className={styles.DivSousContainer}>
 
                         <div className={styles.DivSousSousContainerSignIn}>
-                            <formProjets formid="add-projet-form" projetform={projetform}/>
+                            <FormProjets formid="add-projet-form" projetForm={projetForm}/>
                         </div>
                     </div>
                 </div>
