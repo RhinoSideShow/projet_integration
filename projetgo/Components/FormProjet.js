@@ -49,7 +49,7 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
 
             const {data} = await res.json()
 
-            mutate(`/api/membres/${id}`, data, false) // Update the local data without a revalidation
+            mutate(`/api/Projet/${id}`, data, false) // Update the local data without a revalidation
             router.push('/')
         } catch (error) {
             setMessage('Failed to update membre')

@@ -1,5 +1,5 @@
 import dbConnect from '../../../lib/dbConnect'
-import Membre from '../../../models/ProjetModel'
+import ProjetModel from '../../../models/ProjetModel'
 
 export default async function handler(req, res) {
     const {
@@ -12,8 +12,8 @@ export default async function handler(req, res) {
     switch (method) {
         case 'GET' /* Get a model by its ID */:
             try {
-                const projet = await projets.findById(id)
-                if (!membre) {
+                const projet = await ProjetModel.findById(id)
+                if (!projet) {
                     return res.status(400).json({ success: false })
                 }
                 res.status(200).json({ success: true, data: projet })
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
 
         case 'PUT' /* Edit a model by its ID */:
             try {
-                const projet = await projets.findByIdAndUpdate(id, req.body, {
+                const projet = await ProjetModel.findByIdAndUpdate(id, req.body, {
                     new: true,
                     runValidators: true,
                 })
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
 
         case 'DELETE' /* Delete a model by its ID */:
             try {
-                const deletedProjet = await projets.deleteOne({ _id: id })
+                const deletedProjet = await ProjetModel.deleteOne({ _id: id })
                 if (!deletedProjet) {
                     return res.status(400).json({ success: false })
                 }

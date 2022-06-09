@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 
 /* MembreSchema will correspond to a collection in your MongoDB database. */
-const ProjetsSchema = new mongoose.Schema({
+const MembreSchema = new mongoose.Schema({
         _nom: {
 
             type: String,
@@ -76,4 +76,4 @@ const ProjetsSchema = new mongoose.Schema({
 )
 
 
-export default mongoose.models.ProjetsSchema || mongoose.model('Projet', ProjetsSchema)
+export default mongoose.models.Membre || mongoose.model('Membre', MembreSchema)
