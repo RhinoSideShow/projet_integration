@@ -15,6 +15,7 @@ const NewProjet = () => {
         _fin: new Date().toISOString(),
         _titre: '',
         _somm: '',
+        _desc: '',
 
     }
 

@@ -69,6 +69,13 @@ const projetschema = new mongoose.Schema({
         maxlength: [6000, 'Name cannot be more than 60 characters'],
     },
 
+    _desc: {
+
+        type: String,
+        required: [true, 'Entrez le desc .'],
+        maxlength: [6000, 'Name cannot be more than 60 characters'],
+    },
+
 
     },
     {

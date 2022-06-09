@@ -111,7 +111,7 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
         if (!form._prenom) err._prenom = 'Name is required'
         if (!form._nom) err._nom = 'Prenom is required'
         if (!form._email) err._email = 'Email is required'
-        if (!form._tel) err._tel = 'Species is required'
+        if (!form._tel) err._tel = 'Tel is required'
         if (!form._adresse) err._adresse = 'Adresse is required'
         return err
     }

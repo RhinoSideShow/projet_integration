@@ -84,9 +84,9 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
     const handleChange = (e) => {
         const target = e.target
         const value =
-          //  target.name === '_benevole' ? target.checked : target.value
+        target.name === '_benevole' ? target.checked : target.value
         //target.name === 'paymment' ? target.checked : target.value
-        //const name = target.name
+        const name = target.name
 
 
         setForm({
@@ -109,7 +109,10 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
     /* Makes sure membre info is filled */
     const formValidate = () => {
         let err = {}
+        if (!form._titre) err._titre = 'Titre is required'
+        if (!form._desc) err._desc = 'desc is required'
         if (!form._budget) err._budget = 'budget is required'
+        if (!form._somm) err._somm = 'somm is required'
         
         return err
     }
@@ -118,7 +121,7 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
         <>
 
             <form id={formId} onSubmit={handleSubmit}>
-
+           
             <input
               type="text"
               className={styles.Input}
@@ -164,6 +167,9 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
               onChange={handleChange}
               required
           />
+
+
+         
                 <button className={styles.ButtonSignIn} type="submit">
                     Soumettre
                 </button>
