@@ -21,6 +21,11 @@ const NewMembre = () => {
 
     }
 
+    //change le URL quand Mot de passe oublié ? est clicker.
+    const handleOnClickConexion = () => {
+        router.push('/Sign_In').then(r => r)
+    }
+
 
 
     return (
@@ -41,6 +46,10 @@ const NewMembre = () => {
                     </div>
                     <div>
                 <Form formId="add-membre-form" membreForm={membreForm}/>
+                        <div>
+                            <p>&emsp;&emsp;Vous avez un compte ?<a
+                                onClick={handleOnClickConexion}>&ensp;Connectez-vous</a></p>
+                            <br/><br/></div>
                     </div>
                 </div>
             </div>

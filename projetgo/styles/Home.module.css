@@ -106,6 +106,27 @@
     justify-content: center;
     margin: 10%;
 }
+
+/*************EDITMEMBRE************/
+.DivContainerEdit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #282c34;
+
+}
+.DivSousSousContainerEdit {
+    width: 100%;
+    justify-content: center;
+    margin: 0 10%;
+    height: 100%;
+}
+.DivSousSousSousContainerEdit {
+    width: 80%;
+    display: flex;
+    margin-left: 20%;
+}
+
 /***********Login*************/
 
 .DivSousSousContainerLogin {

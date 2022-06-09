@@ -129,7 +129,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
         <>
 
             <form id={formId} onSubmit={handleSubmit}>
-
+                <label>Prenom</label>
                 <input
                     type="text"
                     className={styles.Input}
@@ -141,6 +141,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     required
                 />
                 <br/><br/>
+                <label>Nom</label>
                 <input
                     type="text"
                     className={styles.Input}
@@ -152,7 +153,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     required
                 />
                 <br/><br/>
-
+                <label>Email</label>
                 <input
                     type="text"
                     className={styles.Input}
@@ -165,6 +166,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                 />
 
                 <br/><br/>
+                <label>Telephone</label>
                 <input
                     type="text"
                     className={styles.Input}
@@ -176,6 +178,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     required
                 />
                 <br/><br/>
+                <label>Adresse</label>
                 <input
                     type="text"
                     className={styles.Input}
@@ -186,6 +189,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     onChange={handleChange}
                 />
                 <br/><br/>
+                <label>Mot de passe</label>
                 <input
                     type="text"
                     className={styles.Input}
@@ -212,10 +216,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     Soumettre
                 </button>
 
-                <div>
-                    <p>&emsp;&emsp;Vous avez un compte ?<a
-                        onClick={handleOnClickConexion}>&ensp;Connectez-vous</a></p>
-                    <br/><br/></div>
+
             </form>
             <p>{message}</p>
             <div>

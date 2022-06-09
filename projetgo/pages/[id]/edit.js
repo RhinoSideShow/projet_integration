@@ -32,19 +32,24 @@ const EditMembre = () => {
     }
 
     return (
-        <div id="__next" className={styles.DivContainerHome}>
-            <Navbar/>
-            <br/><br/>
-            <div className={styles.DivContainer}>
+        <>
+        <div id="__next" className={styles.DivContainerEdit}>
+
+            <div className={styles.DivSousContainerProjet}>
+
+                <Navbar/>
+            <div className={styles.DivContainerEdit}>
 
 
-                    <div className={styles.DivSousSousContainerSignIn}>
+                    <div className={styles.DivSousSousContainerEdit}>
                         <h1>Editer Votre Compte</h1>
                         <Form formId="edit-membre-form" membreForm={membreForm} forNewMembre={false}/>
                     </div>
 
             </div>
+            </div>
         </div>
+        </>
     )
 
 }
