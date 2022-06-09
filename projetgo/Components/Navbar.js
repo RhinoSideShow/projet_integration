@@ -3,7 +3,6 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import {useState} from "react";
 import {useRouter} from "next/router";
-import {mutate} from "swr";
 
 const Nav = styled.nav`
   height: 80px;

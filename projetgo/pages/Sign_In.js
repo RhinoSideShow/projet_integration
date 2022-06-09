@@ -11,6 +11,7 @@ export default function SinIn({utilisateur}) {
     const inputPwd = useRef(null);
     const [email, setEmail] = useState("");
     const [motDePasse, setMotDePasse] = useState("");
+    let isTrue = false;
 
     //change le URL quand Mot de passe oublié ? est clicker.
     const handleOnClickPasDeCompte = () => {
@@ -19,35 +20,60 @@ export default function SinIn({utilisateur}) {
 
     //change URl quand Vous n'avez pas de compte ? Inscrivez-vous est clicker.
     const handleOnClickMPOublier = () => {
-        router.push('/').then(r => r)
+
+        let isVrai = false;
+        let code = "";
+
+        for (let i = 0; i < utilisateur.length; i++) {
+            if (email === utilisateur[i]._email) {
+                isVrai = true;
+                code = utilisateur[i]._id;
+                break;
+            }
+        }
+
+        if(isVrai){
+            return router.push('/post/motdepasse/' + code).then(r => r)
+        }
+        else
+            alert("Veuiller entrer votre adresse email dans la boite de saisie Adresse Email");
+
     }
 
+    function LoadOnce() {
+        if (!window.location.hash) {
+            window.location = window.location;
+            window.location.reload();
+        }
+    }
 
     const isExist = () => {
 
-        let isTrue = false;
         let id = "";
 
         for (let i = 0; i < utilisateur.length; i++) {
-            if (email === utilisateur[i]._email && motDePasse === utilisateur[i]._pw) {
-                isTrue = true;
+            if (email.valueOf() === (utilisateur[i]._email).valueOf() && motDePasse.valueOf() === (utilisateur[i]._pw).valueOf()) {
                 id = utilisateur[i]._id;
+                isTrue = true;
                 break;
             }
         }
 
         if (isTrue) {
+            console.log(id)
             return router.push('/post/membre/' + id).then(r => r);
         } else {
-            alert("Email ou Mot de passe incorrect!");
+            alert("Email ou Mot de passe incorrect!" + email + motDePasse + isTrue);
+
         }
         inputEmail.current.value = "";
         inputPwd.current.value = "";
+        isTrue = false;
     }
 
     return (
 
-        <div id="__next" className={styles.DivContainer}>
+        <div onLoad={LoadOnce} id="__next" className={styles.DivContainer}>
             <Head>
                 <title>ProjetGo</title>
             </Head>
@@ -61,12 +87,12 @@ export default function SinIn({utilisateur}) {
                         <br/>
                         <div>
                             <input type="text" ref={inputEmail} onChange={e => setEmail(e.target.value)}
-                                   className={styles.Input}
+                                   className={styles.InputClient}
                                    placeholder="Adresse Email"/>
                             <br/><br/>
 
                             <input type="password" ref={inputPwd} onChange={e => setMotDePasse(e.target.value)}
-                                   className={styles.Input} placeholder="Mot de Passe"/>
+                                   className={styles.InputClient} placeholder="Mot de Passe"/>
                             &emsp;<a onClick={handleOnClickMPOublier}>Mot de passe oublié ?</a>
                             <br/><br/><br/><br/>
                             <div>
