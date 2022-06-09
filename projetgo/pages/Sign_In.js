@@ -61,12 +61,12 @@ export default function SinIn({utilisateur}) {
                         <br/>
                         <div>
                             <input type="text" ref={inputEmail} onChange={e => setEmail(e.target.value)}
-                                   className={styles.Input}
+                                   className={styles.InputClient}
                                    placeholder="Adresse Email"/>
                             <br/><br/>
 
                             <input type="password" ref={inputPwd} onChange={e => setMotDePasse(e.target.value)}
-                                   className={styles.Input} placeholder="Mot de Passe"/>
+                                   className={styles.InputClient} placeholder="Mot de Passe"/>
                             &emsp;<a onClick={handleOnClickMPOublier}>Mot de passe oublié ?</a>
                             <br/><br/><br/><br/>
                             <div>

@@ -22,7 +22,7 @@ export async function getServerSideProps({params}) {
     let user_id = tab[1];
 
     if (user_id !== undefined) {
-        const data = await fetch(`http://localhost:3000/api/ProjetDetails?projets_id=${projetId}`)
+        const data = await fetch(`http://localhost:3000/api/ProjetDetails?client=${projetId}`)
         const projet = await data.json();
 
         const data2 = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${user_id}`)
@@ -33,7 +33,7 @@ export async function getServerSideProps({params}) {
         }
     } else {
         user_id = null
-        const data = await fetch(`http://localhost:3000/api/ProjetDetails?projets_id=${projetId}`)
+        const data = await fetch(`http://localhost:3000/api/ProjetDetails?client=${projetId}`)
         const projet = await data.json();
 
         return {

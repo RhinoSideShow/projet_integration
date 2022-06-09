@@ -11,7 +11,7 @@ export default function Credit_Don({projet, membre}) {
     const [show, setShow] = useState(false);
 
     const handleShow = () => {
-        fetch(`http://localhost:3000/api/updateFonds?fonds=${[projet._id, money]}`).then(r => r)
+        fetch(`http://localhost:3000/api/updateFonds?fonds=${[projet._id, money]}`).then(r => r);
         setShow(!show);
     }
 
