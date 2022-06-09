@@ -1,86 +1,60 @@
-import Head from 'next/head'
-import clientPromise from '../lib/mongodb'
-import Navbar from "../Components/Navbar";
 import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import {useRouter} from "next/router";
 
-export default function Home({ isConnected }) {
-  return (
-      <div className={styles.container}>
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Navbar/>
-        <main>
-          <h1 className="title">
-            Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
-          </h1>
-          {isConnected ? (
-              <h2 className="subtitle">You are connected to MongoDB</h2>
-          ) : (
-              <h2 className="subtitle">
-                You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
-                for instructions.
-              </h2>
-          )}
+export default function Login() {
 
-          <p className="description">
-            Get started by editing <code>pages/index.js</code>
-          </p>
+  // aide a changer URL dans la fonction onClick des button.
+  const router = useRouter();
 
-          <div className="grid">
-            <a href="https://nextjs.org/docs" className="card">
-              <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className="card">
-              <h3>Learn &rarr;</h3>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-                href="https://github.com/vercel/next.js/tree/canary/examples"
-                className="card"
-            >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-                href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                className="card"
-            >
-              <h3>Deploy &rarr;</h3>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
-          </div>
-        </main>
-      </div>
-  );
-}
-
-export async function getServerSideProps(context) {
-  try {
-    await clientPromise
-    // `await clientPromise` will use the default database passed in the MONGODB_URI
-    // However you can use another database (e.g. myDatabase) by replacing the `await clientPromise` with the following code:
-    //
-    // `const client = await clientPromise`
-    // `const db = client.db("myDatabase")`
-    //
-    // Then you can execute queries against your database like so:
-    // db.find({}) or any of the MongoDB Node Driver commands
-
-    return {
-      props: { isConnected: true },
-    }
-  } catch (e) {
-    console.error(e)
-    return {
-      props: { isConnected: false },
-    }
+  //change le URL quand les terms of service sont clicker.
+  const handleOnClickTerms = () =>{
+    router.push('/').then(r => r)
   }
+
+  return (
+      <>
+        <div id="__next" className={styles.DivContainer}>
+          <Head>
+            <title>ProjetGo</title>
+          </Head>
+          <div className={styles.DivSousContainer}>
+            <div className={styles.DivSousSousContainerLogin}>
+              <div className={styles.DivImage}>
+                <img src="/Image_Login/tothemoon.jpg" alt="nope" className={styles.Image}/>
+              </div>
+              <div className={styles.DivText}>
+                <div>
+                  <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogo}/><br/>
+                </div>
+                <div>
+                  <h3>Apporter votre projet vers la lune</h3>
+                  <h4>Rejoignez ProjetGo aujourd'hui.</h4><br/><br/>
+
+                  <button className={styles.ButtonLogin}
+                          onClick={() => router.push('/Homepage')}>Continuer sans Compte
+                  </button>
+
+                  <div className={styles.DivLigne}>
+                                    <span className={styles.OrSpan}>
+                                        OU
+                                    </span>
+                  </div>
+
+                  <button className={styles.ButtonLogin} onClick={() => router.push('/Sign_In')}>Se
+                    connecter
+                  </button>
+                  <p className={styles.TextAccount}>Vous n'avez pas de compte ?</p>
+
+                  <button className={styles.ButtonLoginSignIn} onClick={() => router.push('/new')}>S'inscrire</button>
+                  <p className={styles.Mini}>En vous inscrivant, vous acceptez les <a onClick={handleOnClickTerms}>conditions d'utilisation</a> et
+                  </p><p className={styles.Mini}>la <a onClick={handleOnClickTerms}>Politique de Confidentialité</a>,
+                  incluant l'<a onClick={handleOnClickTerms}>utilisation des cookies</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+  );
 }
