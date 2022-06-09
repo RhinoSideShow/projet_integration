@@ -114,6 +114,7 @@
 /*************EDITMEMBRE************/
 .DivContainerEdit {
     width: 100%;
+    height:auto;
     display: flex;
     justify-content: center;
     background-color: #282c34;
@@ -121,8 +122,9 @@
 }
 .DivSousSousContainerEdit {
     width: 100%;
+    heign:100%;
     justify-content: center;
-    margin: 0 10%;
+    margin: 2% 25%;
     height: 100%;
 }
 .DivSousSousSousContainerEdit {
