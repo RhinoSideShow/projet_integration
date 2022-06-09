@@ -123,7 +123,7 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
               type="text"
               className={styles.Input}
               maxLength="60"
-              name="_Titre"
+              name="_titre"
               placeholder='Titre'
               value={form._titre}
               onChange={handleChange}
