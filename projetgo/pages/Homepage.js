@@ -105,6 +105,8 @@ export default function Homepage({projets, membre}) {
                         <h1>Bienvenue {user._prenom}</h1>
                     </div>
                     <br/><br/><br/><br/>
+                    <button className={styles.ButtonAdmin}>Créer un projet</button>
+                    <br/><br/><br/><br/>
                     <h2>Vos projets</h2>
                     <hr/>
                     <br/><br/><br/><br/>
@@ -116,7 +118,7 @@ export default function Homepage({projets, membre}) {
     return (
         <>
             <div id="__next" className={styles.DivContainerHome}>
-                <Navbar/>
+                <Navbar membre={membre}/>
                 <div className={styles.DivContainer}>
                     <div className={styles.DivSousContainerHome}>
                         <div className={styles.DivSousSousContainerHome}>

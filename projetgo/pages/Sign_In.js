@@ -38,8 +38,6 @@ export default function SinIn({utilisateur}) {
 
         if (isTrue) {
             return router.push('/post/membre/' + id).then(r => r);
-        } else if (email === '' || motDePasse === '') {
-            console.log("nopenope")
         } else {
             alert("Email ou Mot de passe incorrect!");
         }
