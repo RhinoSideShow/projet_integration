@@ -3,6 +3,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Navbar from "../Components/Navbar";
 
+
+
 const NewMembre = () => {
     const membreForm = {
 
@@ -13,11 +15,13 @@ const NewMembre = () => {
         _adresse: '',
         _pw: '',
         _benevole: false,
-        _status_adhesion: '',
+        _status_adhesion: 'attente cotisation',
         _date_adhesion: new Date().toISOString(),
         _admin: false,
 
     }
+
+
 
     return (
         <div id="__next" className={styles.DivContainerHome}>

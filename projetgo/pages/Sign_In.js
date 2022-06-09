@@ -14,7 +14,7 @@ export default function SinIn({utilisateur}) {
 
     //change le URL quand Mot de passe oublié ? est clicker.
     const handleOnClickPasDeCompte = () => {
-        router.push('/').then(r => r)
+        router.push('/new').then(r => r)
     }
 
     //change URl quand Vous n'avez pas de compte ? Inscrivez-vous est clicker.

@@ -5,7 +5,9 @@ import styles from "../styles/Home.module.css";
 import Head from "next/head";
 
 
-const Form = ({formId, membreForm, forNewMembre = true}) => {
+
+
+const Form = ({formId, membreForm, forNewMembre = true,}) => {
     const router = useRouter()
     const contentType = 'application/json'
     const [errors, setErrors] = useState({})
@@ -73,7 +75,8 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
             }
             //router.push(/[id], as,  /${membre._id})
             //<Link href="/[id]" as={/${membre._id}}>
-            router.push('/')
+            alert("Inscription Reussi, veuillez vous connectez")
+            router.push('/Sign_In')
         } catch (error) {
             setMessage('Failed to add membre')
         }
@@ -212,3 +215,5 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
 }
 
 export default Form
+
+
