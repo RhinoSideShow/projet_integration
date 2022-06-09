@@ -33,7 +33,7 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
         const {id} = router.query
 
         try {
-            const res = await fetch(`/api/membres/${id}`, {
+            const res = await fetch(`/api/Projet/${id}`, {
                 method: 'PUT',
                 headers: {
                     Accept: contentType,
@@ -59,7 +59,7 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
     /* The POST method adds a new entry in the mongodb database. */
     const postData = async (form) => {
         try {
-            const res = await fetch('/api/membres', {
+            const res = await fetch('/api/Projet', {
                 method: 'POST',
                 headers: {
                     Accept: contentType,
@@ -76,7 +76,7 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
             //<Link href="/[id]" as={/${membre._id}}>
             router.push('/')
         } catch (error) {
-            setMessage('Failed to add membre')
+            setMessage('Failed to add projet')
         }
     }
 
@@ -84,9 +84,9 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
     const handleChange = (e) => {
         const target = e.target
         const value =
-            target.name === '_benevole' ? target.checked : target.value
+          //  target.name === '_benevole' ? target.checked : target.value
         //target.name === 'paymment' ? target.checked : target.value
-        const name = target.name
+        //const name = target.name
 
 
         setForm({
@@ -109,7 +109,7 @@ const Form = ({formId, projetForm, forNewMembre = true}) => {
     /* Makes sure membre info is filled */
     const formValidate = () => {
         let err = {}
-        if (!form._budget) err._budget = 'Name is required'
+        if (!form._budget) err._budget = 'budget is required'
         
         return err
     }

@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8ad58f2-f131-4e33-ba05-3ee384d7b992" name="Changes" comment="branch testr 3">
+    <list default="true" id="b8ad58f2-f131-4e33-ba05-3ee384d7b992" name="Changes" comment="branch testr 4">
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/api/Projet/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/Components/formProjets.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/Components/formProjets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/Components/FormProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/Components/FormProjet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/models/ProjetModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/models/ProjetModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/CreateProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/CreateProjet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/api/updateProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/api/Projet/[id].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Diego" />
+        <entry key="$PROJECT_DIR$" value="branch_test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,6 +67,9 @@
       <recent name="C:\Users\d_bay\Documents\projetreact\projet1\projet_integration\projetgo\pages\api" />
       <recent name="C:\Users\d_bay\Documents\projetreact\projet1\projet_integration\projetgo" />
       <recent name="C:\Users\d_bay\Documents\projetreact\projet1\projet_integration\projetgo\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Senat\WebstormProjects\projet_integration\projetgo\pages\api\Projet" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -111,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654791422440</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="branch testr 4">
+      <created>1654792186552</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654792186552</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +147,7 @@
     <MESSAGE value="test base de donnes css et bd" />
     <MESSAGE value="test base de donnes bd communication" />
     <MESSAGE value="branch testr 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="branch testr 3" />
+    <MESSAGE value="branch testr 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="branch testr 4" />
   </component>
 </project>
