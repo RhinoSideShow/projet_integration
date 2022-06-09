@@ -9,7 +9,7 @@ export default function AffichageProjets({projet, membre}) {
             {projet && (
                 <>
                     <div className={styles.DivSousContainerProjet}>
-                        <Navbar/>
+                        <Navbar membre={membre}/>
                         <div className={styles.DivSousSousContainerProjet}>
                             <div className={styles.DivSousSousSousContainerProjet}>
                                 <div>
