@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import {useState} from "react";
 import {useRouter} from "next/router";
+import {mutate} from "swr";
 
 const Nav = styled.nav`
   height: 80px;
@@ -32,6 +33,10 @@ export default function Navbar({membre}) {
 
     const handleHomeButton = () => {
         return router.push('/post/membre/' + membre._id)
+    }
+
+    const handleParametresButton = () =>{
+        return router.push('/'+membre._id+'/edit')
     }
 
     return (
@@ -69,8 +74,8 @@ export default function Navbar({membre}) {
                                         </button>
                                         <div style={show === true ? {display: 'none'} : {display: 'inline'}}>
                                             <div id="myDropdown" className={styles.DropdownContent}>
-                                                <a href="/Contact">Paramètres</a>
-                                                <a href="/About">Déconnexion</a>
+                                                <a onClick={handleParametresButton}>Paramètres</a>
+                                                <a href="/">Déconnexion</a>
                                             </div>
                                         </div>
                                     </div>
