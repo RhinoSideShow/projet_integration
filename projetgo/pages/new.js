@@ -4,7 +4,6 @@ import styles from '../styles/Home.module.css'
 import Navbar from "../Components/Navbar";
 
 
-
 const NewMembre = () => {
     const membreForm = {
 
@@ -21,20 +20,17 @@ const NewMembre = () => {
 
     }
 
-
-
     return (
         <div id="__next" className={styles.DivContainerHome}>
             <Navbar/>
             <div className={styles.DivContainer}>
-            <div className={styles.DivSousContainer}>
-
-                <div className={styles.DivSousSousContainerSignIn}>
-                <Form formId="add-membre-form" membreForm={membreForm}/>
+                <div className={styles.DivSousContainer}>
+                    <div className={styles.DivSousSousContainerSignIn}>
+                        <Form formId="add-membre-form" membreForm={membreForm}/>
+                    </div>
                 </div>
             </div>
         </div>
-</div>
     )
 
 }

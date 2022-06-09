@@ -70,7 +70,7 @@ export default function Navbar({membre}) {
                                         <div style={show === true ? {display: 'none'} : {display: 'inline'}}>
                                             <div id="myDropdown" className={styles.DropdownContent}>
                                                 <a href="/Contact">Paramètres</a>
-                                                <a href="/About">Déconnexion</a>
+                                                <a href="/">Déconnexion</a>
                                             </div>
                                         </div>
                                     </div>

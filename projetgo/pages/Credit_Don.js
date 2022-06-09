@@ -17,7 +17,7 @@ export default function Credit_Don({projet, membre}) {
 
     function LoadOnce() {
         if (!window.location.hash) {
-            window.location = window.location + '#loaded';
+            window.location = window.location;
             window.location.reload();
         }
     }
