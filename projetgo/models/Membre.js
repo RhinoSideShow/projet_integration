@@ -46,14 +46,14 @@ const MembreSchema = new mongoose.Schema({
     type: Date,
   },
 
-  _status_adhesion: String,
+  //_status_adhesion: String,
 
-  /*_status_adhesion: {
+  _status_adhesion: {
 
     type: String,
     required: [true, 'Entrez le numero de tel.'],
     maxlength: [60, 'Tel cannot be more than 40 characters'],
-  },*/
+  },
 
   _admin: {
 

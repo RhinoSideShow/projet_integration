@@ -132,7 +132,6 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     required
                 />
 
-
                 <input
                     type="text"
                     className={styles.Input}
