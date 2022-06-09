@@ -196,6 +196,7 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     onChange={handleChange}
                 />
 
+
                 <button className={styles.ButtonSignIn} type="submit">
                     Soumettre
                 </button>
