@@ -21,15 +21,20 @@ const NewProjet = () => {
     return (
         <div id="__next" className={styles.DivContainerHome}>
             <Navbar/>
+            <br/><br/><br/><br/><br/>
             <div className={styles.DivContainer}>
             <div className={styles.DivSousContainer}>
 
-                <div className={styles.DivSousSousContainerSignIn}>
+                <div className={styles.DivSousContainerCreate}>
+                    <div className={styles.DivImageEtTexte}>
+                        <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogoCreate}/>
+                        <h3>Creez votre projet</h3></div>
                 <FormProjet formId="add-projet-form" projetForm={projetForm}/>
                 </div>
             </div>
         </div>
 </div>
+
     )
 
 }
