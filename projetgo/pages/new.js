@@ -30,20 +30,19 @@ const NewMembre = () => {
 
 
     return (
-        <div id="__next" className={styles.DivContainerHome}>
+        <div id="__next" className={styles.DivContainer}>
             <Head>
                 <title>ProjetGo - Creation Membre</title>
             </Head>
 
-            <br/><br/>
-            <br/><br/>
-            <div className={styles.DivContainer}>
+
+
             <div className={styles.DivSousContainerNew}>
 
                 <div className={styles.DivSousSousContainerNew}>
                     <div>
                         <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogoNewMembre} alt="image"/><br/>
-                        <h2>Devenez un memebre de ProjetGo</h2>
+                        <h2>Devenez un membre de ProjetGo</h2>
                     </div>
                     <div>
                 <Form formId="add-membre-form" membreForm={membreForm}/>
@@ -52,7 +51,7 @@ const NewMembre = () => {
                                 onClick={handleOnClickConexion}>&ensp;Connectez-vous</a></p>
                             <br/><br/></div>
                     </div>
-                </div>
+
             </div>
         </div>
 </div>

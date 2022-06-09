@@ -130,6 +130,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
 
             <form id={formId} onSubmit={handleSubmit}>
                 <label>Prenom</label>
+            <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -140,8 +141,9 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     onChange={handleChange}
                     required
                 />
-                <br/><br/>
+                <br/>
                 <label>Nom</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -152,8 +154,9 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     onChange={handleChange}
                     required
                 />
-                <br/><br/>
+                <br/>
                 <label>Email</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -165,8 +168,9 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     required
                 />
 
-                <br/><br/>
+                <br/>
                 <label>Telephone</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -177,8 +181,9 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     onChange={handleChange}
                     required
                 />
-                <br/><br/>
+                <br/>
                 <label>Adresse</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -188,8 +193,9 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     value={form._adresse}
                     onChange={handleChange}
                 />
-                <br/><br/>
+                <br/>
                 <label>Mot de passe</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -199,7 +205,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     value={form._pw}
                     onChange={handleChange}
                 />
-                <br/><br/>
+                <br/>
                 <div className={styles.DivFormBenevoleLabel}>
                <label htmlFor="benevole">Voulez vous etre Bénévole ? </label>
                 </div>
