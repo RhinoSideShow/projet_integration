@@ -1,24 +1,21 @@
 import Head from 'next/head'
 import {useRouter} from "next/router";
 import styles from "../styles/Home.module.css";
+import {useRef, useState} from "react";
 
 
 export default function CreateProject({membre}) {
 
-    const handleonclickTest = () => {
-
-        var today = new Date();
-        var dateDebut = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        let ProjectCreate = document.getElementById("nom").value
-            + " " + document.getElementById("budget").value
-            + " " + document.getElementById("desc").value
-            + " " + document.getElementById("somm").value
-            + " " + dateDebut
-        fetch(`http://localhost:3000/api/CrProject?create=${[membre._id, ProjectCreate]}`).then(r => r)
-    }
-
-
     const router = useRouter();
+    const [titre, setTitre] = useState("");
+    const [budget, setBudget] = useState("");
+    const [desc, setDesc] = useState("");
+    const [somm, setSomm] = useState("");
+
+    const handleOnClick = () => {
+    fetch(`http://localhost:3000/api/updateProjet?projets=${[membre._id]}`).then(r => r);
+
+    }
 
     return (
         <>
@@ -31,17 +28,24 @@ export default function CreateProject({membre}) {
                         <div className={styles.DivImageEtTexte}>
                             <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogoCreate}/>
                             <h3>Creez votre projet</h3></div>
-                        <input type="text" id="nom" className={styles.Input} placeholder="Nom du projet"/>
+                        <input type="text" onChange={e => setTitre(e.target.value)}
+                               className={styles.Input}
+                               placeholder="Titre du projet"/>
                         <br/><br/>
-                        <input type="text" id="budget" className={styles.Input} placeholder="Budget"/>
+                        <input type="text" onChange={e => setBudget(e.target.value)}
+                               className={styles.Input}
+                               placeholder="Budget du projet"/>
                         <br/><br/>
-                        <input type="text" id="desc" className={styles.Input}
-                               placeholder="Description courte du projet"/>
+                        <input type="text" onChange={e => setDesc(e.target.value)}
+                               className={styles.Input}
+                               placeholder="Description du projet"/>
                         <br/><br/>
-                        <textarea type="text" id="somm" className={styles.InputArea} placeholder="Sommaire du projet"/>
+                        <input type="text" onChange={e => setSomm(e.target.value)}
+                               className={styles.InputArea}
+                               placeholder="Sommaire du projet"/>
                         <br/><br/>
                         <button className={styles.ButtonProjectCreate}
-                                onClick={handleonclickTest}>Soumettre
+                                onClick={handleOnClick}>Soumettre
                         </button>
                         <button className={styles.ButtonProjectCreate} onClick={() => router.push('/Homepage')}>Retour
                         </button>
