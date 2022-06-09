@@ -46,7 +46,7 @@ export default function Login() {
                   </button>
                   <p className={styles.TextAccount}>Vous n'avez pas de compte ?</p>
 
-                  <button className={styles.ButtonLoginSignIn} onClick={() => router.push('/')}>S'inscrire</button>
+                  <button className={styles.ButtonLoginSignIn} onClick={() => router.push('/new')}>S'inscrire</button>
                   <p className={styles.Mini}>En vous inscrivant, vous acceptez les <a onClick={handleOnClickTerms}>conditions d'utilisation</a> et
                   </p><p className={styles.Mini}>la <a onClick={handleOnClickTerms}>Politique de Confidentialité</a>,
                   incluant l'<a onClick={handleOnClickTerms}>utilisation des cookies</a>.</p>
