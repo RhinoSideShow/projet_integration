@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Head from "next/head";
 
 
-const FormProjets = ({formId, projetsForm, forNewProjet = true}) => {
+const FormProjets = ({formid, projetsform, fornewprojet = true}) => {
   const router = useRouter()
   const contentType = 'application/json'
   const [errors, setErrors] = useState({})
@@ -13,16 +13,16 @@ const FormProjets = ({formId, projetsForm, forNewProjet = true}) => {
 
   const [form, setForm] = useState({
 
-    _budget : projetsForm._budget,
-    _createur : projetsForm._createur,
-    _debut : projetsForm._debut,
-    _fonds : projetsForm._fonds,
-    _membres : projetsForm._membres,
-    _status : projetsForm._status,
-    _fin : projetsForm._fin,
-    _titre : projetsForm._titre,
-    _somm : projetsForm._somm,
-    _desc : projetsForm._desc,
+    _budget : projetsform._budget,
+    _createur : projetsform._createur,
+    _debut : projetsform._debut,
+    _fonds : projetsform._fonds,
+    _membres : projetsform._membres,
+    _status : projetsform._status,
+    _fin : projetsform._fin,
+    _titre : projetsform._titre,
+    _somm : projetsform._somm,
+    _desc : projetsform._desc,
 
 
   })
@@ -117,7 +117,7 @@ const FormProjets = ({formId, projetsForm, forNewProjet = true}) => {
 
   return (
       <>
-        <form id={formId} onSubmit={handleSubmit}>
+        <form id={formid} onSubmit={handleSubmit}>
 
           <input
               type="text"
