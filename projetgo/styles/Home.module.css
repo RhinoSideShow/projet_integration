@@ -51,6 +51,12 @@
     justify-content: center;
 }
 
+.DivImageLogoNewMembre {
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+}
+
 .DivImageNav {
     height: 80px;
     width: 80px;
@@ -68,7 +74,38 @@
     justify-content: center;
 
 }
+/**************DEVENIR MEMBRE **********************/
+.DivFormBenevoleLabel{
+    float: left;
 
+}
+.DivFormBenevoleCheck{
+    float: left;
+    width: 20px;
+    height : 20px;
+    margin-left: 10px;
+
+    margin-top: -10px;
+}
+
+.DivSousContainerNew {
+    width: 35%;
+    min-width: 700px;
+    max-width: 700px;
+    min-height: 800px;
+    max-height: 800px;
+
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-radius: 40px;
+}
+
+.DivSousSousContainerNew {
+    width: 80%;
+    justify-content: center;
+    margin: 10%;
+}
 /***********Login*************/
 
 .DivSousSousContainerLogin {

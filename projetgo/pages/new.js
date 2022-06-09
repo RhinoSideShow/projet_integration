@@ -25,12 +25,23 @@ const NewMembre = () => {
 
     return (
         <div id="__next" className={styles.DivContainerHome}>
-            <Navbar/>
-            <div className={styles.DivContainer}>
-            <div className={styles.DivSousContainer}>
+            <Head>
+                <title>ProjetGo - Creation Membre</title>
+            </Head>
 
-                <div className={styles.DivSousSousContainerSignIn}>
+            <br/><br/>
+            <br/><br/>
+            <div className={styles.DivContainer}>
+            <div className={styles.DivSousContainerNew}>
+
+                <div className={styles.DivSousSousContainerNew}>
+                    <div>
+                        <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogoNewMembre} alt="image"/><br/>
+                        <h2>Devenez un memebre de ProjetGo</h2>
+                    </div>
+                    <div>
                 <Form formId="add-membre-form" membreForm={membreForm}/>
+                    </div>
                 </div>
             </div>
         </div>

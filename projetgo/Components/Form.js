@@ -119,6 +119,12 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
         return err
     }
 
+    //change le URL quand Mot de passe oublié ? est clicker.
+    const handleOnClickConexion = () => {
+        router.push('/Sign_In').then(r => r)
+    }
+
+
     return (
         <>
 
@@ -134,7 +140,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     onChange={handleChange}
                     required
                 />
-
+                <br/><br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -145,7 +151,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     onChange={handleChange}
                     required
                 />
-
+                <br/><br/>
 
                 <input
                     type="text"
@@ -158,7 +164,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     required
                 />
 
-
+                <br/><br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -169,7 +175,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     onChange={handleChange}
                     required
                 />
-
+                <br/><br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -179,6 +185,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     value={form._adresse}
                     onChange={handleChange}
                 />
+                <br/><br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -188,20 +195,27 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     value={form._pw}
                     onChange={handleChange}
                 />
-
+                <br/><br/>
+                <div className={styles.DivFormBenevoleLabel}>
                <label htmlFor="benevole">Voulez vous etre Bénévole ? </label>
-                <input
+                </div>
+                <div className={styles.DivFormBenevoleCheck}>
+                    <input
                     className={styles.Input}
                     type="checkbox"
                     name="_benevole"
                     checked={form._benevole}
                     onChange={handleChange}
                 />
-
-
+                </div>
                 <button className={styles.ButtonSignIn} type="submit">
                     Soumettre
                 </button>
+
+                <div>
+                    <p>&emsp;&emsp;Vous avez un compte ?<a
+                        onClick={handleOnClickConexion}>&ensp;Connectez-vous</a></p>
+                    <br/><br/></div>
             </form>
             <p>{message}</p>
             <div>
