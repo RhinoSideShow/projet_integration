@@ -53,7 +53,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
 
             mutate(`/api/membres/${id}`, data, false) // Update the local data without a revalidation
             alert("Edition Reussi")
-            router.push('/Sign_In')
+            router.push('/post/membre/'+{id}.id)
         } catch (error) {
             setMessage('Failed to update membre')
         }
