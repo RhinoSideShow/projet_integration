@@ -25,8 +25,13 @@ export default function Homepage({projets, membre}) {
     const router = useRouter();
     let data = [];
 
-    console.log("here")
-    console.log(projets[0]._createur);
+    function LoadOnce() {
+        if (!window.location.hash) {
+            window.location = window.location + '#Loaded';
+            window.location.reload();
+        }
+    }
+
     const isSub = () => {
         let isTrue = false;
 
@@ -126,7 +131,7 @@ export default function Homepage({projets, membre}) {
                         <h1>Bienvenue {user._prenom}</h1>
                     </div>
                     <br/><br/><br/><br/>
-                    <button className={styles.ButtonAdmin}onClick={() => router.push('/post/CrProject/' + user._id)}>Créer un projet</button>
+                    <button className={styles.ButtonAdmin} onClick={() => {router.push('/post/CrProject/' + user._id)}}>Créer un projet</button>
                     <br/><br/><br/><br/>
                     <h2>Vos projets</h2>
                     <hr/>
@@ -139,7 +144,7 @@ export default function Homepage({projets, membre}) {
     return (
         <>
 
-            <div id="__next" className={styles.DivContainerHome}>
+            <div onLoad={LoadOnce} id="__next" className={styles.DivContainerHome}>
                 <Navbar membre={membre}/>
                 <div className={styles.DivContainer}>
                     <div className={styles.DivSousContainerHome}>
