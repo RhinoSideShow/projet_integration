@@ -1,12 +1,9 @@
-import FormProjet from '../Components/FormProjet'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Navbar from "../Components/Navbar";
+import Form from '../components/Projet'
 
-const NewProjet = () => {
-    const projetForm = {
+const NewMembre = () => {
+  const membreForm = {
 
-        _budget: '',
+    _budget: '',
         _createur: '',
         _debut: new Date().toISOString(),
         _fonds: '',
@@ -16,28 +13,11 @@ const NewProjet = () => {
         _titre: '',
         _somm: '',
         _desc: '',
+    
+    
+  }
 
-    }
-
-    return (
-        <div id="__next" className={styles.DivContainerHome}>
-            <Navbar/>
-            <br/><br/><br/><br/><br/>
-            <div className={styles.DivContainer}>
-            <div className={styles.DivSousContainer}>
-
-                <div className={styles.DivSousContainerCreate}>
-                    <div className={styles.DivImageEtTexte}>
-                        <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogoCreate}/>
-                        <h3>Creez votre projet</h3></div>
-                <FormProjet formId="add-projet-form" projetForm={projetForm}/>
-                </div>
-            </div>
-        </div>
-</div>
-
-    )
-
+  return <Form formId="add-membre-form" membreForm={membreForm} />
 }
 
-export default NewProjet
+export default NewMembre

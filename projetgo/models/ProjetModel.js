@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 
 /* MembreSchema will correspond to a collection in your MongoDB database. */
-const projetschema = new mongoose.Schema({
+const ProjetModelSchema = new mongoose.Schema({
 
     _budget: {
 
@@ -86,4 +86,4 @@ const projetschema = new mongoose.Schema({
 )
 
 
-export default mongoose.models.Projet || mongoose.model('Projet', projetschema)
+export default mongoose.models.ProjetModelSchema || mongoose.model('ProjetModel', ProjetModelSchema)
