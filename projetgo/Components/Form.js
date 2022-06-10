@@ -53,7 +53,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
 
             mutate(`/api/membres/${id}`, data, false) // Update the local data without a revalidation
             alert("Edition Reussi")
-            router.push('/post/membre/'+membreId.valueOf())
+            router.push('/Sign_In')
         } catch (error) {
             setMessage('Failed to update membre')
         }
@@ -79,7 +79,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
             //router.push(/[id], as,  /${membre._id})
             //<Link href="/[id]" as={/${membre._id}}>
             alert("Inscription Reussi, veuillez vous connectez")
-            router.push('/post/membre/'+membreId.valueOf())
+            router.push('/Sign_In')
         } catch (error) {
             setMessage('Failed to add membre')
         }
@@ -221,7 +221,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     onChange={handleChange}
                 />
                 </div>
-                <button className={styles.ButtonSignIn} type="submit">
+                <button className={styles.ButtonSignIn}  type="submit">
                     Soumettre
                 </button>
 
