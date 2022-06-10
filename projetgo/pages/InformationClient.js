@@ -12,27 +12,31 @@ export default function InformationClient({projets , clients}) {
     const [tel, setTel] = useState("");
     const [adresse, setAdresse] = useState("");
 
+    console.log("here");
+    console.log(projets);
+    console.log(clients);
 
     //change le URL quand Mot de passe oublié ? est clicker.
     const handleOnClick = () => {
 
-        let isTrue = false;
+        let isEmailTrue = false;
 
         for (let i = 0; i < clients.length; i++) {
             if (email === clients[i]._email) {
-                isTrue = true;
+                isEmailTrue = true;
                 break;
             }
         }
 
-        if (isTrue) {
+        if (isEmailTrue) {
+            console.log("vrai")
             return router.push('/post/fonds/' + projets._id).then(r => r);
         } else {
+            console.log("faux")
             fetch(`http://localhost:3000/api/CreateClient?client=${[nom,prenom,email,tel,adresse]}`).then(r => r);
 
             return router.push('/post/fonds/' + projets._id).then(r => r);
         }
-
     }
 
     return (
