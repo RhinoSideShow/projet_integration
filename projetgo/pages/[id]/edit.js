@@ -14,6 +14,8 @@ const EditMembre = () => {
     const {id} = router.query
     const {data: membre, error} = useSWR(id ? `/api/membres/${id}` : null, fetcher)
 
+
+
     if (error) return <p>Failed to load</p>
     if (!membre) return <p>Loading...</p>
 
@@ -33,11 +35,12 @@ const EditMembre = () => {
 
     return (
         <>
+
         <div id="__next" className={styles.DivContainerEdit}>
 
             <div className={styles.DivSousContainerProjet}>
 
-                <Navbar/>
+                <Navbar membre = {membre}/>
             <div className={styles.DivContainerEdit}>
 
 

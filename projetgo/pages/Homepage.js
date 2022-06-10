@@ -46,7 +46,7 @@ export default function Homepage({projets, membre}) {
             )
         }
     }
-
+    /*Vue Par Personne*/
     const isMembreNull = () => {
         if (user === undefined)
             return (
@@ -58,6 +58,8 @@ export default function Homepage({projets, membre}) {
                     </div>
                 </>
             )
+
+        /*Vue Par Benevole*/
         else if (user._benevole) {
             return (
                 <>
@@ -70,6 +72,8 @@ export default function Homepage({projets, membre}) {
                     <br/><br/><br/><br/>
                 </>
             )
+
+            /*Vue Par Personne*/
         } else if (user._status_adhesion === 'attente cotisation') {
             return (
                 <>
@@ -84,6 +88,8 @@ export default function Homepage({projets, membre}) {
                     <br/><br/><br/><br/>
                 </>
             )
+
+            /*Vue Par Admin*/
         } else if (user._admin) {
             return (
                 <>
@@ -98,6 +104,8 @@ export default function Homepage({projets, membre}) {
                     <button className={styles.ButtonAdmin}>Créer un projet</button>
                 </>
             )
+
+            /* Vue par membre actif */
         } else if (user._status_adhesion === 'actif') {
             return (
                 <>
@@ -117,6 +125,7 @@ export default function Homepage({projets, membre}) {
 
     return (
         <>
+
             <div id="__next" className={styles.DivContainerHome}>
                 <Navbar membre={membre}/>
                 <div className={styles.DivContainer}>
