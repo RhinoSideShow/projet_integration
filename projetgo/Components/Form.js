@@ -31,7 +31,8 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
 
     /* The PUT method edits an existing entry in the mongodb database. */
     const putData = async (form) => {
-        const {id} = router.query
+        const {id} = router.query;
+        const membreId = router.query;
 
         try {
             const res = await fetch(`/api/membres/${id}`, {
@@ -51,7 +52,8 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
             const {data} = await res.json()
 
             mutate(`/api/membres/${id}`, data, false) // Update the local data without a revalidation
-            router.push('/')
+            alert("Edition Reussi")
+            router.push('/post/membre/'+membreId.valueOf())
         } catch (error) {
             setMessage('Failed to update membre')
         }
@@ -59,6 +61,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
 
     /* The POST method adds a new entry in the mongodb database. */
     const postData = async (form) => {
+        const membreId = router.query
         try {
             const res = await fetch('/api/membres', {
                 method: 'POST',
@@ -76,7 +79,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
             //router.push(/[id], as,  /${membre._id})
             //<Link href="/[id]" as={/${membre._id}}>
             alert("Inscription Reussi, veuillez vous connectez")
-            router.push('/Sign_In')
+            router.push('/post/membre/'+membreId.valueOf())
         } catch (error) {
             setMessage('Failed to add membre')
         }

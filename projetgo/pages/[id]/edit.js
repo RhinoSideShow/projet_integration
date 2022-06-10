@@ -12,6 +12,7 @@ const fetcher = (url) =>
 const EditMembre = () => {
     const router = useRouter()
     const {id} = router.query
+
     const {data: membre, error} = useSWR(id ? `/api/membres/${id}` : null, fetcher)
 
 
