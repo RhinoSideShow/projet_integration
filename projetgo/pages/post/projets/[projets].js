@@ -79,13 +79,13 @@ export default function AffichageProjets({projet, membre, createur}) {
                                         <div>
                                             {membre === undefined ?
                                                 <button className={styles.ButtonProjetDonation} onClick={() => {router.push('/post/clients/' + projet._id).then(r => r)}}>
-                                                    Faire une donation
+                                                    Faire un don
                                                 </button> :
                                                 membre._benevole ? null :
                                                     <button className={styles.ButtonProjetDonation} onClick={() => {
                                                         membre === undefined ? router.push('/post/fonds/' + projet._id) :
                                                             router.push('/post/fonds/' + projet._id + '&' + membre._id)
-                                                    }}>Faire une donation</button>
+                                                    }}>Faire un don</button>
                                             }
                                         </div>
                                     </div>
