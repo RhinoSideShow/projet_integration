@@ -90,24 +90,9 @@ export default function Homepage({projets, membre}) {
                 </>
             )
 
-            /*Vue Par Personne*/
-        } else if (user._status_adhesion === 'attente cotisation') {
-            return (
-                <>
-                    <div className={styles.DivRelative}>
-                        <h1>Bienvenue {user._prenom}</h1><br/>
-                        <h1>Veuillez payer votre cotisation annuelle, pour bénéficier des avantages d'un membre.</h1>
-                        <button className={styles.ButtonCreer} onClick={() => {
-                            router.push('/post/cotisation/' + user._id).then(r => r)
-                        }}>Payer cotisation
-                        </button>
-                    </div>
-                    <br/><br/><br/><br/>
-                </>
-            )
-
-            /*Vue Par Admin*/
-        } else if (user._admin) {
+           /*Vue Par Admin*/
+        }
+        else if (user._admin) {
             return (
                 <>
                     <div className={styles.DivRelative}>
@@ -123,8 +108,24 @@ export default function Homepage({projets, membre}) {
                 </>
             )
 
+            /*Vue Par Personne*/
+        }else if (user._status_adhesion === 'attente cotisation') {
+            return (
+                <>
+                    <div className={styles.DivRelative}>
+                        <h1>Bienvenue {user._prenom}</h1><br/>
+                        <h1>Veuillez payer votre cotisation annuelle, pour bénéficier des avantages d'un membre.</h1>
+                        <button className={styles.ButtonCreer} onClick={() => {
+                            router.push('/post/cotisation/' + user._id).then(r => r)
+                        }}>Payer cotisation
+                        </button>
+                    </div>
+                    <br/><br/><br/><br/>
+                </>
+            )
+
             /* Vue par membre actif */
-        } else if (user._status_adhesion === 'actif') {
+        }  else if (user._status_adhesion === 'actif') {
             return (
                 <>
                     <div className={styles.DivRelative}>

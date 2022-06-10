@@ -24,10 +24,12 @@ export default function AffichageProjets({projet, membre, createur}) {
                                         <div><p>{createur._prenom + " "+ createur._nom + " organise ce projet."}</p><br/>
                                             <div className={styles.DivButtonEdit}>
                                                 {membre === undefined ? null : membre._admin === true ?
-                                                    <button className={styles.ButtonProjetEdit}>Éditer</button> : null}
+                                                    <button className={styles.ButtonProjetEdit}>Éditer</button> :
+                                                    membre._id === createur._id ? <button className={styles.ButtonProjetEdit}>Éditer</button> : null}
                                                 {membre === undefined ? null : membre._admin === true ?
                                                     <button
-                                                        className={styles.ButtonProjetEdit}>Supprimer</button> : null}
+                                                        className={styles.ButtonProjetEdit}>Supprimer</button> :
+                                                    membre._id === createur._id ? <button className={styles.ButtonProjetEdit}>Supprimer</button> : null}
                                             </div>
                                             <hr/>
                                         </div>
@@ -71,7 +73,7 @@ export default function AffichageProjets({projet, membre, createur}) {
                                     <div className={styles.DivSousSousContainerProjetDiv}>
                                         <div>
                                             <p><span className={styles.FontBleu}>{projet._fonds}$</span> récoltés sur un
-                                                objectif de {projet._budget}$</p>
+                                                objectif de<br/> {projet._budget}$</p>
                                         </div>
                                         <div>
                                             {projet._status}
