@@ -25,10 +25,11 @@ export default function Homepage({projets, membre}) {
     const router = useRouter();
     let data = [];
 
-    console.log("here")
-    console.log(projets[0]._createur);
     const isSub = () => {
         let isTrue = false;
+
+        if(membre === undefined)
+            return <div></div>
 
         for (let i = 0; i < projets.length; i++) {
             if((projets[i]._createur).valueOf() === (membre._id).valueOf()){
@@ -63,7 +64,7 @@ export default function Homepage({projets, membre}) {
                     <div className={styles.DivRelative}>
                         <h1>Partout dans le monde, des gens collectent des fonds pour ce qui les
                             passionne.</h1>
-                        <button className={styles.ButtonCreer}>Créer un compte</button>
+                        <button className={styles.ButtonCreer} onClick={() => {router.push('/new')}}>Créer un compte</button>
                     </div>
                 </>
             )
@@ -105,12 +106,13 @@ export default function Homepage({projets, membre}) {
                     <div className={styles.DivRelative}>
                         <h1>Bienvenue {user._prenom}</h1>
                     </div>
+                    <br/><br/>
+                    <button className={styles.ButtonAdmin}>Conseil d'administration </button>
+                    <button className={styles.ButtonAdmin} onClick={() => {router.push('/post/CrProject/' + user._id)}}>Créer un projet</button>
                     <br/><br/><br/><br/>
-                    <button className={styles.ButtonAdmin} onClick={() => {
-                        router.push('/post/cotisation/' + user._id).then(r => r)
-                    }}>Conseil d'administration
-                    </button>
-                    <button className={styles.ButtonAdmin}>Créer un projet</button>
+                    <h2>Vos projets</h2>
+                    <hr/>
+                    <br/>
                 </>
             )
 

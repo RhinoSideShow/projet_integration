@@ -2,8 +2,7 @@ import clientPromise from "../../lib/mongodb";
 
 export default async function handler(req, res) {
 
-    let query = req.query.infoClients;
-    console.log(query)
+    let query = req.query.client;
 
     let tab = query.split(',');
     let nom = tab[0];
