@@ -26,7 +26,6 @@ export default function InformationClient({projets , clients}) {
         }
 
         if (isTrue) {
-            alert("same");
             return router.push('/post/fonds/' + projets._id).then(r => r);
         } else {
             fetch(`http://localhost:3000/api/CreateClient?client=${[nom,prenom,email,tel,adresse]}`).then(r => r);

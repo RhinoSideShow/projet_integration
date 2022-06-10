@@ -21,30 +21,39 @@ export default function Homepage({projets, membre}) {
 
     const [user, setUser] = useState(membre);
     const [pro, setPro] = useState(projets);
-
+    const [sub, setSub] = useState();
     const router = useRouter();
+    let data = [];
 
-    const isProjetNull = () => {
-        if (pro === null)
-            return <div></div>
-        else {
-            return (
-                <div className={styles.DivAbsolute}>
-                    &ensp;{pro.map((projets, i) => (
-                    <div key={i} className={styles.ArrayContainer} onClick={() => {
-                        router.push('/post/projets/' + projets._id).then(r => r)
-                    }}>
-                        <h3 style={{color: "#0272fc"}}>{projets._titre}</h3>
-                        {projets._desc}<br/>
-                        <span style={{
-                            bottom: 20,
-                            left: 20,
-                            position: "absolute"
-                        }}>{projets._fonds + " $ de " + projets._budget + " $"}</span>
-                    </div>))}
-                </div>
-            )
+    console.log("here")
+    console.log(projets[0]._createur);
+    const isSub = () => {
+        let isTrue = false;
+
+        for (let i = 0; i < projets.length; i++) {
+            if((projets[i]._createur).valueOf() === (membre._id).valueOf()){
+                data.push(projets[i]);
+            }
         }
+
+        return (
+            <div className={styles.DivAbsolute}>
+                &ensp;{data.map((projet, i) => (
+                <div key={i} className={styles.ArrayContainer} onClick={() => {
+                    user === undefined ? router.push('/post/projets/' + projet._id).then(r => r) :
+                        router.push('/post/projets/' + projet._id + '&' + user._id).then(r => r)
+                }}>
+                    <h3 style={{color: "#0272fc"}}>{projet._titre}</h3>
+                    {projet._desc}<br/>
+                    <span style={{
+                        bottom: 20,
+                        left: 20,
+                        position: "absolute"
+                    }}>{projet._fonds + " $ de " + projet._budget + " $"}</span>
+                </div>))}
+            </div>
+        )
+
     }
 
     const isMembreNull = () => {
@@ -109,7 +118,7 @@ export default function Homepage({projets, membre}) {
                     <br/><br/><br/><br/>
                     <h2>Vos projets</h2>
                     <hr/>
-                    <br/><br/><br/><br/>
+                    <br/>
                 </>
             )
         }
@@ -124,6 +133,7 @@ export default function Homepage({projets, membre}) {
                         <div className={styles.DivSousSousContainerHome}>
                             <div className={styles.DivRelative}>
                                 {isMembreNull()}
+                                {isSub()}
                                 <br/><br/>
                                 <h2>Top projets</h2>
                                 <hr/>
