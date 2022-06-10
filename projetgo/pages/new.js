@@ -4,8 +4,6 @@ import styles from '../styles/Home.module.css'
 import Navbar from "../Components/Navbar";
 import {router} from "next/client";
 
-
-
 const NewMembre = () => {
     const membreForm = {
 
@@ -26,8 +24,6 @@ const NewMembre = () => {
     const handleOnClickConexion = () => {
         router.push('/Sign_In').then(r => r)
     }
-
-
 
     return (
         <div id="__next" className={styles.DivContainer}>
