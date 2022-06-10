@@ -4,9 +4,6 @@ import {useRouter} from "next/router";
 
 export default function AffichageProjets({projet, membre, createur}) {
     const router = useRouter();
-    console.log("iam log")
-    console.log(projet)
-    console.log(membre)
     return (
         <div id="__next" className={styles.DivContainerProjet}>
             { (
