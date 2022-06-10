@@ -52,7 +52,7 @@ export default function CreateProject({membre}) {
                         <button className={styles.ButtonProjectCreate}
                                 onClick={handleOnClick}>Soumettre
                         </button>
-                        <button className={styles.ButtonProjectCreate}>Retour
+                        <button className={styles.ButtonProjectCreate} onClick={() => router.push('/post/membre/' + membre._id)}>Retour
                         </button>
                     </div>
                 </div>

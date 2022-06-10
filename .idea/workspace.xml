@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="test base de donnes bd communication 2">
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/post/ProjetMerci.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/api/updateProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/api/updateProjet.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -112,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654824302512</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test base de donnes bd communication 2">
+      <created>1654825108559</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654825108559</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
