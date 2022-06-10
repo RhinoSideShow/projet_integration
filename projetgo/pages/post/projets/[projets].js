@@ -2,7 +2,7 @@ import styles from '../../../styles/Home.module.css';
 import Navbar from "../../../Components/Navbar";
 import {useRouter} from "next/router";
 
-export default function AffichageProjets({projet, membre}) {
+export default function AffichageProjets({projet, membre, createur}) {
     const router = useRouter();
     console.log("iam log")
     console.log(projet)
@@ -21,7 +21,7 @@ export default function AffichageProjets({projet, membre}) {
                                             <h1>{projet._titre}</h1>
                                         </div>
 
-                                        <div><p>{" organise ce projet."}</p><br/>
+                                        <div><p>{createur._prenom + " "+ createur._nom + " organise ce projet."}</p><br/>
                                             <div className={styles.DivButtonEdit}>
                                                 {membre === undefined ? null : membre._admin === true ?
                                                     <button className={styles.ButtonProjetEdit}>Éditer</button> : null}
@@ -48,7 +48,7 @@ export default function AffichageProjets({projet, membre}) {
 
                                         <br/>
                                         <div><h3>Créateur du projet</h3>
-                                            <p></p><br/>
+                                            <p>{createur._prenom + " " + createur._nom}</p><br/>
                                             <hr/>
                                         </div>
 
@@ -111,21 +111,28 @@ export async function getServerSideProps({params}) {
         const data = await fetch(`http://localhost:3000/api/ProjetDetails?client=${projet_id}`)
         const projet = await data.json();
 
-        console.log(projet + "allo")
-
         const data2 = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${user_id}`)
         const membre = await data2.json();
 
+        let test = projet._createur;
+
+        const data3 = await  fetch(`http://localhost:3000/api/membrelogin?emailpw=${test}`)
+        const createur = await data3.json();
+
         return {
-            props: {projet, membre}
+            props: {projet, membre, createur}
         }
     } else {
         user_id = null
         const data = await fetch(`http://localhost:3000/api/ProjetDetails?client=${projet_id}`)
         const projet = await data.json();
 
+        let test = projet._createur;
+        const data3 = await  fetch(`http://localhost:3000/api/membrelogin?emailpw=${test}`)
+        const createur = await data3.json();
+
         return {
-            props: {projet, user_id}
+            props: {projet, user_id, createur}
         }
     }
 }

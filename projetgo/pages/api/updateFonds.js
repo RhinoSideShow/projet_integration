@@ -12,10 +12,6 @@ export default async function handler(req, res) {
 
     const client = await clientPromise;
 
-    console.log("here")
-    console.log(projetId)
-    console.log(money)
-
     const db = client.db("projet_go");
     await db.collection("projets").updateOne({_id: new ObjectId(projetId)}, {$inc: {_fonds: parseFloat(money)}})
 }
