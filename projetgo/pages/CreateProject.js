@@ -11,13 +11,14 @@ export default function CreateProject({membre}) {
     const [budget, setBudget] = useState("");
     const [desc, setDesc] = useState("");
     const [somm, setSomm] = useState("");
+    let fonds = "0";
     var today = new Date();
     let fin = null;
     let status = false;
 
 
     const handleOnClick = () => {
-    fetch(`http://localhost:3000/api/updateProjet?projets=${[membre._id, titre, budget, desc,today, fin, status, somm]}`).then(r => r);
+    fetch(`http://localhost:3000/api/updateProjet?projets=${[membre._id, titre, budget, desc,today, fin, status,fonds, somm]}`).then(r => r);
 
     }
 
@@ -51,7 +52,7 @@ export default function CreateProject({membre}) {
                         <button className={styles.ButtonProjectCreate}
                                 onClick={handleOnClick}>Soumettre
                         </button>
-                        <button className={styles.ButtonProjectCreate} onClick={() => router.push('/Homepage')}>Retour
+                        <button className={styles.ButtonProjectCreate}>Retour
                         </button>
                     </div>
                 </div>
