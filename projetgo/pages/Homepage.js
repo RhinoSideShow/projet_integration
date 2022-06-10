@@ -46,7 +46,7 @@ export default function Homepage({projets, membre}) {
 
         return (
             <div className={styles.DivAbsolute}>
-                &ensp;{data.map((projet, i) => (
+                {data.map((projet, i) => (
                 <div key={i} className={styles.ArrayContainer} onClick={() => {
                     user === undefined ? router.push('/post/projets/' + projet._id).then(r => r) :
                         router.push('/post/projets/' + projet._id + '&' + user._id).then(r => r)
@@ -158,7 +158,7 @@ export default function Homepage({projets, membre}) {
                                 <hr/>
                                 <br/>
                                 <div className={styles.DivAbsolute}>
-                                    &ensp;{projets.map((projets, i) => (
+                                    {projets.map((projets, i) => (
                                     <div key={i} className={styles.ArrayContainer} onClick={() => {
                                         {
                                             user === undefined ? router.push('/post/projets/' + projets._id).then(r => r) :
