@@ -21,6 +21,6 @@ export default async function handler(req, res) {
     const client = await clientPromise;
 
     const db = client.db("projet_go");
-    const data = await db.collection("projets").insertOne({_createur : createur,_titre : titre,_budget : budget,_desc : desc, _debut : debut, _fin : fin, _status : status, _fonds : fonds, _somm : somm});
+    const data = await db.collection("projets").insertOne({_createur : createur,_titre : titre,_budget : budget,_desc : desc, _debut : debut, _fin : fin, _status : status, _fonds : parseFloat(fonds), _somm : somm});
 
 }

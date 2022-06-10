@@ -11,12 +11,12 @@ export default function CreateProject({membre}) {
     const [budget, setBudget] = useState("");
     const [desc, setDesc] = useState("");
     const [somm, setSomm] = useState("");
-    let fonds = "0";
+    let fonds = 0.0;
     var today = new Date();
     let fin = null;
     let status = false;
 
-
+<p></p>
     const handleOnClick = () => {
     fetch(`http://localhost:3000/api/updateProjet?projets=${[membre._id, titre, budget, desc,today, fin, status,fonds, somm]}`).then(r => r);
         router.push('/post/membre/' + membre._id)
@@ -28,8 +28,8 @@ export default function CreateProject({membre}) {
                 <Head>
                     <title>Creez votre projet</title>
                 </Head>
-                <div className={styles.DivSousContainer}>
-                    <div className={styles.DivSousContainerCreate}>
+                <div className={styles.DivSousContainerCreate}>
+                    <div className={styles.DivSousSousContainerCreate}>
                         <div className={styles.DivImageEtTexte}>
                             <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogoCreate}/>
                             <h3>Creez votre projet</h3></div>
