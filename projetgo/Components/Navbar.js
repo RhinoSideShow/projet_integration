@@ -57,9 +57,9 @@ export default function Navbar({membre}) {
                     <div className={styles.NavOption}>
                         <div className={styles.NavFlex}>
                             <div className={styles.NavComment}>
-                                <Link href='/' passHref>
-                                    <StyledLink>Comment ça marche</StyledLink>
-                                </Link>
+                                {/*<Link href='/' passHref>*/}
+                                {/*    <StyledLink>Comment ça marche</StyledLink>*/}
+                                {/*</Link>*/}
                             </div>
                             <div className={styles.NavDrop}>
                                 {membre === undefined ? <Link href='/Sign_In' passHref>
