@@ -11,9 +11,13 @@ export default function CreateProject({membre}) {
     const [budget, setBudget] = useState("");
     const [desc, setDesc] = useState("");
     const [somm, setSomm] = useState("");
+    var today = new Date();
+    let fin = null;
+    let status = false;
+
 
     const handleOnClick = () => {
-    fetch(`http://localhost:3000/api/updateProjet?projets=${[membre._id]}`).then(r => r);
+    fetch(`http://localhost:3000/api/updateProjet?projets=${[membre._id, titre, budget, desc,today, fin, status, somm]}`).then(r => r);
 
     }
 
@@ -40,7 +44,7 @@ export default function CreateProject({membre}) {
                                className={styles.Input}
                                placeholder="Description du projet"/>
                         <br/><br/>
-                        <input type="text" onChange={e => setSomm(e.target.value)}
+                        <textarea type="text" onChange={e => setSomm(e.target.value)}
                                className={styles.InputArea}
                                placeholder="Sommaire du projet"/>
                         <br/><br/>
