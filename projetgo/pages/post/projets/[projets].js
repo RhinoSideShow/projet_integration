@@ -1,9 +1,25 @@
 import styles from '../../../styles/Home.module.css';
 import Navbar from "../../../Components/Navbar";
 import {useRouter} from "next/router";
+import Animation_Credit_Don from "../../Animation_Credit_Don";
+import {useState} from "react";
 
 export default function AffichageProjets({projet, membre, createur}) {
+    const [show, setShow] = useState(false)
+    const [plan, setPlan] = useState(projet);
     const router = useRouter();
+
+
+
+
+    const handleShow = () => {
+        fetch(`http://localhost:3000/api/updateProjetListe?updateProjetListe=${[projet._id, membre._id]}`).then(r => r);
+        setShow(!show);
+    }
+
+
+
+
     return (
         <div id="__next" className={styles.DivContainerProjet}>
             { (
@@ -75,9 +91,11 @@ export default function AffichageProjets({projet, membre, createur}) {
                                         <div>
                                             {projet._status}
 
-                                            <button className={ styles.ButtonProjetDonation} onClick={()=> {router.push('/post/clients/' + projet._id).then(r => r)}}>
-                                                Participez au projet
-                                            </button>
+                                            {show && <Animation_Credit_Don isDon={true} membre={membre} projet={plan} />}
+                                            <div>
+                                                {!show &&
+                                                    <button className={styles.ButtonDon} onClick={handleShow}>Participer au projet</button>}
+                                            </div>
                                         </div>
                                         <br/>
                                         <div>
