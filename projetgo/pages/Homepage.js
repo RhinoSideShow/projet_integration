@@ -108,7 +108,7 @@ export default function Homepage({projets, membre}) {
                 </>
             )
 
-            /*Vue Par Personne*/
+            /*Vue Par Membre non actif*/
         }else if (user._status_adhesion === 'attente cotisation') {
             return (
                 <>
@@ -126,20 +126,50 @@ export default function Homepage({projets, membre}) {
 
             /* Vue par membre actif */
         }  else if (user._status_adhesion === 'actif') {
-            return (
-                <>
-                    <div className={styles.DivRelative}>
-                        <h1>Bienvenue {user._prenom}</h1>
-                    </div>
-                    <br/><br/><br/><br/>
-                    <button className={styles.ButtonAdmin} onClick={() => {router.push('/post/CrProject/' + user._id)}}>Créer un projet</button>
-                    <br/><br/><br/><br/>
-                    <h2>Vos projets</h2>
-                    <hr/>
-                    <br/>
-                </>
-            )
+            let date = new Date(user._date_adhesion)
+            let annee = date.getFullYear()
+            let mois = date.getMonth()
+            let jour = date.getDate()
+            let dateAdhesion = new Date(annee,mois,jour)
+            let expiration = new Date(annee + 1, mois, jour)
+
+            if (dateAdhesion > expiration) {
+
+                return (
+                    <>
+                        <div className={styles.DivRelative}>
+                            <h1>Bienvenue {user._prenom}</h1>
+                        </div>
+                        <br/><br/><br/><br/>
+                        <button className={styles.ButtonAdmin} onClick={() => {
+                            router.push('/post/CrProject/' + user._id)
+                        }}>Créer un projet
+                        </button>
+                        <br/><br/><br/><br/>
+                        <h2>Vos projets</h2>
+                        <hr/>
+                        <br/>
+                    </>
+                )
+            }
+            else{
+                return (
+                    <>
+                        <div className={styles.DivRelative}>
+                            <h1>Bienvenue {user._prenom}</h1><br/>
+                            <h1>Veuillez payer votre cotisation annuelle, pour bénéficier des avantages d'un membre.</h1>
+                            <button className={styles.ButtonCreer} onClick={() => {
+                                router.push('/post/cotisation/' + user._id).then(r => r)
+                            }}>Payer cotisation
+                            </button>
+                        </div>
+                        <br/><br/><br/><br/>
+                    </>
+                )
+
+            }
         }
+
     }
 
     return (
