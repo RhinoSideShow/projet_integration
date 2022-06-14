@@ -108,32 +108,16 @@ export default function Homepage({projets, membre}) {
                 </>
             )
 
-            /*Vue Par Membre non actif*/
-        }else if (user._status_adhesion === 'attente cotisation') {
-            return (
-                <>
-                    <div className={styles.DivRelative}>
-                        <h1>Bienvenue {user._prenom}</h1><br/>
-                        <h1>Veuillez payer votre cotisation annuelle, pour bénéficier des avantages d'un membre.</h1>
-                        <button className={styles.ButtonCreer} onClick={() => {
-                            router.push('/post/cotisation/' + user._id).then(r => r)
-                        }}>Payer cotisation
-                        </button>
-                    </div>
-                    <br/><br/><br/><br/>
-                </>
-            )
-
-            /* Vue par membre actif */
-        }  else if (user._status_adhesion === 'actif') {
+            /*Vue Par Membre actif*/
+        }else if (user._status_adhesion === 'actif') {
             let date = new Date(user._date_adhesion)
             let annee = date.getFullYear()
             let mois = date.getMonth()
             let jour = date.getDate()
-            let dateAdhesion = new Date(annee,mois,jour)
             let expiration = new Date(annee + 1, mois, jour)
+            let dateCourante = new Date()
 
-            if (dateAdhesion > expiration) {
+            if (dateCourante < expiration) {
 
                 return (
                     <>
@@ -152,22 +136,26 @@ export default function Homepage({projets, membre}) {
                     </>
                 )
             }
-            else{
-                return (
-                    <>
-                        <div className={styles.DivRelative}>
-                            <h1>Bienvenue {user._prenom}</h1><br/>
-                            <h1>Veuillez payer votre cotisation annuelle, pour bénéficier des avantages d'un membre.</h1>
-                            <button className={styles.ButtonCreer} onClick={() => {
-                                router.push('/post/cotisation/' + user._id).then(r => r)
-                            }}>Payer cotisation
-                            </button>
-                        </div>
-                        <br/><br/><br/><br/>
-                    </>
-                )
+            else
+                user._status_adhesion = "attente cotisation"
+        }
+        /* Vue par membre actif */
+        if (user._status_adhesion === 'attente cotisation') {
+            return (
+                <>
+                    <div className={styles.DivRelative}>
+                        <h1>Bienvenue {user._prenom}</h1><br/>
+                        <h1>Veuillez payer votre cotisation annuelle, pour bénéficier des avantages d'un membre.</h1>
+                        <button className={styles.ButtonCreer} onClick={() => {
+                            router.push('/post/cotisation/' + user._id).then(r => r)
+                        }}>Payer cotisation
+                        </button>
+                    </div>
+                    <br/><br/><br/><br/>
+                </>
+            )
 
-            }
+
         }
 
     }
