@@ -34,6 +34,10 @@ export default function Navbar({membre}) {
         return router.push('/post/membre/' + membre._id)
     }
 
+    const handleParametresButton = () =>{
+        return router.push('/'+membre._id+'/edit')
+    }
+
     return (
         <Nav>
             <div className={styles.NavContainer}>
@@ -69,8 +73,8 @@ export default function Navbar({membre}) {
                                         </button>
                                         <div style={show === true ? {display: 'none'} : {display: 'inline'}}>
                                             <div id="myDropdown" className={styles.DropdownContent}>
-                                                <a href="/Contact">Paramètres</a>
-                                                <a href="/About">Déconnexion</a>
+                                                <a onClick={handleParametresButton}>Paramètres</a>
+                                                <a href="/">Déconnexion</a>
                                             </div>
                                         </div>
                                     </div>

@@ -8,8 +8,14 @@ export default function Login() {
   const router = useRouter();
 
   //change le URL quand les terms of service sont clicker.
-  const handleOnClickTerms = () =>{
-    router.push('/').then(r => r)
+  const handleOnClickCondition = () =>{
+    router.push('/Conditions').then(r => r)
+  }
+  const handleOnClickPolitique = () =>{
+    router.push('/Politique').then(r => r)
+  }
+  const handleOnClickCooklies = () =>{
+    router.push('/Cookies').then(r => r)
   }
 
   return (
@@ -47,9 +53,9 @@ export default function Login() {
                   <p className={styles.TextAccount}>Vous n'avez pas de compte ?</p>
 
                   <button className={styles.ButtonLoginSignIn} onClick={() => router.push('/new')}>S'inscrire</button>
-                  <p className={styles.Mini}>En vous inscrivant, vous acceptez les <a onClick={handleOnClickTerms}>conditions d'utilisation</a> et
-                  </p><p className={styles.Mini}>la <a onClick={handleOnClickTerms}>Politique de Confidentialité</a>,
-                  incluant l'<a onClick={handleOnClickTerms}>utilisation des cookies</a>.</p>
+                  <p className={styles.Mini}>En vous inscrivant, vous acceptez les <a onClick={handleOnClickCondition}>conditions d'utilisation</a> et
+                  </p><p className={styles.Mini}>la <a onClick={handleOnClickPolitique}>Politique de Confidentialité</a>,
+                  incluant l'<a onClick={handleOnClickCooklies}>utilisation des cookies</a>.</p>
                 </div>
               </div>
             </div>

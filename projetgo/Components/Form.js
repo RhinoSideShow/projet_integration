@@ -5,7 +5,9 @@ import styles from "../styles/Home.module.css";
 import Head from "next/head";
 
 
-const Form = ({formId, membreForm, forNewMembre = true}) => {
+
+
+const Form = ({formId, membreForm, forNewMembre = true,}) => {
     const router = useRouter()
     const contentType = 'application/json'
     const [errors, setErrors] = useState({})
@@ -29,7 +31,8 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
 
     /* The PUT method edits an existing entry in the mongodb database. */
     const putData = async (form) => {
-        const {id} = router.query
+        const {id} = router.query;
+        const membreId = router.query;
 
         try {
             const res = await fetch(`/api/membres/${id}`, {
@@ -49,7 +52,8 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
             const {data} = await res.json()
 
             mutate(`/api/membres/${id}`, data, false) // Update the local data without a revalidation
-            router.push('/')
+            alert("Edition Reussi")
+            router.push('/Sign_In')
         } catch (error) {
             setMessage('Failed to update membre')
         }
@@ -57,6 +61,7 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
 
     /* The POST method adds a new entry in the mongodb database. */
     const postData = async (form) => {
+        const membreId = router.query
         try {
             const res = await fetch('/api/membres', {
                 method: 'POST',
@@ -73,7 +78,8 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
             }
             //router.push(/[id], as,  /${membre._id})
             //<Link href="/[id]" as={/${membre._id}}>
-            router.push('/')
+            alert("Inscription Reussi, veuillez vous connectez")
+            router.push('/Sign_In')
         } catch (error) {
             setMessage('Failed to add membre')
         }
@@ -116,11 +122,18 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
         return err
     }
 
+    //change le URL quand Mot de passe oublié ? est clicker.
+    const handleOnClickConexion = () => {
+        router.push('/Sign_In').then(r => r)
+    }
+
+
     return (
         <>
 
             <form id={formId} onSubmit={handleSubmit}>
-
+                <label>Prenom</label>
+            <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -131,7 +144,9 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     onChange={handleChange}
                     required
                 />
-
+                <br/>
+                <label>Nom</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -142,8 +157,9 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     onChange={handleChange}
                     required
                 />
-
-
+                <br/>
+                <label>Email</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -155,7 +171,9 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     required
                 />
 
-
+                <br/>
+                <label>Telephone</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -166,7 +184,9 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     onChange={handleChange}
                     required
                 />
-
+                <br/>
+                <label>Adresse</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -176,6 +196,9 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     value={form._adresse}
                     onChange={handleChange}
                 />
+                <br/>
+                <label>Mot de passe</label>
+                <br/>
                 <input
                     type="text"
                     className={styles.Input}
@@ -185,20 +208,24 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
                     value={form._pw}
                     onChange={handleChange}
                 />
-
+                <br/>
+                <div className={styles.DivFormBenevoleLabel}>
                <label htmlFor="benevole">Voulez vous etre Bénévole ? </label>
-                <input
+                </div>
+                <div className={styles.DivFormBenevoleCheck}>
+                    <input
                     className={styles.Input}
                     type="checkbox"
                     name="_benevole"
                     checked={form._benevole}
                     onChange={handleChange}
                 />
-
-
-                <button className={styles.ButtonSignIn} type="submit">
+                </div>
+                <button className={styles.ButtonSignIn}  type="submit">
                     Soumettre
                 </button>
+
+
             </form>
             <p>{message}</p>
             <div>
@@ -212,3 +239,5 @@ const Form = ({formId, membreForm, forNewMembre = true}) => {
 }
 
 export default Form
+
+

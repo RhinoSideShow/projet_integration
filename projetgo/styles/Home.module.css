@@ -4,6 +4,8 @@
     justify-content: center;
     background-color: #282c34;
     align-items: center;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .DivContainerHome {
@@ -13,6 +15,8 @@
     overflow: auto;
     justify-content: center;
     align-items: center;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .DivSousContainerHome {
@@ -51,6 +55,12 @@
     justify-content: center;
 }
 
+.DivImageLogoNewMembre {
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+}
+
 .DivImageNav {
     height: 80px;
     width: 80px;
@@ -67,6 +77,58 @@
     width: 35px;
     justify-content: center;
 
+}
+/**************DEVENIR MEMBRE **********************/
+.DivFormBenevoleLabel{
+    float: left;
+
+}
+.DivFormBenevoleCheck{
+    float: left;
+    width: 20px;
+    height : 20px;
+    margin-left: 10px;
+
+    margin-top: -10px;
+}
+
+.DivSousContainerNew {
+    width: 35%;
+    min-width: 700px;
+    max-width: 700px;
+    min-height: 900px;
+    max-height: 900px;
+
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-radius: 40px;
+}
+
+.DivSousSousContainerNew {
+    width: 80%;
+    justify-content: center;
+    margin: 10%;
+}
+
+/*************EDITMEMBRE************/
+.DivContainerEdit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #282c34;
+
+}
+.DivSousSousContainerEdit {
+    width: 100%;
+    justify-content: center;
+    margin: 2% 25%;
+    height: 100%;
+}
+.DivSousSousSousContainerEdit {
+    width: 80%;
+    display: flex;
+    margin-left: 20%;
 }
 
 /***********Login*************/
@@ -149,7 +211,7 @@
     margin: 10%;
 }
 
-.Input {
+.InputClient {
     height: 35px;
     font-size: 12pt;
     width: 100%;
@@ -159,6 +221,7 @@
     border: 3px solid gray;
     color: white;
 }
+
 .ButtonSignIn {
     border-radius: 25px;
     font-size: 20px;
@@ -355,7 +418,7 @@
 }
 
 .DivAbsolute {
-    margin-left: 20px;
+    margin-left: 40px;
     display: flex;
     flex-wrap: wrap;
     z-index: 1;
@@ -369,11 +432,14 @@
     justify-content: center;
     background-color: #282c34;
     align-items: center;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .DivSousContainerProjet {
     width: 100%;
     background-color: #282c34;
+
 }
 
 .DivSousSousContainerProjet {
@@ -387,6 +453,8 @@
     width: 80%;
     display: flex;
     margin-left: 20%;
+    justify-content: center;
+    align-items: center;
 }
 
 .DivSousSousContainerProjetText {
@@ -463,7 +531,7 @@
     box-sizing: border-box;
     width: 100%;
     height: 80px;
-    min-width: 500px;
+    min-width: 400px;
     max-width: 3000px;
     display: flex;
     justify-content: center;
@@ -554,7 +622,7 @@
 
 .DropdownContent a {
     color: #0272fc;
-    padding: 15px 115px 15px 10px;
+    padding: 15px 200px 15px 10px;
     text-decoration: none;
     display: block;
     overflow: hidden;
@@ -569,10 +637,96 @@
     display: block;
 }
 
-/**************************/
+/******************************/
+/**********InfoClient**********/
+.InputClient {
+    height: 35px;
+    font-size: 12pt;
+    width: 100%;
+    padding: 1%;
+    outline: none;
+    background-color: black;
+    border: 3px solid gray;
+    color: white;
+    margin-bottom: 3%;
+}
+
+/***********************/
+/**********TOS**********/
+
+.DivContainerTOS {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #282c34;
+    align-items: center;
+    position: relative;
+    max-width: 100vw;
+}
+
+.DivImageCondition {
+    width: 100%;
+    height:60%;
+    position: relative;
+
+}
+
+.ImageCondition {
+    max-width: 100%;
+    min-width: 100%;
+    height: 800px;
+}
+
+.DivSousContainerTOS {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.DivSousSousContainerTOS {
+    width: 60%;
+    min-width: 1200px;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.HugeFont {
+    font-size: 100px;
+}
+
+.Input {
+    height: 35px;
+    font-size: 12pt;
+    width: 100%;
+    padding: 1%;
+    outline: none;
+    background-color: black;
+    border: 3px solid gray;
+    color: white;
+    margin-bottom: 3%;
+}
+
+/****************************/
 /********ProjetCreate********/
 
 .DivSousContainerCreate {
+    width: 35%;
+    min-width: 700px;
+    max-width: 700px;
+    min-height: 750px;
+    max-height: 750px;
+
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-radius: 40px;
+}
+
+.DivSousSousContainerCreate {
     position : relative;
     width: 25%;
     min-width: 550px;
@@ -590,7 +744,6 @@
 }
 
 .InputArea{
-
     height: 100px;
     font-size: 12pt;
     width: 100%;
@@ -600,7 +753,6 @@
     border: 3px solid gray;
     color: white;
     resize : none;
-
 }
 
 .ButtonProjectCreate{
@@ -611,14 +763,11 @@
     background-color: #0272fc;
     color: white;
     width: 50%;
-
-
 }
 
 .DivImageLogoCreate{
     position : relative;
     right : 20px;
-
-
-
 }
+
+/**************************/
