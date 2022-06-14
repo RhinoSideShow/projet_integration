@@ -32,14 +32,17 @@ export default function Homepage({projets, membre}) {
         }
     }
 
+
+
+
     const isSub = () => {
         let isTrue = false;
 
-        if(membre === undefined)
+        if (membre === undefined)
             return <div></div>
 
         for (let i = 0; i < projets.length; i++) {
-            if((projets[i]._createur).valueOf() === (membre._id).valueOf()){
+            if ((projets[i]._createur).valueOf() === (membre._id).valueOf()) {
                 data.push(projets[i]);
             }
         }
@@ -47,18 +50,18 @@ export default function Homepage({projets, membre}) {
         return (
             <div className={styles.DivAbsolute}>
                 {data.map((projet, i) => (
-                <div key={i} className={styles.ArrayContainer} onClick={() => {
-                    user === undefined ? router.push('/post/projets/' + projet._id).then(r => r) :
-                        router.push('/post/projets/' + projet._id + '&' + user._id).then(r => r)
-                }}>
-                    <h3 style={{color: "#0272fc"}}>{projet._titre}</h3>
-                    {projet._desc}<br/>
-                    <span style={{
-                        bottom: 20,
-                        left: 20,
-                        position: "absolute"
-                    }}>{projet._fonds + " $ de " + projet._budget + " $"}</span>
-                </div>))}
+                    <div key={i} className={styles.ArrayContainer} onClick={() => {
+                        user === undefined ? router.push('/post/projets/' + projet._id).then(r => r) :
+                            router.push('/post/projets/' + projet._id + '&' + user._id).then(r => r)
+                    }}>
+                        <h3 style={{color: "#0272fc"}}>{projet._titre}</h3>
+                        {projet._desc}<br/>
+                        <span style={{
+                            bottom: 20,
+                            left: 20,
+                            position: "absolute"
+                        }}>{projet._fonds + " $ de " + projet._budget + " $"}</span>
+                    </div>))}
             </div>
         )
 
@@ -71,7 +74,10 @@ export default function Homepage({projets, membre}) {
                     <div className={styles.DivRelative}>
                         <h1>Partout dans le monde, des gens collectent des fonds pour ce qui les
                             passionne.</h1>
-                        <button className={styles.ButtonCreer} onClick={() => {router.push('/new')}}>Créer un compte</button>
+                        <button className={styles.ButtonCreer} onClick={() => {
+                            router.push('/new')
+                        }}>Créer un compte
+                        </button>
                     </div>
                 </>
             )
@@ -90,17 +96,19 @@ export default function Homepage({projets, membre}) {
                 </>
             )
 
-           /*Vue Par Admin*/
-        }
-        else if (user._admin) {
+            /*Vue Par Admin*/
+        } else if (user._admin) {
             return (
                 <>
                     <div className={styles.DivRelative}>
                         <h1>Bienvenue {user._prenom}</h1>
                     </div>
                     <br/><br/>
-                    <button className={styles.ButtonAdmin}>Conseil d'administration </button>
-                    <button className={styles.ButtonAdmin} onClick={() => {router.push('/post/CrProject/' + user._id)}}>Créer un projet</button>
+                    <button className={styles.ButtonAdmin}>Conseil d'administration</button>
+                    <button className={styles.ButtonAdmin} onClick={() => {
+                        router.push('/post/CrProject/' + user._id)
+                    }}>Créer un projet
+                    </button>
                     <br/><br/><br/><br/>
                     <h2>Vos projets</h2>
                     <hr/>
@@ -109,7 +117,7 @@ export default function Homepage({projets, membre}) {
             )
 
             /*Vue Par Membre actif*/
-        }else if (user._status_adhesion === 'actif') {
+        } else if (user._status_adhesion === 'actif') {
             let date = new Date(user._date_adhesion)
             let annee = date.getFullYear()
             let mois = date.getMonth()
@@ -135,9 +143,22 @@ export default function Homepage({projets, membre}) {
                         <br/>
                     </>
                 )
+            } else {
+                return(
+                <>
+                    <div className={styles.DivRelative}>
+                        <h1>Bienvenue {user._prenom}</h1><br/>
+                        <h1>Votre abonement est expiré</h1>
+                        <button className={styles.ButtonCreer} onClick={() => {
+                            router.push('/post/cotisation/' + user._id).then(r => r)
+                        }}>Payer cotisation
+                        </button>
+                    </div>
+                    <br/><br/><br/><br/>
+                </>
+                )
+
             }
-            else
-                user._status_adhesion = "attente cotisation"
         }
         /* Vue par membre non-actif */
         else if (user._status_adhesion === 'attente cotisation') {
@@ -177,20 +198,20 @@ export default function Homepage({projets, membre}) {
                                 <br/>
                                 <div className={styles.DivAbsolute}>
                                     {projets.map((projets, i) => (
-                                    <div key={i} className={styles.ArrayContainer} onClick={() => {
-                                        {
-                                            user === undefined ? router.push('/post/projets/' + projets._id).then(r => r) :
-                                                router.push('/post/projets/' + projets._id + '&' + user._id).then(r => r)
-                                        }
-                                    }}>
-                                        <h3 style={{color: "#0272fc"}}>{projets._titre}</h3>
-                                        {projets._desc}<br/>
-                                        <span style={{
-                                            bottom: 20,
-                                            left: 20,
-                                            position: "absolute"
-                                        }}>{projets._fonds + " $ de " + projets._budget + " $"}</span>
-                                    </div>))}
+                                        <div key={i} className={styles.ArrayContainer} onClick={() => {
+                                            {
+                                                user === undefined ? router.push('/post/projets/' + projets._id).then(r => r) :
+                                                    router.push('/post/projets/' + projets._id + '&' + user._id).then(r => r)
+                                            }
+                                        }}>
+                                            <h3 style={{color: "#0272fc"}}>{projets._titre}</h3>
+                                            {projets._desc}<br/>
+                                            <span style={{
+                                                bottom: 20,
+                                                left: 20,
+                                                position: "absolute"
+                                            }}>{projets._fonds + " $ de " + projets._budget + " $"}</span>
+                                        </div>))}
                                 </div>
                             </div>
                         </div>

@@ -74,6 +74,10 @@ export default function AffichageProjets({projet, membre, createur}) {
                                         </div>
                                         <div>
                                             {projet._status}
+
+                                            <button className={ styles.ButtonProjetDonation} onClick={()=> {router.push('/post/clients/' + projet._id).then(r => r)}}>
+                                                Participez au projet
+                                            </button>
                                         </div>
                                         <br/>
                                         <div>
