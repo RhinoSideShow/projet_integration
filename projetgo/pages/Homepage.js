@@ -139,8 +139,8 @@ export default function Homepage({projets, membre}) {
             else
                 user._status_adhesion = "attente cotisation"
         }
-        /* Vue par membre actif */
-        if (user._status_adhesion === 'attente cotisation') {
+        /* Vue par membre non-actif */
+        else if (user._status_adhesion === 'attente cotisation') {
             return (
                 <>
                     <div className={styles.DivRelative}>
