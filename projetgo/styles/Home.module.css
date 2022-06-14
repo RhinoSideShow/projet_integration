@@ -484,7 +484,12 @@
     padding: 10px 25px;
     background-color: #0272fc;
     color: white;
-    width: 100%;
+    margin-right: 2%;
+    width: 48%;
+}
+
+.ButtonProjetDonation:focus {
+    background-color: gray;
 }
 
 .FontBleu {

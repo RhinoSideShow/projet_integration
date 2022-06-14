@@ -5,24 +5,28 @@ import Animation_Credit_Don from "../../Animation_Credit_Don";
 import {useState} from "react";
 
 export default function AffichageProjets({projet, membre, createur}) {
-    const [show, setShow] = useState(false)
-    const [plan, setPlan] = useState(projet);
     const router = useRouter();
+    let isClick = true;
 
+    const handleShow = (e) => {
 
-
-
-    const handleShow = () => {
-        fetch(`http://localhost:3000/api/updateProjetListe?updateProjetListe=${[projet._id, membre._id]}`).then(r => r);
-        setShow(!show);
+        let btn = document.getElementById("btnSub");
+        // fetch(`http://localhost:3000/api/updateProjetListe?updateProjetListe=${[projet._id, membre._prenom, membre._nom]}`).then(r => r);
+        if(isClick){
+            e.target.style.backgroundColor = "gray";
+            btn.innerText = "Abonné";
+            isClick = false;
+        }
+        else{
+            e.target.style.backgroundColor = "gray";
+            e.target.value = "S'abonner"
+            isClick = true;
+        }
     }
-
-
-
 
     return (
         <div id="__next" className={styles.DivContainerProjet}>
-            { (
+            {(
                 <>
                     <div className={styles.DivSousContainerProjet}>
                         <Navbar membre={membre}/>
@@ -34,15 +38,18 @@ export default function AffichageProjets({projet, membre, createur}) {
                                             <h1>{projet._titre}</h1>
                                         </div>
 
-                                        <div><p>{createur._prenom + " "+ createur._nom + " organise ce projet."}</p><br/>
+                                        <div><p>{createur._prenom + " " + createur._nom + " organise ce projet."}</p>
+                                            <br/>
                                             <div className={styles.DivButtonEdit}>
                                                 {membre === undefined ? null : membre._admin === true ?
                                                     <button className={styles.ButtonProjetEdit}>Éditer</button> :
-                                                    membre._id === createur._id ? <button className={styles.ButtonProjetEdit}>Éditer</button> : null}
+                                                    membre._id === createur._id ? <button
+                                                        className={styles.ButtonProjetEdit}>Éditer</button> : null}
                                                 {membre === undefined ? null : membre._admin === true ?
                                                     <button
                                                         className={styles.ButtonProjetEdit}>Supprimer</button> :
-                                                    membre._id === createur._id ? <button className={styles.ButtonProjetEdit}>Supprimer</button> : null}
+                                                    membre._id === createur._id ? <button
+                                                        className={styles.ButtonProjetEdit}>Supprimer</button> : null}
                                             </div>
                                             <hr/>
                                         </div>
@@ -68,19 +75,10 @@ export default function AffichageProjets({projet, membre, createur}) {
                                         </div>
 
                                         <br/>
-                                        <div><h3>{projet._membres}</h3></div>
-                                        <br/>
-                                        <div><h3>{projet._membres}</h3></div>
-                                        <br/>
-                                        <div><h3>{projet._membres}</h3></div>
-                                        <br/>
-                                        <div><h3>{projet._membres}</h3></div>
-                                        <br/>
-                                        <div><h3>{projet._membres}</h3></div>
-                                        <br/>
-                                        <div><h3>{projet._membres}</h3></div>
-                                        <br/>
-                                        <div><h3>{projet._membres}</h3></div>
+                                        <div>{projet._liste.map((id, i) => (
+                                            <h3 key={i}>{id}</h3>
+                                        ))}</div>
+
                                     </div>
 
                                     <div className={styles.DivSousSousContainerProjetDiv}>
@@ -88,26 +86,22 @@ export default function AffichageProjets({projet, membre, createur}) {
                                             <p><span className={styles.FontBleu}>{projet._fonds}$</span> récoltés sur un
                                                 objectif de<br/> {projet._budget}$</p>
                                         </div>
-                                        <div>
-                                            {projet._status}
-
-                                            {show && <Animation_Credit_Don isDon={true} membre={membre} projet={plan} />}
-                                            <div>
-                                                {!show &&
-                                                    <button className={styles.ButtonDon} onClick={handleShow}>Participer au projet</button>}
-                                            </div>
-                                        </div>
                                         <br/>
                                         <div>
                                             {membre === undefined ?
-                                                <button className={styles.ButtonProjetDonation} onClick={() => {router.push('/post/clients/' + projet._id).then(r => r)}}>
-                                                    Faire une donation
+                                                <button className={styles.ButtonProjetDonation} onClick={() => {
+                                                    router.push('/post/clients/' + projet._id).then(r => r)
+                                                }}>
+                                                    Faire un don
                                                 </button> :
                                                 membre._benevole ? null :
                                                     <button className={styles.ButtonProjetDonation} onClick={() => {
                                                         membre === undefined ? router.push('/post/fonds/' + projet._id) :
                                                             router.push('/post/fonds/' + projet._id + '&' + membre._id)
-                                                    }}>Faire une donation</button>
+                                                    }}>Faire un don</button>
+                                            }
+                                            {membre !== undefined ? <button
+                                                className={styles.ButtonProjetDonation} id="btnSub" onClick={handleShow}>S'abonner</button> : null
                                             }
                                         </div>
                                     </div>
@@ -137,7 +131,7 @@ export async function getServerSideProps({params}) {
 
         let test = projet._createur;
 
-        const data3 = await  fetch(`http://localhost:3000/api/membrelogin?emailpw=${test}`)
+        const data3 = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${test}`)
         const createur = await data3.json();
 
         return {
@@ -149,7 +143,7 @@ export async function getServerSideProps({params}) {
         const projet = await data.json();
 
         let test = projet._createur;
-        const data3 = await  fetch(`http://localhost:3000/api/membrelogin?emailpw=${test}`)
+        const data3 = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${test}`)
         const createur = await data3.json();
 
         return {

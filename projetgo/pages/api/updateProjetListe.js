@@ -8,11 +8,11 @@ export default async function handler(req, res) {
 
     let tab = query.split(',');
     let projetId = tab[0];
-    let membreId = tab[1];
+    let membre = tab[1] + " " +tab[2];
 
     const client = await clientPromise;
 
     const db = client.db("projet_go");
-    await db.collection("projets").updateOne({_id: new ObjectId(projetId)}, {$push: {_liste: membreId}});
+    await db.collection("projets").updateOne({_id: new ObjectId(projetId)}, {$push: {_liste: membre}});
 
 }
