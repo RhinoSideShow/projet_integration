@@ -12,30 +12,29 @@ export default function InformationClient({projets , clients}) {
     const [tel, setTel] = useState("");
     const [adresse, setAdresse] = useState("");
 
-    console.log("here");
-    console.log(projets);
-    console.log(clients);
-
     //change le URL quand Mot de passe oublié ? est clicker.
-    const handleOnClick = () => {
+    async function handleOnClick(){
 
         let isEmailTrue = false;
+        let idClient = "";
 
         for (let i = 0; i < clients.length; i++) {
             if (email === clients[i]._email) {
                 isEmailTrue = true;
+                idClient = clients[i]._id;
                 break;
             }
         }
 
         if (isEmailTrue) {
-            console.log("vrai")
-            return router.push('/post/fonds/' + projets._id).then(r => r);
-        } else {
-            console.log("faux")
-            fetch(`http://localhost:3000/api/CreateClient?client=${[nom,prenom,email,tel,adresse]}`).then(r => r);
+            return router.push('/post/fonds/' + projets._id + '&' + idClient).then(r => r);
 
-            return router.push('/post/fonds/' + projets._id).then(r => r);
+        } else {
+
+            const data = await fetch(`http://localhost:3000/api/CreateClient?client=${[nom,prenom,email,tel,adresse]}`).then(r => r);
+            const client = await data.json();
+
+            return router.push('/post/fonds/' + projets._id  + '&' + client._id).then(r => r);
         }
     }
 

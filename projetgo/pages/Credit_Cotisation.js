@@ -67,7 +67,7 @@ export default function Credit_Cotisation({membre}) {
                         </div>
                     </div>
                     <div>
-                        {show && <Animation_Credit_Don isDon={false} membre={user} projet={null}/>}
+                        {show && <Animation_Credit_Don isDon={false} membre={user} projet={null} isClient={false}/>}
                         <div>
                             {!show &&
                                 <button className={styles.ButtonDon} onClick={handleShow}>Payer {argent * 1.15.toFixed(2) + " $"}</button>}

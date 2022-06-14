@@ -15,4 +15,8 @@ export default async function handler(req, res) {
 
     const db = client.db("projet_go");
     await db.collection("clients").insertOne({_nom: nom, _prenom: prenom, _email: email, _telephone: tel, _adresse: adresse });
+
+    const data = await db.collection("clients").findOne({_email: email});
+    console.log(data)
+    res.json(data)
 }

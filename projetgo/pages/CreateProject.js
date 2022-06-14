@@ -12,7 +12,7 @@ export default function CreateProject({membre}) {
     const [desc, setDesc] = useState("");
     const [somm, setSomm] = useState("");
     let fonds = 0.0;
-    var today = new Date();
+    let today = new Date().toLocaleDateString();
     let fin = null;
     let status = false;
 
