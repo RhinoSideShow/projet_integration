@@ -13,10 +13,9 @@ export default function CreateProject({membre}) {
     const [somm, setSomm] = useState("");
     let fonds = 0.0;
     let today = new Date().toLocaleDateString();
-    let fin = null;
+    let fin = new Date(new Date().setDate(new Date().getDate() + 7)).toLocaleDateString();
     let status = false;
 
-<p></p>
     const handleOnClick = () => {
     fetch(`http://localhost:3000/api/updateProjet?projets=${[membre._id, titre, budget, desc,today, fin, status,fonds, somm]}`).then(r => r);
         router.push('/post/membre/' + membre._id)

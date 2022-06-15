@@ -1,10 +1,9 @@
 import clientPromise from "../../lib/mongodb";
 import {ObjectId} from "mongodb";
-import membre from "../../models/Membre";
 
 export default async function handler(req, res) {
 
-    let query = req.query.updateProjetListe;
+    let query = req.query.deleteProjetListe;
 
     let tab = query.split(',');
     let projetId = tab[0];
@@ -12,8 +11,5 @@ export default async function handler(req, res) {
 
     const client = await clientPromise;
     const db = client.db("projet_go");
-
-    const data = await db.collection("membres").findOne({_id: new ObjectId(membreId)});
-
-    await db.collection("projets").updateOne({_id: new ObjectId(projetId)}, {$push: {_liste: data}});
+    await db.collection("projets").updateOne({_id: new ObjectId(projetId)}, {$pull: {_liste: {_id: new ObjectId(membreId)}}});
 }

@@ -17,10 +17,10 @@ export default async function handler(req, res) {
     let fonds = tab[7];
     let somm = tab[8];
 
-
     const client = await clientPromise;
 
     const db = client.db("projet_go");
-    const data = await db.collection("projets").insertOne({_createur : createur,_titre : titre,_budget : budget,_desc : desc, _debut : debut, _fin : fin, _status : status, _fonds : parseFloat(fonds), _somm : somm});
+    const membreCreateur = await db.collection("membres").findOne({_id: new ObjectId(createur)});
 
+    await db.collection("projets").insertOne({_createur : createur,_titre : titre,_budget : budget,_desc : desc, _debut : debut, _fin : fin, _status : status, _fonds : parseFloat(fonds), _somm : somm, _liste:[membreCreateur]});
 }

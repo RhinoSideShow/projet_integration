@@ -1,26 +1,33 @@
 import styles from '../../../styles/Home.module.css';
 import Navbar from "../../../Components/Navbar";
 import {useRouter} from "next/router";
-import Animation_Credit_Don from "../../Animation_Credit_Don";
-import {useState} from "react";
 
 export default function AffichageProjets({projet, membre, createur}) {
     const router = useRouter();
-    let isClick = true;
 
-    const handleShow = (e) => {
+    const handleShow = () => {
 
-        let btn = document.getElementById("btnSub");
-        // fetch(`http://localhost:3000/api/updateProjetListe?updateProjetListe=${[projet._id, membre._prenom, membre._nom]}`).then(r => r);
-        if(isClick){
-            e.target.style.backgroundColor = "gray";
-            btn.innerText = "Abonné";
-            isClick = false;
+        if (document.querySelector('#btnSub').innerHTML === "Abonné") {
+
+            for (let i = 0; i < projet._liste.length; i++) {
+                if (projet._liste[i]._id === membre._id) {
+                    fetch(`http://localhost:3000/api/deleteProjetListe?deleteProjetListe=${[projet._id, membre._id]}`).then(r => r);
+                    document.querySelector('#btnSub').innerHTML = "S'abonner";
+                    document.querySelector('#btnSub').style.backgroundColor = "#0272fc";
+                    break;
+                }
+            }
+        } else {
+            document.querySelector('#btnSub').innerHTML = "Abonné";
+            document.querySelector('#btnSub').style.backgroundColor = "gray";
+            fetch(`http://localhost:3000/api/updateProjetListe?updateProjetListe=${[projet._id, membre._id]}`).then(r => r);
         }
-        else{
-            e.target.style.backgroundColor = "gray";
-            e.target.value = "S'abonner"
-            isClick = true;
+    }
+
+    function colorChange() {
+        for (let i = 0; i < projet._liste.length; i++) {
+            if (projet._liste[i]._id === membre._id || projet._createur === createur._id && membre._id === createur._id)
+                return true;
         }
     }
 
@@ -75,9 +82,11 @@ export default function AffichageProjets({projet, membre, createur}) {
                                         </div>
 
                                         <br/>
-                                        <div>{projet._liste.map((id, i) => (
-                                            <h3 key={i}>{id}</h3>
-                                        ))}</div>
+
+                                        <div><h3>Liste des membres et des bénévoles</h3>
+                                            {projet._liste !== undefined ? projet._liste.map((id, i) => (
+                                                <p key={i}>{id._prenom} {id._nom}</p>
+                                            )) : null}</div>
 
                                     </div>
 
@@ -100,8 +109,18 @@ export default function AffichageProjets({projet, membre, createur}) {
                                                             router.push('/post/fonds/' + projet._id + '&' + membre._id)
                                                     }}>Faire un don</button>
                                             }
-                                            {membre !== undefined ? <button
-                                                className={styles.ButtonProjetDonation} id="btnSub" onClick={handleShow}>S'abonner</button> : null
+
+                                            {membre !== undefined ? projet._liste !== undefined ? projet._liste.some(colorChange) ?
+                                                    <button className={styles.ButtonProjetDonation} type="button"
+                                                            id="btnSub"
+                                                            style={{backgroundColor: "gray"}}
+                                                            onClick={handleShow}>Abonné</button> :
+                                                    <button className={styles.ButtonProjetDonation} type="button"
+                                                            id="btnSub"
+                                                            onClick={handleShow}>S'abonner</button> :
+                                                <button className={styles.ButtonProjetDonation} type="button"
+                                                        id="btnSub"
+                                                        onClick={handleShow}>S'abonner</button> : null
                                             }
                                         </div>
                                     </div>

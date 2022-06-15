@@ -32,9 +32,6 @@ export default function Homepage({projets, membre}) {
         }
     }
 
-
-
-
     const isSub = () => {
         let isTrue = false;
 
