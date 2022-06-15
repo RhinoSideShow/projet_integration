@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="test base de donnes bd communication 2">
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/post/ProjetMerci.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/EditeurDeProjet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/api/editProjet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/post/EdProjet/[edprojet].js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/Homepage2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/api/ProjetDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/api/ProjetDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/index2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/post/projets/[projets].js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/post/projets/[projets].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +46,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2AG8ODoUZGrYtpc7VYq1Hqcs5nd" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -168,8 +175,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/projetgo/pages/CreateProject.js</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/projetgo/pages/api/editProjet.js</url>
+          <line>9</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
