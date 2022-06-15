@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="test base de donnes bd communication">
+    <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="update branch">
+      <change afterPath="$PROJECT_DIR$/projetgo/.env.local" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/models/Membre.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/models/Membre.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Diego" />
+        <entry key="$PROJECT_DIR$" value="Developpement" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,6 +30,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2AG8ODoUZGrYtpc7VYq1Hqcs5nd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,6 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654624527830</updated>
       <workItem from="1654624529140" duration="34570000" />
+      <workItem from="1655334975528" duration="951000" />
     </task>
     <task id="LOCAL-00001" summary="integration formulaire membre">
       <created>1654699162427</created>
@@ -111,6 +115,7 @@
     <MESSAGE value="test base de donnes formulaire" />
     <MESSAGE value="test base de donnes css et bd" />
     <MESSAGE value="test base de donnes bd communication" />
-    <option name="LAST_COMMIT_MESSAGE" value="test base de donnes bd communication" />
+    <MESSAGE value="update branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="update branch" />
   </component>
 </project>
