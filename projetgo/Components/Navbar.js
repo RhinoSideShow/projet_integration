@@ -57,7 +57,7 @@ export default function Navbar({membre}) {
                     <div className={styles.NavOption}>
                         <div className={styles.NavFlex}>
                             <div className={styles.NavComment}>
-                                <Link href='/' passHref>
+                                <Link href='/CommentCaMarche' passHref>
                                     <StyledLink>Comment ça marche</StyledLink>
                                 </Link>
                             </div>
