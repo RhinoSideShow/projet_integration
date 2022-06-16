@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-
+/*Template pour la creation d'un membre*/
 /* MembreSchema will correspond to a collection in your MongoDB database. */
 const MembreSchema = new mongoose.Schema({
         _nom: {

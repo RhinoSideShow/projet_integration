@@ -1,4 +1,6 @@
 import mongoose from 'mongoose'
+{/*Librairie pour Mongoose*/}
+
 
 const MONGODB_URI = process.env.MONGODB_URI
 
