@@ -49,9 +49,9 @@ export default function AffichageProjets({projet, membre, createur}) {
                                             <br/>
                                             <div className={styles.DivButtonEdit}>
                                                 {membre === undefined ? null : membre._admin === true ?
-                                                    <button className={styles.ButtonProjetEdit}>Éditer</button> :
+                                                    <button className={styles.ButtonProjetEdit}onClick={() => {router.push('/post/EdProjet/' + projet._id)}}>Éditer</button> :
                                                     membre._id === createur._id ? <button
-                                                        className={styles.ButtonProjetEdit}>Éditer</button> : null}
+                                                        className={styles.ButtonProjetEdit}onClick={() => {router.push('/post/EdProjet/' + projet._id)}}>Éditer</button> : null}
                                                 {membre === undefined ? null : membre._admin === true ?
                                                     <button
                                                         className={styles.ButtonProjetEdit}>Supprimer</button> :
