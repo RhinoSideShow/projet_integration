@@ -62,7 +62,7 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                                     <button
                                                         className={styles.ButtonProjetEdit}
                                                         onClick={handleAccept}>Accepter</button>}
-                                                {conseil === true ? membre === undefined ? null : membre._admin === true ?
+                                                {conseil !== true ? membre === undefined ? null : membre._admin === true ?
                                                         <button
                                                             className={styles.ButtonProjetEdit}>Supprimer</button> :
                                                         membre._id === createur._id ? <button
