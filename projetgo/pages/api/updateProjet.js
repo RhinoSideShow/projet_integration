@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     let createur = tab[0];
     let titre = tab[1];
     let budget = tab[2];
-    let desc = tab[3];;
+    let desc = tab[3];
     let debut = tab[4];
     let fin = tab[5];
     let status =  tab[6];

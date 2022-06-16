@@ -24,12 +24,41 @@ export default function Homepage({projets, membre}) {
     const [sub, setSub] = useState();
     const router = useRouter();
     let data = [];
+    let arrayProjets = [];
 
     function LoadOnce() {
         if (!window.location.hash) {
             window.location = window.location + '#Loaded';
             window.location.reload();
         }
+    }
+
+    const afficherProjets = () => {
+        for (let i = 0; i < projets.length; i++) {
+            if(projets[i]._status === "true"){
+                arrayProjets.push(projets[i]);
+            }
+        }
+
+        return (
+            <div className={styles.DivAbsolute}>
+                {arrayProjets.map((projets, i) => (
+                    <div key={i} className={styles.ArrayContainer} onClick={() => {
+                        {
+                            user === undefined ? router.push('/post/projets/' + projets._id).then(r => r) :
+                                router.push('/post/projets/' + projets._id + '&' + user._id).then(r => r)
+                        }
+                    }}>
+                        <h3 style={{color: "#0272fc"}}>{projets._titre}</h3>
+                        {projets._desc}<br/>
+                        <span style={{
+                            bottom: 20,
+                            left: 20,
+                            position: "absolute"
+                        }}>{projets._fonds + " $ de " + projets._budget + " $"}</span>
+                    </div>))}
+            </div>
+        )
     }
 
     const isSub = () => {
@@ -39,7 +68,7 @@ export default function Homepage({projets, membre}) {
             return <div></div>
 
         for (let i = 0; i < projets.length; i++) {
-            if ((projets[i]._createur).valueOf() === (membre._id).valueOf()) {
+            if ((projets[i]._createur).valueOf() === (membre._id).valueOf() && projets[i]._status === "true") {
                 data.push(projets[i]);
             }
         }
@@ -101,7 +130,10 @@ export default function Homepage({projets, membre}) {
                         <h1>Bienvenue {user._prenom}</h1>
                     </div>
                     <br/><br/>
-                    <button className={styles.ButtonAdmin}>Conseil d'administration</button>
+                    <button className={styles.ButtonAdmin} onClick={() => {
+                        router.push('/post/conseil/' + user._id)
+                    }}>Conseil d'administration
+                    </button>
                     <button className={styles.ButtonAdmin} onClick={() => {
                         router.push('/post/CrProject/' + user._id)
                     }}>Créer un projet
@@ -172,15 +204,11 @@ export default function Homepage({projets, membre}) {
                     <br/><br/><br/><br/>
                 </>
             )
-
-
         }
-
     }
 
     return (
         <>
-
             <div onLoad={LoadOnce} id="__next" className={styles.DivContainerHome}>
                 <Navbar membre={membre}/>
                 <div className={styles.DivContainer}>
@@ -193,23 +221,7 @@ export default function Homepage({projets, membre}) {
                                 <h2>Top projets</h2>
                                 <hr/>
                                 <br/>
-                                <div className={styles.DivAbsolute}>
-                                    {projets.map((projets, i) => (
-                                        <div key={i} className={styles.ArrayContainer} onClick={() => {
-                                            {
-                                                user === undefined ? router.push('/post/projets/' + projets._id).then(r => r) :
-                                                    router.push('/post/projets/' + projets._id + '&' + user._id).then(r => r)
-                                            }
-                                        }}>
-                                            <h3 style={{color: "#0272fc"}}>{projets._titre}</h3>
-                                            {projets._desc}<br/>
-                                            <span style={{
-                                                bottom: 20,
-                                                left: 20,
-                                                position: "absolute"
-                                            }}>{projets._fonds + " $ de " + projets._budget + " $"}</span>
-                                        </div>))}
-                                </div>
+                                {afficherProjets()}
                             </div>
                         </div>
                     </div>
