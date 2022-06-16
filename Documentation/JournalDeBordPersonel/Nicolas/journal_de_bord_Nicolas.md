@@ -88,6 +88,8 @@
 - Implementation du routage et du backend pour tout les utilisateurs (membres, admin, client) pour Credit_Don et Credit_Cotisation.
 - Regler un bug dans [projets].js qui est quand l'utilisateur est undefied, les boutons pour un utilisateur admin apparaissent.
 
+---
+
 ### 2022-06-09 (Journée avant présentation)
 
 - Regler les problèmes de la Navbar au changement de résolution et aussi de bien placer les éléments de la navbar à des endroits appropier.
@@ -104,11 +106,36 @@
 - Rajouter une fonction qui reload la page HomePage.js 1 fois.
 - Vérification et réglage de bugs avant la présentation devant l'enseignant (Sylvain Labranche) le (2022-06-10).
 
+---
+
 ### 2022-06-10
 
 - Régler bug, lors de la création d'un projet. Le field dans la base de données, _fond, était un String quand il est supposer être un Double.
 - Amélioré le CSS et le positionnement des données pour la page [projets].js
 
+---
+
 ### 2022-06-14
 
-- Implementation enregistre des informations(date d'aujourd'hui, montant, type, id projet, id client ou id membre) d'un don que sa soit un membre ou un client et format la date dans CreateProject.js et updateFonds.js (jour/mois/annee). 
+- Implementation qui enregistre des informations(date d'aujourd'hui, montant, type, id projet, id client ou id membre) d'un don que sa soit un membre ou un client et format la date dans CreateProject.js et updateFonds.js (jour/mois/annee). 
+- Commencement de l'implementation du boutton S'abonner et ces fonctionalitées.
+
+---
+
+### 2022-06-15
+
+- Implementation du boutton S'abonner qui rajoute le membre ou le bénévole dans la liste des membres et des bénévoles du projet.
+- Règler bug dans api updateProjet.js pour mettre une date de fin au projet.
+- Création et implementation du frontend, backend et routage de la page Conseil.js. Elle a pour but de recevoir les nouveaux projet créer. Elle peut être accèder seulement par les admins et les admins peuvent voir toute les informations des projets. Ils peuvent soit accepter ou refuser grâce à des boutons accepter et refuser. Si il accepte le projet, le projet est visible par tout le monde sinon le projet est supprimer.
+- Règler bug dans [projets].js où dans conseil d'administration, le boutton supprimer apairaissait à la place de refuser.
+
+---
+
+### 2022-06-16
+
+- Rajouter une fonction onClick={() => {router.push('/post/delProjet/' + projet._id)}} au boutton refuser dans le conseil d'administration.
+- Rajouter vérification si 1 des champs de saisie dans Credit_Don.js et Credit_Cotisation.js. est vide. Si oui un message d'erreur apparaît. 
+- Implementation du routage et du transfert des JSON du projet selectionné et du membre selectionné dans DeleteProjet.js et EditeurDeProjet.js
+- Rajout du prénom du membre et un hr tag dans dropDownList de la Navbar.
+- Rajout des commentaires pour la page Credit_Don.js, Credit_Cotisation.js.
+- Rajout des commentaires pour la page [projets].js.
