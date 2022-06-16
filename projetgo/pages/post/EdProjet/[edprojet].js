@@ -1,5 +1,6 @@
 import styles from '../../../styles/Home.module.css';
 import EditeurDeProjet from "../../EditeurDeProjet";
+import clientPromise from "../../../lib/mongodb";
 
 export default function ProjetEdit({projet}) {
 
@@ -16,8 +17,11 @@ export default function ProjetEdit({projet}) {
 
 export async function getServerSideProps({params}) {
 
-    const data = await fetch(`http://localhost:3000/api/ProjectDetails?client=${params.edprojet}`)
-    const projet = await data.text();
+
+    const projet = params.edprojet;
+
+    const client = await clientPromise;
+    const db = client.db("projet_go");
 
 
 

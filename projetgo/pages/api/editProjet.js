@@ -4,7 +4,7 @@ import {ObjectId} from 'mongodb';
 export default async function handler(req, res) {
 
     const query = req.query.edprojet;
-
+    console.log("here");
     console.log(query);
     let tab = query.split(',');
     let projetId = tab[0];
@@ -17,6 +17,6 @@ export default async function handler(req, res) {
     const client = await clientPromise;
 
     const db = client.db("projet_go");
-    const data = await db.collection("projets").updateOne({_id : ObjectId(projetId)},  {$set :{_titre : titre}})
+    const data = await db.collection("projets").updateOne({_id : ObjectId(projetId)},  {$set :{_titre : titre,_budget: budget, _desc: desc, _somm: somm}})
 
 }

@@ -13,8 +13,10 @@ export default function EditeurDeProjet({projet}) {
     const [somm, setSomm] = useState("");
 
     const handleOnClick = () => {
-        fetch(`http://localhost:3000/api/editProjet?edprojet=${[projet._id, titre, budget, desc, somm]}`).then(r => r);
-        router.push('/')
+        console.log("hello")
+        console.log(projet)
+        fetch(`http://localhost:3000/api/editProjet?edprojet=${[projet, titre, budget, desc, somm]}`).then(r => r);
+       // router.push('/')
 
     }
 
