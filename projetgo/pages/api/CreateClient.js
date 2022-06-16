@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     const db = client.db("projet_go");
     //Ajoute une nouvelle instance de client dans la tab clients
     await db.collection("clients").insertOne({_nom: nom, _prenom: prenom, _email: email, _telephone: tel, _adresse: adresse });
-    //Verifie si l'email existe deja dans la base de donner
+    //Trouve le email dans la base de donner pour retourner le ID du client nouvellement creer
     const data = await db.collection("clients").findOne({_email: email});
     console.log(data)
     res.json(data)
