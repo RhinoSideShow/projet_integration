@@ -3,16 +3,13 @@ import {useRouter} from "next/router";
 import styles from "../styles/Home.module.css";
 import {useRef, useState} from "react";
 
-
-
-export default function DeleteProjet({projet}) {
+export default function DeleteProjet({projet, membre}) {
 
     const router = useRouter();
     const handleOnClick = () => {
 
-        fetch(`http://localhost:3000/api/removeProjet?delprojet=${[projet]}`).then(r => r);
-         router.push('/')
-
+        fetch(`http://localhost:3000/api/removeProjet?delprojet=${[projet._id]}`).then(r => r);
+        router.push('/post/membre/' + membre._id);
     }
 
     return (
