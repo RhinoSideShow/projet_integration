@@ -15,7 +15,7 @@ export default function ProjetDelete({projet, membre}) {
 }
 
 export async function getServerSideProps({params}) {
-
+    //Envoi l'objet membre et projet a la page DeleteProjet.js
     let query = params.delprojet
     let tab = query.split('&');
     let projetId = tab[0];

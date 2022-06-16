@@ -15,7 +15,7 @@ export default function ProjetEdit({projet, membre}) {
 }
 
 export async function getServerSideProps({params}) {
-
+    //Envoi l'objet membre et projet a la page EditeurDeProjet.js
     let query = params.edprojet
     let tab = query.split('&');
     let projetId = tab[0];

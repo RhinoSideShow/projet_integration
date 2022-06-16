@@ -16,7 +16,7 @@ export default function CreationProjet({membre}) {
 }
 
 export async function getServerSideProps({params}) {
-
+    //Envoi l'objet memebre a la page CreateProject.js
     const data = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${params.CrProject}`)
     const membre = await data.json();
 

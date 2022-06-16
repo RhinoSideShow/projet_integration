@@ -15,7 +15,7 @@ export default function Donation({projet, membre, isClient}) {
 }
 
 export async function getServerSideProps({params}) {
-
+    //Envoi les objet projet, membre et isClient(boolean) a la page Credit_Don.js
     let isClient = false;
     let query = params.fonds
     let tab = query.split('&');

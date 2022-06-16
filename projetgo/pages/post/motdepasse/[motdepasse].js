@@ -15,7 +15,7 @@ export default function OublierMotDePasse({membre}) {
 }
 
 export async function getServerSideProps({params}) {
-
+    //Envoi l'objet membre a la page MotDepAsseOublier.js
     const data = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${params.motdepasse}`)
     const membre = await data.json();
 

@@ -15,7 +15,7 @@ export default function PayerCotisation({membre}) {
 }
 
 export async function getServerSideProps({params}) {
-
+    //Envoi l'objet membre a la page Credit_Cotisation.js
     const data = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${params.cotisation}`)
     const membre = await data.json();
 

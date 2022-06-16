@@ -16,7 +16,7 @@ export default function ClientInfo({membre,projets}) {
 }
 
 export async function getServerSideProps({params}) {
-
+//Envoi les objet projet et membre a la page Conseil.js
     const data = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${params.conseil}`)
     const membre = await data.json();
 
