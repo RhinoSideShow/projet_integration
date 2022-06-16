@@ -2,7 +2,7 @@ import clientPromise from "../../lib/mongodb";
 import {ObjectId} from "mongodb";
 
 export default async function handler(req, res) {
-
+    //Requete pour editer le status d'un projet
     const query = req.query.status;
     const client = await clientPromise;
 
