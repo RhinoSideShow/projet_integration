@@ -4,7 +4,7 @@ import {useRouter} from "next/router";
 import {useRef, useState} from "react";
 
 export default function MotDePasseOublier({membre}) {
-
+    //Declaration des varaibles
     const router = useRouter();
     const inputNewPwd = useRef(null);
     const inputConNewPwd = useRef(null);
@@ -14,19 +14,21 @@ export default function MotDePasseOublier({membre}) {
 
     //change le URL quand Mot de passe oublié ? est clicker.
     const handleOnClick = () => {
+        //Verifie si le mot de passe entre et egal a la confirmation et renvoi a la page d'acueil
         if(nouveau === conNouveau){
             fetch(`http://localhost:3000/api/updatePwd?motdepasse=${[membre._id,nouveau]}`).then(r => r);
             router.push('/').then(r => r);
         }
         else{
-            alert("La confirmation du nouveau n'est pas pareil au nouveau mot de passe.");
+            //Envoi un message d'erreur s'il y a une difference
+            alert("La confirmation n'est pas pareil au nouveau mot de passe.");
             inputNewPwd.current.value = "";
             inputConNewPwd.current.value = "";
         }
     }
 
     return (
-
+        //Page Visible
         <div id="__next" className={styles.DivContainer}>
             <Head>
                 <title>ProjetGo</title>
@@ -40,15 +42,17 @@ export default function MotDePasseOublier({membre}) {
                     <br/>
                     <div>
                         <div>
+                            {/*Champ pour entrer le mot de passe*/}
                             <input type="text" ref={inputNewPwd} onChange={e => setNouveau(e.target.value)}
                                    className={styles.InputClient}
                                    placeholder="Nouveau mot de passe"/><br/>
-
+                            {/*Champ POur entrert la confirmation*/}
                             <input type="text" ref={inputConNewPwd} onChange={e => setConNouveau(e.target.value)}
                                    className={styles.InputClient}
                                    placeholder="Confirmation du nouveau mot de passe"/><br/>
                         </div>
                         <div>
+                            {/*Bouton pour continuer*/}
                             <button className={styles.ButtonSignIn} onClick={handleOnClick}>Suivant</button>
                         </div>
                     </div>
