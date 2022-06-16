@@ -86,18 +86,18 @@
 - Implementation d'un checkup si l'utilisateur exist dans la base de données lors du Sign in. Si oui, l'utilisateur procède au HomePage sinon un message d'erreur apparait.
 - Implementation du changement du status d'adhésion dans la base de données quand l'utilisateur à payer sa cotisation.
 - Implementation du routage et du backend pour tout les utilisateurs (membres, admin, client) pour Credit_Don et Credit_Cotisation.
-- Regler un bug dans [projets].js qui est quand l'utilisateur est undefied, les boutons pour un utilisateur admin apparaissent.
+- Regler un bug dans [projets].js où l'utilisateur est undefied, les boutons pour un utilisateur admin apparaissent.
 
 ---
 
 ### 2022-06-09 (Journée avant présentation)
 
 - Regler les problèmes de la Navbar au changement de résolution et aussi de bien placer les éléments de la navbar à des endroits appropier.
-- Changement du CSS pour la Navba
+- Changement du CSS pour la Navbar.
 - Implementation dans Navbar pour que sa soit les bon éléments qui apparaissent selon le status de l'utilisateur et sur quelle page l'utilisateur est.
 - Ajouter user.png pour la Navbar. Quand un membre, admin ou bénévole est connecter, le mot connexion est changer pour un boutton avec user.png comme image dans la Navbar.
-- Implémentation d'une dropDownList quand l'utilisateur click sur le bouton avec user.png. Les sous-menus sont Paramètres et Déconnexion.
-- Création et implémentation du frontend, backend et routage de la page InformationClient.js. Elle a pour but de prendre les information d'un client avant qu'il fasse un don.
+- Implémentation d'une dropDownList quand l'utilisateur click sur le bouton. Les sous-menus sont Paramètres et Déconnexion.
+- Création et implémentation du frontend, backend et routage de la page InformationClient.js. Elle a pour but de prendre les informations d'un client avant qu'il fasse un don.
 - Création et implémentation du frontend, backend et le routage de MotDePasseOublier.js. Il est appeler quand l'utilisateur click sur Mot de passe oublié ? dans le Sign in et permet à l'utilisateur à changer son mot de passe et il est enregistrer dans la base de données.
 - Création des pages TOS qui veut dire, Condition d'utilisation, Politique de confidentialité et Cookies.
 - Ajouter les 3 images pour les pages TOS
