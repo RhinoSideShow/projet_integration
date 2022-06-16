@@ -4,8 +4,6 @@ import {ObjectId} from 'mongodb';
 export default async function handler(req, res) {
 
     const query = req.query.edprojet;
-    console.log("here");
-    console.log(query);
     let tab = query.split(',');
     let projetId = tab[0];
     let titre = tab[1];

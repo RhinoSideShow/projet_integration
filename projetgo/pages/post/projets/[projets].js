@@ -51,12 +51,12 @@ export default function AffichageProjets({projet, membre, createur}) {
                                                 {membre === undefined ? null : membre._admin === true ?
                                                     <button className={styles.ButtonProjetEdit}onClick={() => {router.push('/post/EdProjet/' + projet._id)}}>Éditer</button> :
                                                     membre._id === createur._id ? <button
-                                                        className={styles.ButtonProjetEdit}onClick={() => {router.push('/post/EdProjet/' + projet._id)}}>Éditer</button> : null}
+                                                        className={styles.ButtonProjetEdit}onClick={() => {router.push('/post/EdProjet/' + projet._id + '&' + membre._id)}}>Éditer</button> : null}
                                                 {membre === undefined ? null : membre._admin === true ?
                                                     <button
                                                         className={styles.ButtonProjetEdit}>Supprimer</button> :
                                                     membre._id === createur._id ? <button
-                                                        className={styles.ButtonProjetEdit}>Supprimer</button> : null}
+                                                        className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/delProjet/' + projet._id)}}>Supprimer </button> : null}
                                             </div>
                                             <hr/>
                                         </div>

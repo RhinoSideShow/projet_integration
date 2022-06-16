@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="update branch">
-      <change afterPath="$PROJECT_DIR$/projetgo/.env.local" afterDir="false" />
+    <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="test base de donnes bd communication">
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/DeleteProjet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/api/removeProjet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetgo/pages/post/delProjet/[delprojet].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-06-15_19_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-06-15_19_15__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/EditeurDeProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/EditeurDeProjet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/api/editProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/api/editProjet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/post/projets/[projets].js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/post/projets/[projets].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -42,6 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/projetgo/public" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>

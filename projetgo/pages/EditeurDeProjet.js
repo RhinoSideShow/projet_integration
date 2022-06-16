@@ -4,7 +4,8 @@ import styles from "../styles/Home.module.css";
 import {useRef, useState} from "react";
 
 
-export default function EditeurDeProjet({projet}) {
+
+export default function EditeurDeProjet({projet, membre}) {
 
     const router = useRouter();
     const [titre, setTitre] = useState("");
@@ -13,8 +14,7 @@ export default function EditeurDeProjet({projet}) {
     const [somm, setSomm] = useState("");
 
     const handleOnClick = () => {
-        console.log("hello")
-        console.log(projet)
+
         fetch(`http://localhost:3000/api/editProjet?edprojet=${[projet, titre, budget, desc, somm]}`).then(r => r);
        // router.push('/')
 
@@ -59,3 +59,4 @@ export default function EditeurDeProjet({projet}) {
     )
 
 }
+
