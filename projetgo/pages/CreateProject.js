@@ -6,6 +6,7 @@ import {useRef, useState} from "react";
 
 export default function CreateProject({membre}) {
 
+    //declaration des variables pour la recupartion des informations de l'utilisateur
     const router = useRouter();
     const [titre, setTitre] = useState("");
     const [budget, setBudget] = useState("");
@@ -16,6 +17,9 @@ export default function CreateProject({membre}) {
     let fin = new Date(new Date().setDate(new Date().getDate() + 7)).toLocaleDateString();
     let status = false;
 
+
+
+    //envoi les informations receuillis ver le api pour les manipuler avec la bases de donnees
     const handleOnClick = () => {
     fetch(`http://localhost:3000/api/updateProjet?projets=${[membre._id, titre, budget, desc,today, fin, status,fonds, somm]}`).then(r => r);
         router.push('/post/membre/' + membre._id)
@@ -48,9 +52,11 @@ export default function CreateProject({membre}) {
                                className={styles.InputArea}
                                placeholder="Sommaire du projet"/>
                         <br/><br/>
+                        {/* utilise la fonction declare ci dessus au click du button */}
                         <button className={styles.ButtonProjectCreate}
                                 onClick={handleOnClick}>Soumettre
                         </button>
+                        {/* Boutton qui envoi vers la page d'acceuil in avec la methode router + l'attribut de l'intstance membre  */}
                         <button className={styles.ButtonProjectCreate} onClick={() => router.push('/post/membre/' + membre._id)}>Retour
                         </button>
                     </div>
