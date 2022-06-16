@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="delete 1" />
+    <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="delete 1">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-06-15_19_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-06-15_19_15__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/DeleteProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/DeleteProjet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetgo/pages/EditeurDeProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/EditeurDeProjet.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Alain" />
+        <entry key="$PROJECT_DIR$" value="branch_test2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,19 +140,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="branch_test2" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -170,7 +163,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/projetgo/pages/api/editProjet.js</url>
-          <line>9</line>
+          <line>7</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
