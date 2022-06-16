@@ -5,6 +5,7 @@ import {useRouter} from "next/router";
 export default function AffichageProjets({projet, membre, createur, conseil}) {
     const router = useRouter();
 
+    //
     const handleShow = () => {
 
         if (document.querySelector('#btnSub').innerHTML === "Abonné") {
