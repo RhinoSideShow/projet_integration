@@ -56,17 +56,17 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                             <br/>
                                             <div className={styles.DivButtonEdit}>
                                                 {conseil !== true ? membre === undefined ? null : membre._admin === true ?
-                                                        <button className={styles.ButtonProjetEdit}>Éditer</button> :
+                                                        <button className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/EdProjet/' + projet._id)}}>Éditer</button> :
                                                         membre._id === createur._id ? <button
-                                                            className={styles.ButtonProjetEdit}>Éditer</button> : null :
+                                                            className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/EdProjet/' + projet._id)}}>Éditer</button> : null :
                                                     <button
                                                         className={styles.ButtonProjetEdit}
                                                         onClick={handleAccept}>Accepter</button>}
                                                 {conseil !== true ? membre === undefined ? null : membre._admin === true ?
                                                         <button
-                                                            className={styles.ButtonProjetEdit}>Supprimer</button> :
+                                                            className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/delProjet/' + projet._id)}}>Supprimer</button> :
                                                         membre._id === createur._id ? <button
-                                                            className={styles.ButtonProjetEdit}>Supprimer</button> : null :
+                                                            className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/delProjet/' + projet._id)}}>Supprimer</button> : null :
                                                     <button
                                                         className={styles.ButtonProjetEdit}>Refuser</button>}
                                             </div>
