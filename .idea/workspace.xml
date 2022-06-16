@@ -1,35 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="test base de donnes bd communication 2">
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/EditeurDeProjet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/api/editProjet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetgo/pages/post/EdProjet/[edprojet].js" afterDir="false" />
+    <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="update branch">
+      <change afterPath="$PROJECT_DIR$/projetgo/.env.local" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/Homepage2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/api/ProjetDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/api/ProjetDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/index2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/post/projets/[projets].js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/post/projets/[projets].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Alain" />
+        <entry key="$PROJECT_DIR$" value="Developpement" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,10 +42,6 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/projetgo/public" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -83,6 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654624527830</updated>
       <workItem from="1654624529140" duration="34570000" />
+      <workItem from="1655334975528" duration="951000" />
     </task>
     <task id="LOCAL-00001" summary="integration formulaire membre">
       <created>1654699162427</created>
@@ -112,28 +93,7 @@
       <option name="project" value="LOCAL" />
       <updated>1654718142097</updated>
     </task>
-    <task id="LOCAL-00005" summary="test base de donnes bd communication">
-      <created>1654818745845</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1654818745845</updated>
-    </task>
-    <task id="LOCAL-00006" summary="test base de donnes bd communication 2">
-      <created>1654824302512</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1654824302512</updated>
-    </task>
-    <task id="LOCAL-00007" summary="test base de donnes bd communication 2">
-      <created>1654825108559</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1654825108559</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,19 +104,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="branch_test2" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -167,23 +115,7 @@
     <MESSAGE value="test base de donnes formulaire" />
     <MESSAGE value="test base de donnes css et bd" />
     <MESSAGE value="test base de donnes bd communication" />
-    <MESSAGE value="test base de donnes bd communication 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="test base de donnes bd communication 2" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/projetgo/pages/CreateProject.js</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/projetgo/pages/api/editProjet.js</url>
-          <line>9</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="update branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="update branch" />
   </component>
 </project>
