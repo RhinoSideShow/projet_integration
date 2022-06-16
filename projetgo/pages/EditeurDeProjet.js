@@ -3,9 +3,7 @@ import {useRouter} from "next/router";
 import styles from "../styles/Home.module.css";
 import {useRef, useState} from "react";
 
-
-
-export default function EditeurDeProjet({projet, membre}) {
+export default function Editeur({projet, membre}) {
 
     const router = useRouter();
     const [titre, setTitre] = useState("");
@@ -15,9 +13,8 @@ export default function EditeurDeProjet({projet, membre}) {
 
     const handleOnClick = () => {
 
-        fetch(`http://localhost:3000/api/editProjet?edprojet=${[projet, titre, budget, desc, somm]}`).then(r => r);
-       // router.push('/')
-
+        fetch(`http://localhost:3000/api/editProjet?edprojet=${[projet._id, titre, budget, desc, somm]}`).then(r => r);
+        router.push('/post/projets/' + projet._id + '&' + membre._id);
     }
 
     return (
