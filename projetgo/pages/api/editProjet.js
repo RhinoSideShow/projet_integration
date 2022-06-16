@@ -2,7 +2,7 @@ import clientPromise from '../../lib/mongodb'
 import {ObjectId} from 'mongodb';
 
 export default async function handler(req, res) {
-
+    //Requete pour editer un projet
     const query = req.query.edprojet;
     let tab = query.split(',');
     let projetId = tab[0];
