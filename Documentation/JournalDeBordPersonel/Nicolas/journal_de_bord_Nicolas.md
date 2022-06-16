@@ -111,4 +111,4 @@
 
 ### 2022-06-14
 
-- 
+- Implementation enregistre des informations(date d'aujourd'hui, montant, type, id projet, id client ou id membre) d'un don que sa soit un membre ou un client et format la date dans CreateProject.js et updateFonds.js (jour/mois/annee). 
