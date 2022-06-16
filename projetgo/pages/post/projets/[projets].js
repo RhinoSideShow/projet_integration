@@ -56,7 +56,7 @@ export default function AffichageProjets({projet, membre, createur}) {
                                                     <button
                                                         className={styles.ButtonProjetEdit}>Supprimer</button> :
                                                     membre._id === createur._id ? <button
-                                                        className={styles.ButtonProjetEdit}>Supprimer</button> : null}
+                                                        className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/delProjet/' + projet._id)}}>Supprimer</button> : null}
                                             </div>
                                             <hr/>
                                         </div>
