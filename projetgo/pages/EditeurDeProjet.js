@@ -4,12 +4,15 @@ import styles from "../styles/Home.module.css";
 import {useRef, useState} from "react";
 
 export default function Editeur({projet, membre}) {
+    //declaration des variables pour la recupartion des informations de l'utilisateur
 
     const router = useRouter();
     const [titre, setTitre] = useState("");
     const [budget, setBudget] = useState("");
     const [desc, setDesc] = useState("");
     const [somm, setSomm] = useState("");
+
+//envoi les informations receuillis ver le api pour les manipuler avec la bases de donnees
 
     const handleOnClick = () => {
 
@@ -44,9 +47,13 @@ export default function Editeur({projet, membre}) {
                                   className={styles.InputArea}
                                   placeholder="Sommaire du projet"/>
                         <br/><br/>
+                        {/* utilise la fonction declare ci dessus au click du button */}
+
                         <button className={styles.ButtonProjectCreate}
                                 onClick={handleOnClick}>Soumettre
                         </button>
+                        {/* Boutton qui envoi vers la page d'acceuil in avec la methode router + l'attribut de l'intstance membre  */}
+
                         <button className={styles.ButtonProjectCreate} onClick={() => router.push('/post/membre/' + membre._id)}>Retour
                         </button>
                     </div>
