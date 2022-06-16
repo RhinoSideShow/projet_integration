@@ -65,7 +65,7 @@ export default function Navbar({membre}) {
                                     <StyledLink>Comment ça marche</StyledLink>
                                 </Link>
                             </div>
-                            {/*Section connexion pour un non membre ou image + parametre et deconnexion pour un membre connecte*/}
+                            {/*Section connexion pour un non membre ou image, nom, parametre et deconnexion pour un membre connecte*/}
                             <div className={styles.NavDrop}>
                                 {membre === undefined ? <Link href='/Sign_In' passHref>
                                         <StyledLink>
@@ -78,6 +78,8 @@ export default function Navbar({membre}) {
                                         </button>
                                         <div style={show === true ? {display: 'none'} : {display: 'inline'}}>
                                             <div id="myDropdown" className={styles.DropdownContent}>
+                                                <p style={{marginLeft:10, color:"#0272fc"}}>{membre._prenom}</p>
+                                                <hr style={{borderColor:"#383838"}}/>
                                                 <a onClick={handleParametresButton}>Paramètres</a>
                                                 <a href="/">Déconnexion</a>
                                             </div>
