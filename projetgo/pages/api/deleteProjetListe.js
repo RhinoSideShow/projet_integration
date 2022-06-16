@@ -2,7 +2,7 @@ import clientPromise from "../../lib/mongodb";
 import {ObjectId} from "mongodb";
 
 export default async function handler(req, res) {
-
+    //requete pour enleve un membre dans la liste d'un projet
     let query = req.query.deleteProjetListe;
 
     let tab = query.split(',');
