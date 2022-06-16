@@ -2,7 +2,7 @@ import clientPromise from '../../lib/mongodb'
 import {ObjectId} from 'mongodb';
 
 export default async function handler(req, res) {
-
+    //Requete pour trouver le createur du projet & ajoute une instance dans la tab projets
     const query = req.query.projets;
     console.log(query);
 

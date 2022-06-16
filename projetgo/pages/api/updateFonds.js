@@ -2,7 +2,7 @@ import clientPromise from "../../lib/mongodb";
 import {ObjectId} from "mongodb";
 
 export default async function handler(req, res) {
-
+    //Requete pour ajouter les fonds a un projet & requete pour ajouter une instance dans la table dons
     let query = req.query.fonds;
     let today = new Date().toLocaleDateString();
 

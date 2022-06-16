@@ -1,7 +1,7 @@
 import clientPromise from "../../lib/mongodb";
 import {ObjectId} from "mongodb";
 export default async  function handler(req,res){
-
+    //Requete pour effacer un projet
     const query = req.query.delprojet;
     const client = await clientPromise;
 

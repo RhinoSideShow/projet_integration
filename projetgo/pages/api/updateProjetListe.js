@@ -3,7 +3,7 @@ import {ObjectId} from "mongodb";
 import membre from "../../models/Membre";
 
 export default async function handler(req, res) {
-
+    //Requete pour trouver un membre & l'ajouter a la liste d'un projet
     let query = req.query.updateProjetListe;
 
     let tab = query.split(',');
