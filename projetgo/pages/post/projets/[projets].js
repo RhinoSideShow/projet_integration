@@ -77,32 +77,18 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                             {/*LEGENDE
                                             condition ? exprIfTrue : exprIfFalse*/}
                                             <div className={styles.DivButtonEdit}>
-
                                                 {conseil !== true ? membre === undefined ? null : membre._admin === true ?
-
-                                                    {/*L'affichage du boutton Éditer par admin*/}
                                                         <button className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/EdProjet/' + projet._id + '&' + membre._id)}}>Éditer</button> :
-                                                        membre._id === createur._id ?
-                                                    {/*L'affichage du boutton Éditer par createur*/}
-                                                            <button
+                                                        membre._id === createur._id ? <button
                                                             className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/EdProjet/' + projet._id + '&' + membre._id)}}>Éditer</button> : null :
-
-                                                    {/*L'affichage des bouttons vu par admin à l'intérieur du conseil d'administration*/}
                                                     <button
                                                         className={styles.ButtonProjetEdit}
                                                         onClick={handleAccept}>Accepter</button>}
-
                                                 {conseil !== true ? membre === undefined ? null : membre._admin === true ?
-
-                                                        {/*L'affichage du boutton Supprimer par admin*/}
                                                         <button
                                                             className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/delProjet/' + projet._id + '&' + membre._id)}}>Supprimer</button> :
-                                                        membre._id === createur._id ?
-                                                        {/*L'affichage du boutton Supprimer par createur*/}
-                                                            <button
+                                                        membre._id === createur._id ? <button
                                                             className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/delProjet/' + projet._id + '&' + membre._id)}}>Supprimer</button> : null :
-
-                                                        {/*L'affichage des bouttons vu par admin à l'intérieur du conseil d'administration*/}
                                                     <button
                                                         className={styles.ButtonProjetEdit} onClick={() => {router.push('/post/delProjet/' + projet._id + '&' + membre._id)}}>Refuser</button>}
                                             </div>
@@ -150,9 +136,11 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                             <p><span className={styles.FontBleu}>{projet._fonds}$</span> récoltés sur un
                                                 objectif de<br/> {projet._budget}$</p>
                                         </div>
+                                        <div>
+                                            {projet._status}
+                                        </div>
                                         <br/>
                                         <div>
-                                            {/*L'affichage du boutton Faire un don par client(undefined)*/}
                                             {membre === undefined ?
                                                 <button className={styles.ButtonProjetDonation} onClick={() => {
                                                     router.push('/post/clients/' + projet._id).then(r => r)
@@ -160,33 +148,26 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                                     Faire un don
                                                 </button> :
                                                 membre._benevole ? null :
-                                                    {/*L'affichage du boutton Faire un don par membre ou admin*/}
                                                     <button className={styles.ButtonProjetDonation} onClick={() => {
                                                         membre === undefined ? router.push('/post/fonds/' + projet._id) :
                                                             router.push('/post/fonds/' + projet._id + '&' + membre._id)
                                                     }}>Faire un don</button>
                                             }
 
-                                            {membre !== undefined ? projet._liste !== undefined ? projet._liste.some(colorChange) ?
-
-                                {/*L'affichage du boutton Abonné par membre/benevole/admin qui sont abonner au projet*/}
+                                            {membre._status_adhesion !== "attente cotisation" ? membre !== undefined ? projet._liste !== undefined ? projet._liste.some(colorChange) ?
                                                     <button className={styles.ButtonProjetDonation} type="button"
                                                             id="btnSub"
                                                             style={{backgroundColor: "gray"}}
                                                             onClick={handleShow}>Abonné</button> :
-                                      {/*L'affichage du boutton S'abonner par membre/benevole/admin qui sont pas abonner
-                                        au projet et que projet._liste != undefined*/}
                                                     <button className={styles.ButtonProjetDonation} type="button"
                                                             id="btnSub"
                                                             onClick={handleShow}>S'abonner</button> :
-                         {/*L'affichage du boutton S'abonner par membre/benevole/admin qui sont pas abonner au projet*/}
                                                 <button className={styles.ButtonProjetDonation} type="button"
                                                         id="btnSub"
-                                                        onClick={handleShow}>S'abonner</button> : null
+                                                        onClick={handleShow}>S'abonner</button> : null : null
                                             }
                                         </div>
                                     </div> : null}
-                                    {/**********************************************************************************************/}
                                 </div>
                             </div>
                         </div>
