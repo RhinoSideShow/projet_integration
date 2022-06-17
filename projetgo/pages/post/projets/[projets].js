@@ -154,7 +154,7 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                                     }}>Faire un don</button>
                                             }
 
-                                            {membre !== undefined ? projet._liste !== undefined ? projet._liste.some(colorChange) ?
+                                            {membre._status_adhesion !== "attente cotisation" ? membre !== undefined ? projet._liste !== undefined ? projet._liste.some(colorChange) ?
                                                     <button className={styles.ButtonProjetDonation} type="button"
                                                             id="btnSub"
                                                             style={{backgroundColor: "gray"}}
@@ -164,7 +164,7 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                                             onClick={handleShow}>S'abonner</button> :
                                                 <button className={styles.ButtonProjetDonation} type="button"
                                                         id="btnSub"
-                                                        onClick={handleShow}>S'abonner</button> : null
+                                                        onClick={handleShow}>S'abonner</button> : null : null
                                             }
                                         </div>
                                     </div> : null}
