@@ -26,20 +26,29 @@
 - debut d'integration du upload de donnees dans mongodb dans la page creation de projets avec mongoose base sur la page Membre de Gustavo et Diego
 
 # 2022-06-07
-- problemes avec mongoose, continuation de l'integration de la page de creation projet, revision du code avec mongoose de membre pour pouvoir appliquer le meme principe
+- problemes avec mongoose
+- continuation de l'integration de la page de creation projet, revision du code avec mongoose de membre pour pouvoir appliquer le meme principe
 dans nos projets.
 
 # 2022-06-09
-- retrait de la methode mongoose pour la creation des projets, continuation avec la methode inee de mongodb. querry et les upload vers la db sont fonctionnel, nettoyage dans le code afin de presenter le projet au client. 
+- retrait de la methode mongoose pour la creation des projets
+- continuation avec la methode inee de mongodb. querry et les upload vers la db sont fonctionnel
+- nettoyage dans le code afin de presenter le projet au client. 
 
 # 2022-06-10
 - fini la creation des projets fonctionnel ensuite faire la presentation du projet au client (sylvain)
 
 # 2022-06-14
 - creation des methodes edit projets et delete projets
+- pair programming avec arnaud et nicolas pour la fonctionalite des nouvelles methodes
+- test constant pour verifier que les methodes etait fonctionnelles en relation avec la base de donnees
 
 # 2022-06-15
 - integration des deux methodes edit et delete dans la branche de developpement
+- pair programming avec arnaud et nicolas pour un meilleure structure de code
+-nettoyage du code
 
 # 2022-06-16 
-- finalisation du projets, ajouts des annotations, revision du code, des diagrammes UMl, du cahier de charge
+- finalisation du projet
+- ajouts des annotations
+- revision du code, des diagrammes UMl, du cahier de charge et cahier de maintenance
