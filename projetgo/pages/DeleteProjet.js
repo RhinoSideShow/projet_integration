@@ -22,16 +22,16 @@ export default function DeleteProjet({projet, membre}) {
                 </Head>
                 <div className={styles.DivSousContainerCreate}>
                     <div className={styles.DivSousSousContainerCreate}>
-                        <div className={styles.DivImageEtTexte}>
-                            <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogoCreate}/>
+                        <div className={styles.DivImageEtTexteDelete}>
+                            <img src="/Image_Login/logoMoon.png" className={styles.DivImageLogoDelete}/>
                             <h3>Voulez vous vraiment effacer votre projet?</h3></div>
                         <br/><br/>
                         {/* utilise la fonction declare ci dessus au click du button */}
-                        <button className={styles.ButtonProjectCreate}
+                        <button className={styles.ButtonProjectDelete}
                                 onClick={handleOnClick}>Oui
                         </button>
                         {/* Boutton qui envoi vers la page d'acceuil in avec la methode router + l'attribut de l'intstance membre  */}
-                        <button className={styles.ButtonProjectCreate} onClick={() => router.push('/')}>Non
+                        <button className={styles.ButtonProjectDelete} onClick={() => router.push('/')}>Non
                         </button>
                     </div>
                 </div>
