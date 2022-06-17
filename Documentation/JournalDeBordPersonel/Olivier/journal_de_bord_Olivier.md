@@ -36,7 +36,7 @@
 - Début de la création du PowerPoint.<br>
 - Début de la création de cahier des charges.<br>
 
-<img src="Image\PremierePage_Cahier_des_Charges.PNG" width="900" height="500" alt="charges">
+<img src="Image\PremierePage_Cahier_des_Charges.PNG" width="900" height="696" alt="charges">
 <img src="Image\First_Page_Presentation.PNG" width="900" height="500" alt="presentation">
 
 ### 2022-06-08
