@@ -484,8 +484,7 @@
     padding: 10px 25px;
     background-color: #0272fc;
     color: white;
-    margin-right: 2%;
-    width: 48%;
+    width: 100%;
 }
 
 .ButtonProjetDonation:focus {

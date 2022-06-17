@@ -142,6 +142,7 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                         </div>
                                         <br/>
                                         <div>
+                                            <div style={{float:"left", marginRight:20}}>
                                             {membre === undefined ?
                                                 <button className={styles.ButtonProjetDonation} onClick={() => {
                                                     router.push('/post/clients/' + projet._id).then(r => r)
@@ -154,7 +155,10 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                                             router.push('/post/fonds/' + projet._id + '&' + membre._id)
                                                     }}>Faire un don</button>
                                             }
+                                            </div>
 
+                                            { membre !== undefined ?
+                                            <div style={{float:"left"}}>
                                             {membre._status_adhesion !== "attente cotisation" ? membre !== undefined ? projet._liste !== undefined ? projet._liste.some(colorChange) ?
                                                     <button className={styles.ButtonProjetDonation} type="button"
                                                             id="btnSub"
@@ -167,6 +171,7 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                                         id="btnSub"
                                                         onClick={handleShow}>S'abonner</button> : null : null
                                             }
+                                            </div>:null}
                                         </div>
                                     </div> : null}
                                 </div>
