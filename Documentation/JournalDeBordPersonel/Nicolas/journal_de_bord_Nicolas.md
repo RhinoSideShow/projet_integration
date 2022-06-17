@@ -139,3 +139,10 @@
 - Rajout du prénom du membre et un hr tag dans dropDownList de la Navbar.
 - Rajout des commentaires pour la page Credit_Don.js et Credit_Cotisation.js.
 - Rajout des commentaires pour la page [projets].js. et Animation_Credit_Don.js.
+
+---
+
+### 2022-06-16
+
+- Règler un bug où quand un client(undefined) essaye de rentrer dans un projet, l'application arrête de fonctionner.
+- Supprimer les fichier About.js et Contact.js
