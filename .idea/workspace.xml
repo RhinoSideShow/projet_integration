@@ -4,47 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="delete 1">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-06-15_19_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022-06-15_19_15__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/CreateProject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/DeleteProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/DeleteProjet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetgo/pages/EditeurDeProjet.js" beforeDir="false" afterPath="$PROJECT_DIR$/projetgo/pages/EditeurDeProjet.js" afterDir="false" />
+    <list default="true" id="e495843e-3aac-40ec-9882-ec6d10e1e470" name="Changes" comment="journal Gustavo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="branch_test2" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2AG8ODoUZGrYtpc7VYq1Hqcs5nd" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2AfaSndbOj75K6nEGjbIWfpykjZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,83 +27,33 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/projetgo/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\d_bay\Documents\projetreact\projet1\projet_integration\projetgo\public" />
-      <recent name="C:\Users\d_bay\Documents\projetreact\projet1\projet_integration\projetgo\pages" />
-      <recent name="C:\Users\d_bay\Documents\projetreact\projet1\projet_integration\projetgo\pages\api" />
-      <recent name="C:\Users\d_bay\Documents\projetreact\projet1\projet_integration\projetgo" />
-      <recent name="C:\Users\d_bay\Documents\projetreact\projet1\projet_integration\projetgo\lib" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f4df1b93-cdbf-48e7-a1d5-cd8adfb4cde4" name="Changes" comment="" />
-      <created>1654624527830</created>
+      <changelist id="e495843e-3aac-40ec-9882-ec6d10e1e470" name="Changes" comment="" />
+      <created>1655403145500</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1654624527830</updated>
-      <workItem from="1654624529140" duration="34570000" />
+      <updated>1655403145500</updated>
+      <workItem from="1655403146717" duration="441000" />
+      <workItem from="1655403637362" duration="149000" />
+      <workItem from="1655403791527" duration="1787000" />
     </task>
-    <task id="LOCAL-00001" summary="integration formulaire membre">
-      <created>1654699162427</created>
+    <task id="LOCAL-00001" summary="journal Gustavo">
+      <created>1655404893460</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1654699162427</updated>
+      <updated>1655404893460</updated>
     </task>
-    <task id="LOCAL-00002" summary="test base de donnes formulaire">
-      <created>1654703292112</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1654703292112</updated>
-    </task>
-    <task id="LOCAL-00003" summary="test base de donnes css et bd">
-      <created>1654712019677</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1654712019677</updated>
-    </task>
-    <task id="LOCAL-00004" summary="test base de donnes bd communication">
-      <created>1654718142097</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1654718142097</updated>
-    </task>
-    <task id="LOCAL-00005" summary="test base de donnes bd communication">
-      <created>1654818745845</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1654818745845</updated>
-    </task>
-    <task id="LOCAL-00006" summary="test base de donnes bd communication 2">
-      <created>1654824302512</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1654824302512</updated>
-    </task>
-    <task id="LOCAL-00007" summary="test base de donnes bd communication 2">
-      <created>1654825108559</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1654825108559</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,33 +64,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Production" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="integration formulaire membre" />
-    <MESSAGE value="test base de donnes formulaire" />
-    <MESSAGE value="test base de donnes css et bd" />
-    <MESSAGE value="test base de donnes bd communication" />
-    <MESSAGE value="test base de donnes bd communication 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="test base de donnes bd communication 2" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/projetgo/pages/CreateProject.js</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/projetgo/pages/api/editProjet.js</url>
-          <line>7</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="journal Gustavo" />
+    <option name="LAST_COMMIT_MESSAGE" value="journal Gustavo" />
   </component>
 </project>
