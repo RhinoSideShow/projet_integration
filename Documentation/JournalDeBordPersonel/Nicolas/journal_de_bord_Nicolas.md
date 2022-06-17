@@ -137,5 +137,5 @@
 - Rajouter vérification si 1 des champs de saisie dans Credit_Don.js et Credit_Cotisation.js. est vide. Si oui un message d'erreur apparaît. 
 - Implementation du routage et du transfert des JSON du projet selectionné et du membre selectionné dans DeleteProjet.js et EditeurDeProjet.js
 - Rajout du prénom du membre et un hr tag dans dropDownList de la Navbar.
-- Rajout des commentaires pour la page Credit_Don.js, Credit_Cotisation.js.
-- Rajout des commentaires pour la page [projets].js.
+- Rajout des commentaires pour la page Credit_Don.js et Credit_Cotisation.js.
+- Rajout des commentaires pour la page [projets].js. et Animation_Credit_Don.js.
