@@ -775,4 +775,29 @@
     right : 20px;
 }
 
-/**************************/
+/**********Delete****************/
+
+.DivImageEtTexteDelete{
+    position: relative;
+    left : 77px;
+
+}
+
+.DivImageLogoDelete{
+
+    position: relative;
+    left : 77px;
+
+}
+
+.ButtonProjectDelete{
+position: relative;
+    top: 200px;
+border-radius: 20px;
+font-size: 15px;
+font-weight: bold;
+padding: 10px 25px;
+background-color: #0272fc;
+color: white;
+width: 50%;
+}
