@@ -6,6 +6,7 @@ export default function ConseilAdmin({membre, projets}) {
 
     let array = [];
 
+    //va chercher les instances de projets avec les attributs qui sont false (le statut est a false par default) et les push dans le array cree ci dessus
     function handleStatut(){
         for (let i = 0; i < projets.length; i++) {
             if (projets[i]._status === "false") {
@@ -15,12 +16,15 @@ export default function ConseilAdmin({membre, projets}) {
 
         return (
             <div className={styles.DivAbsolute}>
+
+                {/* place le array declaree dans du front end afin que les admins peuvent cliquer pour approuver */}
                 {array.map((projets, i) => (
                     <div key={i} className={styles.ArrayContainer} onClick={() => {
                         {
                             router.push('/post/projets/' + projets._id + '&' + membre._id + '&' + "true").then(r => r)
                         }
                     }}>
+                        {/* utilise la methode router.push pour envoyer les projets avec le changement dans le statut   */}
                         <h3 style={{color: "#0272fc"}}>{projets._titre}</h3>
                         {projets._desc}<br/>
                         <span style={{
@@ -32,7 +36,7 @@ export default function ConseilAdmin({membre, projets}) {
             </div>
         )
     }
-
+//affichage de la liste de projets a approuver avec la methode handlestatut
     const router = useRouter();
     return (
         <>
