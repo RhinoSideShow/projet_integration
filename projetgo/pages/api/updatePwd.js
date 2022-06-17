@@ -2,7 +2,7 @@ import clientPromise from "../../lib/mongodb";
 import {ObjectId} from "mongodb";
 
 export default async function handler(req, res) {
-
+    //Requete pour editer le mot de passe d'un membre
     let query = req.query.motdepasse;
     console.log(query)
 

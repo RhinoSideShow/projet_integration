@@ -3,7 +3,6 @@ import InformationClient from "../../InformationClient";
 import clientPromise from "../../../lib/mongodb";
 
 export default function ClientInfo({plan, clients}) {
-    console.log("here1");
 
     return (
         <div id="__next" className={styles.DivContainer}>
@@ -16,6 +15,7 @@ export default function ClientInfo({plan, clients}) {
     )
 }
 
+//Envoi les objet projet et client a la page InformationClient
 export async function getServerSideProps({params}) {
 
     const data = await fetch(`http://localhost:3000/api/ProjetDetails?client=${params.client}`)

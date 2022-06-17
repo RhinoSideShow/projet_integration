@@ -5,8 +5,6 @@ import styles from "../styles/Home.module.css";
 import Head from "next/head";
 
 
-
-
 const Form = ({formId, membreForm, forNewMembre = true,}) => {
     const router = useRouter()
     const contentType = 'application/json'
@@ -24,16 +22,12 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
         _admin: membreForm._admin,
         _benevole: membreForm._benevole,
         _pw: membreForm._pw,
-
-
     })
-
 
     /* The PUT method edits an existing entry in the mongodb database. */
     const putData = async (form) => {
         const {id} = router.query;
         const membreId = router.query;
-
         try {
             const res = await fetch(`/api/membres/${id}`, {
                 method: 'PUT',
@@ -43,14 +37,11 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                 },
                 body: JSON.stringify(form),
             })
-
             // Throw error with status code in case Fetch API req failed
             if (!res.ok) {
                 throw new Error(res.status)
             }
-
             const {data} = await res.json()
-
             mutate(`/api/membres/${id}`, data, false) // Update the local data without a revalidation
             alert("Edition Reussi")
             router.push('/post/membre/'+{id}.id)
@@ -71,13 +62,10 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                 },
                 body: JSON.stringify(form),
             })
-
             // Throw error with status code in case Fetch API req failed
             if (!res.ok) {
                 throw new Error(res.status)
             }
-            //router.push(/[id], as,  /${membre._id})
-            //<Link href="/[id]" as={/${membre._id}}>
             alert("Inscription Reussi, veuillez vous connectez")
             router.push('/Sign_In')
         } catch (error) {
@@ -85,15 +73,12 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
         }
     }
 
-
     const handleChange = (e) => {
         const target = e.target
         const value =
             target.name === '_benevole' ? target.checked : target.value
         //target.name === 'paymment' ? target.checked : target.value
         const name = target.name
-
-
         setForm({
             ...form,
             [name]: value,
@@ -105,7 +90,6 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
         const errs = formValidate()
         if (Object.keys(errs).length === 0) {
             forNewMembre ? postData(form) : putData(form)
-
         } else {
             setErrors({errs})
         }
@@ -127,13 +111,14 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
         router.push('/Sign_In').then(r => r)
     }
 
-
     return (
         <>
 
             <form id={formId} onSubmit={handleSubmit}>
+                {/*Champ Prenom*/}
                 <label>Prenom</label>
-            <br/>
+                <br/>
+
                 <input
                     type="text"
                     className={styles.Input}
@@ -145,6 +130,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     required
                 />
                 <br/>
+                {/*Champ Nom*/}
                 <label>Nom</label>
                 <br/>
                 <input
@@ -158,6 +144,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     required
                 />
                 <br/>
+                {/*Champ Email*/}
                 <label>Email</label>
                 <br/>
                 <input
@@ -172,6 +159,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                 />
 
                 <br/>
+                {/*Champ # de telephone*/}
                 <label>Telephone</label>
                 <br/>
                 <input
@@ -185,6 +173,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     required
                 />
                 <br/>
+                {/*Champ Adresse*/}
                 <label>Adresse</label>
                 <br/>
                 <input
@@ -197,6 +186,7 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                     onChange={handleChange}
                 />
                 <br/>
+                {/*Champ mot de passe*/}
                 <label>Mot de passe</label>
                 <br/>
                 <input
@@ -210,23 +200,25 @@ const Form = ({formId, membreForm, forNewMembre = true,}) => {
                 />
                 <br/>
                 <div className={styles.DivFormBenevoleLabel}>
-               <label htmlFor="benevole">Voulez vous etre Bénévole ? </label>
+                    {/*CheckBox pour benevole*/}
+                    <label htmlFor="benevole">Voulez vous etre Bénévole ? </label>
                 </div>
                 <div className={styles.DivFormBenevoleCheck}>
                     <input
-                    className={styles.Input}
-                    type="checkbox"
-                    name="_benevole"
-                    checked={form._benevole}
-                    onChange={handleChange}
-                />
+                        className={styles.Input}
+                        type="checkbox"
+                        name="_benevole"
+                        checked={form._benevole}
+                        onChange={handleChange}
+                    />
                 </div>
-                <button className={styles.ButtonSignIn}  type="submit">
+                {/*Bouton soumettre*/}
+                <button className={styles.ButtonSignIn} type="submit">
                     Soumettre
                 </button>
-
-
             </form>
+
+
             <p>{message}</p>
             <div>
                 {Object.keys(errors).map((err, index) => (

@@ -16,7 +16,7 @@ export default function VerifSignIn({membre, projets}) {
 }
 
 export async function getServerSideProps({params}) {
-
+    //Envoi les objet projet et membre a la page Homepage.js
     const data = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${params.emailpw}`)
     const membre = await data.json();
 

@@ -6,6 +6,7 @@ import {useRef, useState} from "react";
 
 export default function SinIn({utilisateur}) {
 
+    //Definition de variable
     const router = useRouter();
     const inputEmail = useRef(null);
     const inputPwd = useRef(null);
@@ -18,12 +19,12 @@ export default function SinIn({utilisateur}) {
         router.push('/new').then(r => r)
     }
 
-    //change URl quand Vous n'avez pas de compte ? Inscrivez-vous est clicker.
+    //Envoi vers la page mot de passe oublier
     const handleOnClickMPOublier = () => {
 
         let isVrai = false;
         let code = "";
-
+        //Verifie si le memebre existe
         for (let i = 0; i < utilisateur.length; i++) {
             if (email === utilisateur[i]._email) {
                 isVrai = true;
@@ -31,7 +32,7 @@ export default function SinIn({utilisateur}) {
                 break;
             }
         }
-
+        //Envoi vers la page
         if(isVrai){
             return router.push('/post/motdepasse/' + code).then(r => r)
         }
@@ -39,14 +40,14 @@ export default function SinIn({utilisateur}) {
             alert("Veuiller entrer votre adresse email dans la boite de saisie Adresse Email");
 
     }
-
+    //Reload la page pour mettre info a jour
     function LoadOnce() {
         if (!window.location.hash) {
             window.location = window.location;
             window.location.reload();
         }
     }
-
+    //Verifie si le email et le mot de passe son relier a un memebre
     const isExist = () => {
 
         let id = "";
@@ -58,10 +59,11 @@ export default function SinIn({utilisateur}) {
                 break;
             }
         }
-
+        //Envoi vers la home page
         if (isTrue) {
             console.log(id)
             return router.push('/post/membre/' + id).then(r => r);
+            //Donne un message d'erreur
         } else {
             alert("Email ou Mot de passe incorrect!" + email + motDePasse + isTrue);
 
@@ -72,7 +74,7 @@ export default function SinIn({utilisateur}) {
     }
 
     return (
-
+        // Page Visible
         <div onLoad={LoadOnce} id="__next" className={styles.DivContainer}>
             <Head>
                 <title>ProjetGo</title>
@@ -86,17 +88,21 @@ export default function SinIn({utilisateur}) {
                         </div>
                         <br/>
                         <div>
+                            {/*Field Email*/}
                             <input type="text" ref={inputEmail} onChange={e => setEmail(e.target.value)}
                                    className={styles.InputClient}
                                    placeholder="Adresse Email"/>
                             <br/><br/>
-
+                            {/*Field Mot de passe*/}
                             <input type="password" ref={inputPwd} onChange={e => setMotDePasse(e.target.value)}
                                    className={styles.InputClient} placeholder="Mot de Passe"/>
+                            {/*Lien mot de passe oublie*/}
                             &emsp;<a onClick={handleOnClickMPOublier}>Mot de passe oublié ?</a>
                             <br/><br/><br/><br/>
                             <div>
+                                {/*Bouton connexion*/}
                                 <button className={styles.ButtonSignIn} onClick={isExist}>Suivant</button>
+                                {/*Lien vers page creer compte*/}
                                 <p>&emsp;&emsp;Vous n'avez pas de compte ?<a
                                     onClick={handleOnClickPasDeCompte}>&ensp;Inscrivez-vous</a></p>
                             </div>

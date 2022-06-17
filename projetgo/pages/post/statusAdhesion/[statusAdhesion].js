@@ -1,7 +1,9 @@
 import styles from '../../../styles/Home.module.css';
+import clientPromise from "../../../lib/mongodb";
+import Homepage from "../../Homepage";
 import Credit_Cotisation from "../../Credit_Cotisation";
 
-export default function PayerCotisation({membre}) {
+export default function ChangerStatusAdhesion({membre}) {
 
     return (
         <div id="__next" className={styles.DivContainer}>
@@ -15,9 +17,10 @@ export default function PayerCotisation({membre}) {
 }
 
 export async function getServerSideProps({params}) {
-    //Envoi l'objet membre a la page Credit_Cotisation.js
-    const data = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${params.cotisation}`)
+    //Envoi l'objet membre a la page Credit_Cotisations.js
+    const data = await fetch(`http://localhost:3000/api/membrelogin?emailpw=${params.statusAdhesion}`)
     const membre = await data.json();
+
 
     return {
         props: {membre,}

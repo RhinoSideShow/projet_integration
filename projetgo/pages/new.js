@@ -26,12 +26,12 @@ const NewMembre = () => {
     }
 
     return (
+        //Page Visible
         <div id="__next" className={styles.DivContainer}>
+
             <Head>
                 <title>ProjetGo - Creation Membre</title>
             </Head>
-
-
 
             <div className={styles.DivSousContainerNew}>
 
@@ -41,10 +41,12 @@ const NewMembre = () => {
                         <h2>Devenez un membre de ProjetGo</h2>
                     </div>
                     <div>
+                        {/*Form pour ajouter membre*/}
                 <Form formId="add-membre-form" membreForm={membreForm}/>
                         <div>
-                            <p>&emsp;&emsp;Vous avez un compte ?<a
-                                onClick={handleOnClickConexion}>&ensp;Connectez-vous</a></p>
+                            <p>&emsp;&emsp;Vous avez un compte ?
+                                {/*Lien vers page Sign_In*/}
+                                <a onClick={handleOnClickConexion}>&ensp;Connectez-vous</a></p>
                             <br/><br/></div>
                     </div>
 

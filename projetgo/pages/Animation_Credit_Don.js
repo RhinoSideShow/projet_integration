@@ -4,33 +4,47 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import Confetti from 'react-confetti'
 
-export default function Animation_Credit_Don({isDon, membre, projet}) {
+export default function Animation_Credit_Don({isDon, membre, projet, isClient}) {
 
     const [show, setShow] = useState(false);
+    //set le counter a 6 seconde
     const [counter, setCounter] = useState(6);
     const router = useRouter();
 
+    //anneau téléchargement dure 2 secondes
     useEffect(() => {
         const timer = setTimeout(() => setShow(true), 2000);
         return () => clearTimeout(timer);
     }, []);
 
+    //redirection diminue le counter de 1 à chaque seconde
     useEffect(() => {
         const timer = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
 
-        if (counter === 0 && membre === undefined)
-            router.push('/post/projets/' + projet._id).then(r => r);
+        if(!isClient){
+            //si membre est undefined
+            if (counter === 0 && membre === undefined)
+                router.push('/post/projets/' + projet._id).then(r => r);
 
-        else if (counter === 0 && membre !== null && projet === null)
-            router.push('/post/membre/' + membre._id).then(r => r);
+            //si le membre n'est pas null mais le projet est null
+            else if (counter === 0 && membre !== null && projet === null)
+                router.push('/post/membre/' + membre._id).then(r => r);
 
-        else if (counter === 0 && membre !== null && projet !== null)
-            router.push('/post/projets/' + projet._id + '&' + membre._id).then(r => r);
+            //si le membre n'est pas null mais le projet n'est null
+            else if (counter === 0 && membre !== null && projet !== null)
+                router.push('/post/projets/' + projet._id + '&' + membre._id).then(r => r);
+        }
+        //si isClient = true
+        else{
+            if (counter === 0)
+                router.push('/post/projets/' + projet._id).then(r => r);
+        }
 
 
         return () => clearInterval(timer);
     }, [counter]);
 
+    //si isDon = true
     if (isDon) {
         return (
             <div>
@@ -57,7 +71,9 @@ export default function Animation_Credit_Don({isDon, membre, projet}) {
                 </div>
             </div>
         )
-    } else {
+    }
+    //si isDon = false
+    else {
         return (
             <div>
                 <div style={show === true ? {display: 'none'} : {display: 'inline'}}>
