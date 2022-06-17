@@ -123,6 +123,10 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                             {projet._liste !== undefined ? projet._liste.map((id, i) => (
                                                 <p key={i}>{id._prenom} {id._nom}</p>
                                             )) : null}</div>
+                                        <br/>
+                                        <hr/>
+                                        <br/>
+                                        <br/>
 
                                     </div>
                                     {/******************************************************************************/}
@@ -135,9 +139,6 @@ export default function AffichageProjets({projet, membre, createur, conseil}) {
                                         <div>
                                             <p><span className={styles.FontBleu}>{projet._fonds}$</span> récoltés sur un
                                                 objectif de<br/> {projet._budget}$</p>
-                                        </div>
-                                        <div>
-                                            {projet._status}
                                         </div>
                                         <br/>
                                         <div>
