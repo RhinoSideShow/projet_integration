@@ -77,6 +77,8 @@
 #### [projets].js avec sticky div
 <img src="https://media.giphy.com/media/6sUzbzq7U7xxuLsyyp/giphy.gif" width="800" height="500" alt="Login">
 
+#### Parcours [projets].js à donation (avec confetti)
+<img src="[https://media.giphy.com/media/6sUzbzq7U7xxuLsyyp/giphy.gif](https://media.giphy.com/media/6eSDAWaQoYSUG3vGO3/giphy.gif)" width="800" height="500" alt="Login">
 ---
 
 ### 2022-06-08
